@@ -1,0 +1,118 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum OrderStatus {
+  PENDING
+  PAID
+  PROCESSING
+  DESIGNING
+  CODING
+  DEPLOYING
+  COMPLETED
+  FAILED
+}
+
+enum PipelineStep {
+  PAYMENT_CONFIRMED
+  DATA_PREPARED
+  PROMPT_GENERATED
+  DESIGN_CREATED
+  CODE_GENERATED
+  REPO_CREATED
+  DEPLOYED
+  EMAIL_SENT
+  INVOICE_SENT
+}
+
+model Order {
+  id              String      @id @default(cuid())
+  stripeSessionId String      @unique
+  stripePaymentId String?
+
+  // Kundendaten
+  companyName     String
+  industry        String
+  description     String      @db.Text
+  logoUrl         String?
+  primaryColor    String?
+  secondaryColor  String?
+  existingWebsite String?
+  contactEmail    String
+  contactName     String
+
+  // Impressum-Pflichtangaben (§ 5 TMG)
+  legalAddress    String?     @db.Text  // Straße, PLZ, Ort
+  legalPhone      String?
+  legalForm       String?     // GmbH, GbR, UG, Einzelunternehmen, etc.
+  legalCeo        String?     // Geschäftsführer
+  legalRegisterNr String?     // Handelsregister-Nr. (optional)
+
+  // Widerrufsrecht (§ 356 Abs. 5 BGB)
+  widerrufsrechtAkzeptiert Boolean @default(false)
+
+  // Pipeline-Status
+  status          OrderStatus @default(PENDING)
+  currentStep     PipelineStep?
+
+  // Ergebnisse
+  pencilDesignPath String?
+  githubRepoUrl    String?
+  previewUrl       String?
+  errorMessage     String?     @db.Text
+
+  // Metadaten
+  amount          Int         @default(49900) // Cent
+  currency        String      @default("eur")
+
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+  completedAt     DateTime?
+
+  logs            PipelineLog[]
+  invoice         Invoice?
+}
+
+model Invoice {
+  id            String   @id @default(cuid())
+  invoiceNumber Int      @default(autoincrement())
+  orderId       String   @unique
+  order         Order    @relation(fields: [orderId], references: [id])
+
+  // Beträge in Cent
+  grossAmount   Int      // Brutto (inkl. MwSt.)
+  netAmount     Int      // Netto
+  taxAmount     Int      // MwSt.-Betrag
+  taxRate       Float    @default(0.19)
+
+  // Rechnungsempfänger
+  recipientName    String
+  recipientEmail   String
+  recipientCompany String
+  recipientAddress String?
+
+  issuedAt      DateTime @default(now())
+  createdAt     DateTime @default(now())
+}
+
+model PipelineLog {
+  id        String       @id @default(cuid())
+  orderId   String
+  order     Order        @relation(fields: [orderId], references: [id])
+  step      PipelineStep
+  status    String       // "started" | "completed" | "failed"
+  message   String       @db.Text
+  metadata  Json?
+  createdAt DateTime     @default(now())
+}
+
+model WaitlistEntry {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  createdAt DateTime @default(now())
+}
