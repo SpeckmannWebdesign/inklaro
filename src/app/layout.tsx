@@ -1,21 +1,30 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Serif_Display, Nunito } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const dmSerif = DM_Serif_Display({
+  variable: "--font-display",
   subsets: ["latin"],
+  weight: ["400"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const nunito = Nunito({
+  variable: "--font-body",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "KI-Website Generator – Professionelle Website in 60 Minuten",
+  title: "Inklaro – Professionelle Website zum Festpreis",
   description:
-    "Vollautomatische Website-Erstellung per KI: Formular ausfüllen, bezahlen, fertige Website erhalten. Für Handwerker, Restaurants, Dienstleister. Einmalig 499 €.",
+    "Professionelle Website ab 499 € netto. Responsive, DSGVO-konform, blitzschnell. Erst zahlen, wenn Sie zufrieden sind.",
+  openGraph: {
+    title: "Inklaro – Professionelle Website zum Festpreis",
+    description:
+      "Professionelle Website ab 499 € netto. Responsive, DSGVO-konform, blitzschnell. Erst zahlen, wenn Sie zufrieden sind.",
+    type: "website",
+    locale: "de_DE",
+  },
 };
 
 export default function RootLayout({
@@ -26,9 +35,17 @@ export default function RootLayout({
   return (
     <html
       lang="de"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${dmSerif.variable} ${nunito.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-screen bg-[#FFFAF5] text-[#0F2B3C]">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-[#E8564A] focus:text-white focus:px-4 focus:py-2 focus:rounded-full focus:font-semibold"
+        >
+          Zum Inhalt springen
+        </a>
+        {children}
+      </body>
     </html>
   );
 }
