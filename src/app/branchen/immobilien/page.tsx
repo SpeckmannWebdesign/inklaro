@@ -11,7 +11,7 @@ export default function ImmobilienPage() {
     <BranchenShowcase
       branche="Immobilien"
       beschreibung="So könnte Ihre Immobilien-Website aussehen — exklusiv, professionell und auf Vertrauen gebaut. Für Makler, Hausverwaltungen und Bauträger."
-      screenshot="/images/fullpage-immobilien.jpg"
+      screenshot="/images/fullpage-immobilien.avif"
       url="www.thornburg-immobilien.de"
     />
   );

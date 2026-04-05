@@ -11,7 +11,7 @@ export default function FreelancerPage() {
     <BranchenShowcase
       branche="Freelancer"
       beschreibung="So könnte Ihre Freelancer-Website aussehen — modern, persönlich und perfekt für Ihr Portfolio. Für Berater, Designer und Kreative."
-      screenshot="/images/fullpage-freelancer.jpg"
+      screenshot="/images/fullpage-freelancer.avif"
       url="www.anna-richter-design.de"
     />
   );

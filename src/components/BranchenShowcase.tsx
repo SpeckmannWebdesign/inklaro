@@ -16,18 +16,18 @@ interface BranchenShowcaseProps {
 }
 
 const alleBranchen = [
-  { name: "Elektriker", desc: "Elektroinstallation, Smart Home, Notdienst", img: "/images/oQ5OH.jpeg", href: "/branchen/elektriker" },
-  { name: "Restaurant", desc: "Gastronomie, Café, Catering", img: "/images/nuGnq.jpeg", href: "/branchen/restaurant" },
-  { name: "Freelancer", desc: "Portfolio, Berater, Kreative", img: "/images/IPZsz.jpeg", href: "/branchen/freelancer" },
-  { name: "Arztpraxis", desc: "Ärzte, Zahnärzte, Therapeuten", img: "/images/Tfgar.jpeg", href: "/branchen/arztpraxis" },
-  { name: "Fitnessstudio", desc: "Gym, Personal Training, Yoga", img: "/images/5cM2T.jpeg", href: "/branchen/fitnessstudio" },
-  { name: "Immobilien", desc: "Makler, Hausverwaltung, Bauträger", img: "/images/q71eS.jpeg", href: "/branchen/immobilien" },
-  { name: "Rechtsanwalt", desc: "Kanzlei, Anwalt, Notar", img: "/images/hero-rechtsanwalt.jpeg", href: "/branchen/rechtsanwalt" },
-  { name: "Steuerberater", desc: "Buchhaltung, Steuern, Beratung", img: "/images/hero-steuerberater.jpeg", href: "/branchen/steuerberater" },
-  { name: "Café", desc: "Café, Bäckerei, Bistro", img: "/images/hero-cafe.jpeg", href: "/branchen/cafe" },
-  { name: "Tischler", desc: "Tischlerei, Schreiner, Möbelbau", img: "/images/hero-tischler.jpeg", href: "/branchen/tischler" },
-  { name: "SHK-Betrieb", desc: "Sanitär, Heizung, Klima", img: "/images/hero-shk.jpeg", href: "/branchen/shk" },
-  { name: "Hochzeitsplanung", desc: "Hochzeitsplaner, Events", img: "/images/hero-hochzeit.jpeg", href: "/branchen/hochzeitsplanung" },
+  { name: "Elektriker", desc: "Elektroinstallation, Smart Home, Notdienst", img: "/images/oQ5OH.avif", href: "/branchen/elektriker" },
+  { name: "Restaurant", desc: "Gastronomie, Café, Catering", img: "/images/nuGnq.avif", href: "/branchen/restaurant" },
+  { name: "Freelancer", desc: "Portfolio, Berater, Kreative", img: "/images/IPZsz.avif", href: "/branchen/freelancer" },
+  { name: "Arztpraxis", desc: "Ärzte, Zahnärzte, Therapeuten", img: "/images/Tfgar.avif", href: "/branchen/arztpraxis" },
+  { name: "Fitnessstudio", desc: "Gym, Personal Training, Yoga", img: "/images/5cM2T.avif", href: "/branchen/fitnessstudio" },
+  { name: "Immobilien", desc: "Makler, Hausverwaltung, Bauträger", img: "/images/q71eS.avif", href: "/branchen/immobilien" },
+  { name: "Rechtsanwalt", desc: "Kanzlei, Anwalt, Notar", img: "/images/hero-rechtsanwalt.avif", href: "/branchen/rechtsanwalt" },
+  { name: "Steuerberater", desc: "Buchhaltung, Steuern, Beratung", img: "/images/hero-steuerberater.avif", href: "/branchen/steuerberater" },
+  { name: "Café", desc: "Café, Bäckerei, Bistro", img: "/images/hero-cafe.avif", href: "/branchen/cafe" },
+  { name: "Tischler", desc: "Tischlerei, Schreiner, Möbelbau", img: "/images/hero-tischler.avif", href: "/branchen/tischler" },
+  { name: "SHK-Betrieb", desc: "Sanitär, Heizung, Klima", img: "/images/hero-shk.avif", href: "/branchen/shk" },
+  { name: "Hochzeitsplanung", desc: "Hochzeitsplaner, Events", img: "/images/hero-hochzeit.avif", href: "/branchen/hochzeitsplanung" },
 ];
 
 export default function BranchenShowcase({ branche, beschreibung, screenshot, url }: BranchenShowcaseProps) {

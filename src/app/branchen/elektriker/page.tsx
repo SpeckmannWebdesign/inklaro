@@ -11,7 +11,7 @@ export default function ElektrikerPage() {
     <BranchenShowcase
       branche="Elektriker"
       beschreibung="So könnte Ihre Elektriker-Website aussehen — professionell, vertrauenswürdig und perfekt auf Ihren Betrieb zugeschnitten."
-      screenshot="/images/fullpage-handwerker.jpg"
+      screenshot="/images/fullpage-handwerker.avif"
       url="www.mueller-elektrotechnik.de"
     />
   );

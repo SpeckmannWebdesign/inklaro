@@ -8,6 +8,10 @@ const ShieldCheck = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
 );
 
+const CheckCircle = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E8564A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+);
+
 const steps = [
   { num: "1", title: "Ihr Unternehmen" },
   { num: "2", title: "Zielgruppe & Ziele" },
@@ -18,11 +22,143 @@ const steps = [
 
 const inputCls = "bg-[#FFF5EB] border border-[#E8DFD4] rounded-xl px-4 py-3.5 text-[#0F2B3C] text-[15px] placeholder:text-[#8DA4B4] focus:border-[#E8564A] focus:outline-none transition w-full";
 
+interface FormData {
+  // Schritt 1
+  firmenname: string;
+  branche: string;
+  beschreibung: string;
+  standort: string;
+  website: string;
+  // Schritt 2
+  zielgruppe: string;
+  websiteZiel: string;
+  b2bB2c: string;
+  zielgruppeBeschreibung: string;
+  // Schritt 3
+  hatLogo: string;
+  hatBrandfarben: string;
+  farben: string;
+  vorbilder: string;
+  // Schritt 4
+  seiten: string[];
+  texteVorhanden: string;
+  sonstiges: string;
+  // Schritt 5
+  ansprechpartner: string;
+  email: string;
+  telefon: string;
+}
+
 export default function AnfragenPage() {
   const [step, setStep] = useState(0);
+  const [senden, setSenden] = useState(false);
+  const [erfolg, setErfolg] = useState(false);
+  const [fehler, setFehler] = useState("");
+
+  const [form, setForm] = useState<FormData>({
+    firmenname: "",
+    branche: "",
+    beschreibung: "",
+    standort: "",
+    website: "",
+    zielgruppe: "",
+    websiteZiel: "",
+    b2bB2c: "",
+    zielgruppeBeschreibung: "",
+    hatLogo: "",
+    hatBrandfarben: "",
+    farben: "",
+    vorbilder: "",
+    seiten: [],
+    texteVorhanden: "",
+    sonstiges: "",
+    ansprechpartner: "",
+    email: "",
+    telefon: "",
+  });
+
+  const set = (feld: keyof FormData, wert: string) =>
+    setForm((prev) => ({ ...prev, [feld]: wert }));
+
+  const toggleSeite = (seite: string) =>
+    setForm((prev) => ({
+      ...prev,
+      seiten: prev.seiten.includes(seite)
+        ? prev.seiten.filter((s) => s !== seite)
+        : [...prev.seiten, seite],
+    }));
 
   const next = () => setStep((s) => Math.min(s + 1, steps.length - 1));
   const prev = () => setStep((s) => Math.max(s - 1, 0));
+
+  const absenden = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFehler("");
+    setSenden(true);
+
+    try {
+      const res = await fetch("/api/anfragen", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const daten = await res.json();
+
+      if (!res.ok || !daten.erfolg) {
+        setFehler(
+          daten.fehler ||
+            "Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
+        );
+        return;
+      }
+
+      setErfolg(true);
+    } catch {
+      setFehler(
+        "Verbindungsfehler — bitte prüfen Sie Ihre Internetverbindung und versuchen Sie es erneut."
+      );
+    } finally {
+      setSenden(false);
+    }
+  };
+
+  // Erfolgsseite nach dem Absenden
+  if (erfolg) {
+    return (
+      <>
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-[#FFFAF5]/90 backdrop-blur-xl border-b border-[#E8DFD4]">
+          <div className="max-w-[1440px] mx-auto flex items-center justify-between h-20 px-5 lg:px-16">
+            <Link href="/" className="flex items-center gap-2">
+              <Image src="/images/inklaro-logo.png" alt="Inklaro" width={180} height={60} className="h-12 w-auto" />
+            </Link>
+          </div>
+        </nav>
+        <main className="pt-20 bg-[#FFFAF5] min-h-screen flex items-center justify-center">
+          <div className="max-w-[520px] mx-auto px-5 text-center">
+            <div className="flex justify-center mb-6">
+              <CheckCircle />
+            </div>
+            <h1 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl text-[#0F2B3C] leading-[1.15] mb-4">
+              Ihre Anfrage ist eingegangen!
+            </h1>
+            <p className="text-[#4A6274] text-lg leading-[1.7] mb-3">
+              Wir haben Ihnen eine Bestätigung an <strong className="text-[#0F2B3C]">{form.email}</strong> gesendet.
+            </p>
+            <p className="text-[#4A6274] text-base leading-[1.7] mb-8">
+              Unser Team erstellt jetzt Ihre Website-Vorschau. Wir melden uns innerhalb von 1–2 Werktagen bei Ihnen.
+            </p>
+            <Link
+              href="/"
+              className="inline-block bg-[#E8564A] text-white font-bold text-sm px-8 py-3.5 rounded-full hover:shadow-lg hover:shadow-[#E8564A]/30 hover:-translate-y-0.5 transition-all duration-200"
+            >
+              Zurück zur Startseite
+            </Link>
+          </div>
+        </main>
+      </>
+    );
+  }
 
   return (
     <>
@@ -53,11 +189,12 @@ export default function AnfragenPage() {
               {steps.map((s, i) => (
                 <div key={i} className="flex items-center flex-1">
                   <button
+                    type="button"
                     onClick={() => setStep(i)}
                     className={`flex items-center gap-2 transition-all ${i <= step ? "opacity-100" : "opacity-40"}`}
                   >
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all ${i === step ? "bg-[#E8564A] text-white scale-110" : i < step ? "bg-[#0F2B3C] text-white" : "bg-[#E8DFD4] text-[#8DA4B4]"}`}>
-                      {i < step ? "✓" : s.num}
+                      {i < step ? "\u2713" : s.num}
                     </div>
                     <span className={`text-sm font-medium hidden md:block ${i === step ? "text-[#0F2B3C]" : "text-[#8DA4B4]"}`}>{s.title}</span>
                   </button>
@@ -69,7 +206,7 @@ export default function AnfragenPage() {
             </div>
 
             {/* Form Card */}
-            <form className="bg-white rounded-2xl border border-[#E8DFD4] shadow-sm p-8 md:p-12">
+            <form onSubmit={absenden} className="bg-white rounded-2xl border border-[#E8DFD4] shadow-sm p-8 md:p-12">
               {/* Step 1: Unternehmen */}
               <div className={step === 0 ? "flex flex-col gap-6" : "hidden"}>
                 <h2 className="font-[family-name:var(--font-display)] text-2xl text-[#0F2B3C] mb-2">Über Ihr Unternehmen</h2>
@@ -77,25 +214,25 @@ export default function AnfragenPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-2">
                     <label className="text-[#4A6274] text-xs font-semibold">Firmenname *</label>
-                    <input type="text" placeholder="z.B. Müller Elektrotechnik GmbH" required className={inputCls} />
+                    <input type="text" placeholder="z.B. Müller Elektrotechnik GmbH" required value={form.firmenname} onChange={(e) => set("firmenname", e.target.value)} className={inputCls} />
                   </div>
                   <div className="flex flex-col gap-2">
                     <label className="text-[#4A6274] text-xs font-semibold">Branche *</label>
-                    <input type="text" placeholder="z.B. Handwerk, Praxis, Gastro..." required className={inputCls} />
+                    <input type="text" placeholder="z.B. Handwerk, Praxis, Gastro..." required value={form.branche} onChange={(e) => set("branche", e.target.value)} className={inputCls} />
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
                   <label className="text-[#4A6274] text-xs font-semibold">Was macht Ihr Unternehmen? *</label>
-                  <textarea rows={3} placeholder="Beschreiben Sie kurz, was Sie anbieten und was Sie von der Konkurrenz unterscheidet..." required className={`${inputCls} resize-none`} />
+                  <textarea rows={3} placeholder="Beschreiben Sie kurz, was Sie anbieten und was Sie von der Konkurrenz unterscheidet..." required value={form.beschreibung} onChange={(e) => set("beschreibung", e.target.value)} className={`${inputCls} resize-none`} />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-2">
                     <label className="text-[#4A6274] text-xs font-semibold">Standort / Region</label>
-                    <input type="text" placeholder="z.B. Oldenburg, Niedersachsen" className={inputCls} />
+                    <input type="text" placeholder="z.B. Oldenburg, Niedersachsen" value={form.standort} onChange={(e) => set("standort", e.target.value)} className={inputCls} />
                   </div>
                   <div className="flex flex-col gap-2">
                     <label className="text-[#4A6274] text-xs font-semibold">Website-URL (falls vorhanden)</label>
-                    <input type="text" placeholder="www.ihre-aktuelle-seite.de" className={inputCls} />
+                    <input type="text" placeholder="www.ihre-aktuelle-seite.de" value={form.website} onChange={(e) => set("website", e.target.value)} className={inputCls} />
                   </div>
                 </div>
               </div>
@@ -107,7 +244,7 @@ export default function AnfragenPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-2">
                     <label className="text-[#4A6274] text-xs font-semibold">Primäre Zielgruppe *</label>
-                    <select required defaultValue="" className={`${inputCls} appearance-none`}>
+                    <select required value={form.zielgruppe} onChange={(e) => set("zielgruppe", e.target.value)} className={`${inputCls} appearance-none`}>
                       <option value="" disabled>Bitte wählen...</option>
                       <option>Privatpersonen</option>
                       <option>Unternehmen / Geschäftskunden</option>
@@ -116,7 +253,7 @@ export default function AnfragenPage() {
                   </div>
                   <div className="flex flex-col gap-2">
                     <label className="text-[#4A6274] text-xs font-semibold">Was soll die Website erreichen? *</label>
-                    <select required defaultValue="" className={`${inputCls} appearance-none`}>
+                    <select required value={form.websiteZiel} onChange={(e) => set("websiteZiel", e.target.value)} className={`${inputCls} appearance-none`}>
                       <option value="" disabled>Bitte wählen...</option>
                       <option>Mehr Kundenanfragen</option>
                       <option>Professioneller Online-Auftritt</option>
@@ -131,7 +268,7 @@ export default function AnfragenPage() {
                   <div className="flex gap-3">
                     {["B2B", "B2C", "Beides"].map((opt) => (
                       <label key={opt} className="flex-1 cursor-pointer">
-                        <input type="radio" name="b2b_b2c" value={opt} className="sr-only peer" />
+                        <input type="radio" name="b2b_b2c" value={opt} checked={form.b2bB2c === opt} onChange={() => set("b2bB2c", opt)} className="sr-only peer" />
                         <div className="text-center py-3 rounded-full bg-[#FFF5EB] border border-[#E8DFD4] text-[#4A6274] text-sm font-medium peer-checked:border-[#E8564A] peer-checked:border-2 peer-checked:text-[#E8564A] peer-checked:font-semibold transition">{opt}</div>
                       </label>
                     ))}
@@ -139,7 +276,7 @@ export default function AnfragenPage() {
                 </div>
                 <div className="flex flex-col gap-2">
                   <label className="text-[#4A6274] text-xs font-semibold">Beschreiben Sie Ihre Zielgruppe genauer (optional)</label>
-                  <textarea rows={2} placeholder="z.B. Hausbesitzer 30–60 Jahre im Raum Oldenburg, die eine Heizungssanierung planen..." className={`${inputCls} resize-none`} />
+                  <textarea rows={2} placeholder="z.B. Hausbesitzer 30–60 Jahre im Raum Oldenburg, die eine Heizungssanierung planen..." value={form.zielgruppeBeschreibung} onChange={(e) => set("zielgruppeBeschreibung", e.target.value)} className={`${inputCls} resize-none`} />
                 </div>
               </div>
 
@@ -153,7 +290,7 @@ export default function AnfragenPage() {
                     <div className="flex gap-3">
                       {["Ja", "Nein"].map((opt) => (
                         <label key={opt} className="flex-1 cursor-pointer">
-                          <input type="radio" name="logo" value={opt} className="sr-only peer" />
+                          <input type="radio" name="logo" value={opt} checked={form.hatLogo === opt} onChange={() => set("hatLogo", opt)} className="sr-only peer" />
                           <div className="text-center py-3 rounded-full bg-[#FFF5EB] border border-[#E8DFD4] text-[#4A6274] text-sm font-medium peer-checked:border-[#E8564A] peer-checked:border-2 peer-checked:text-[#E8564A] peer-checked:font-semibold transition">{opt}</div>
                         </label>
                       ))}
@@ -164,7 +301,7 @@ export default function AnfragenPage() {
                     <div className="flex gap-3">
                       {["Ja", "Nein"].map((opt) => (
                         <label key={opt} className="flex-1 cursor-pointer">
-                          <input type="radio" name="brandfarben" value={opt} className="sr-only peer" />
+                          <input type="radio" name="brandfarben" value={opt} checked={form.hatBrandfarben === opt} onChange={() => set("hatBrandfarben", opt)} className="sr-only peer" />
                           <div className="text-center py-3 rounded-full bg-[#FFF5EB] border border-[#E8DFD4] text-[#4A6274] text-sm font-medium peer-checked:border-[#E8564A] peer-checked:border-2 peer-checked:text-[#E8564A] peer-checked:font-semibold transition">{opt}</div>
                         </label>
                       ))}
@@ -173,11 +310,11 @@ export default function AnfragenPage() {
                 </div>
                 <div className="flex flex-col gap-2">
                   <label className="text-[#4A6274] text-xs font-semibold">Welche Farben (Hex-Codes oder Beschreibung)?</label>
-                  <input type="text" placeholder="z.B. Dunkelblau + Gold, oder #1B3D70" className={inputCls} />
+                  <input type="text" placeholder="z.B. Dunkelblau + Gold, oder #1B3D70" value={form.farben} onChange={(e) => set("farben", e.target.value)} className={inputCls} />
                 </div>
                 <div className="flex flex-col gap-2">
                   <label className="text-[#4A6274] text-xs font-semibold">Gibt es Websites, die Ihnen gefallen? (optional)</label>
-                  <textarea rows={2} placeholder="z.B. www.beispiel-firma.de — gefällt mir der Stil, die Farben, das Layout..." className={`${inputCls} resize-none`} />
+                  <textarea rows={2} placeholder="z.B. www.beispiel-firma.de — gefällt mir der Stil, die Farben, das Layout..." value={form.vorbilder} onChange={(e) => set("vorbilder", e.target.value)} className={`${inputCls} resize-none`} />
                 </div>
               </div>
 
@@ -190,7 +327,7 @@ export default function AnfragenPage() {
                   <div className="flex flex-wrap gap-2">
                     {["Startseite", "Leistungen", "Über uns", "Kontakt", "Team", "Referenzen", "FAQ"].map((page) => (
                       <label key={page} className="cursor-pointer">
-                        <input type="checkbox" value={page} className="sr-only peer" />
+                        <input type="checkbox" value={page} checked={form.seiten.includes(page)} onChange={() => toggleSeite(page)} className="sr-only peer" />
                         <div className="px-4 py-2.5 rounded-full bg-[#FFF5EB] border border-[#E8DFD4] text-[#4A6274] text-[13px] font-medium peer-checked:border-[#E8564A] peer-checked:border-2 peer-checked:text-[#E8564A] peer-checked:font-semibold transition">{page}</div>
                       </label>
                     ))}
@@ -201,7 +338,7 @@ export default function AnfragenPage() {
                   <div className="flex gap-3">
                     {["Ja, teilweise", "Nein, bitte erstellen", "Ich liefere alles"].map((opt) => (
                       <label key={opt} className="flex-1 cursor-pointer">
-                        <input type="radio" name="texte" value={opt} className="sr-only peer" />
+                        <input type="radio" name="texte" value={opt} checked={form.texteVorhanden === opt} onChange={() => set("texteVorhanden", opt)} className="sr-only peer" />
                         <div className="text-center py-3 rounded-full bg-[#FFF5EB] border border-[#E8DFD4] text-[#4A6274] text-[13px] font-medium peer-checked:border-[#E8564A] peer-checked:border-2 peer-checked:text-[#E8564A] peer-checked:font-semibold transition">{opt}</div>
                       </label>
                     ))}
@@ -209,7 +346,7 @@ export default function AnfragenPage() {
                 </div>
                 <div className="flex flex-col gap-2">
                   <label className="text-[#4A6274] text-xs font-semibold">Noch etwas, das wir wissen sollten?</label>
-                  <textarea rows={3} placeholder="z.B. Besondere Funktionen, Terminbuchung, Öffnungszeiten-Widget, spezielle Wünsche..." className={`${inputCls} resize-none`} />
+                  <textarea rows={3} placeholder="z.B. Besondere Funktionen, Terminbuchung, Öffnungszeiten-Widget, spezielle Wünsche..." value={form.sonstiges} onChange={(e) => set("sonstiges", e.target.value)} className={`${inputCls} resize-none`} />
                 </div>
               </div>
 
@@ -220,40 +357,51 @@ export default function AnfragenPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-2">
                     <label className="text-[#4A6274] text-xs font-semibold">Ansprechpartner *</label>
-                    <input type="text" placeholder="Vor- und Nachname" required className={inputCls} />
+                    <input type="text" placeholder="Vor- und Nachname" required value={form.ansprechpartner} onChange={(e) => set("ansprechpartner", e.target.value)} className={inputCls} />
                   </div>
                   <div className="flex flex-col gap-2">
                     <label className="text-[#4A6274] text-xs font-semibold">E-Mail-Adresse *</label>
-                    <input type="email" placeholder="ihre@email.de" required className={inputCls} />
+                    <input type="email" placeholder="ihre@email.de" required value={form.email} onChange={(e) => set("email", e.target.value)} className={inputCls} />
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
                   <label className="text-[#4A6274] text-xs font-semibold">Telefon (optional)</label>
-                  <input type="tel" placeholder="+49 ..." className={inputCls} />
+                  <input type="tel" placeholder="+49 ..." value={form.telefon} onChange={(e) => set("telefon", e.target.value)} className={inputCls} />
                 </div>
                 <div className="bg-[#FFF5EB] rounded-xl p-4 border border-[#E8DFD4]">
                   <p className="text-[#4A6274] text-sm leading-[1.6]">
                     <span className="font-semibold text-[#0F2B3C]">Was passiert als Nächstes?</span> Wir schauen uns Ihre Angaben an und erstellen innerhalb von 1–2 Tagen eine fertige Website-Vorschau. Dann melden wir uns bei Ihnen für eine persönliche Live-Vorstellung. Sie zahlen erst, wenn Sie begeistert sind.
                   </p>
                 </div>
+
+                {/* Fehlermeldung */}
+                {fehler && (
+                  <div className="bg-red-50 border border-red-200 rounded-xl p-4">
+                    <p className="text-red-700 text-sm">{fehler}</p>
+                  </div>
+                )}
               </div>
 
               {/* Navigation Buttons */}
               <div className="flex items-center justify-between mt-10 pt-6 border-t border-[#E8DFD4]">
                 {step > 0 ? (
                   <button type="button" onClick={prev} className="text-[#4A6274] font-semibold text-sm px-6 py-3 rounded-full border border-[#E8DFD4] hover:border-[#0F2B3C] hover:text-[#0F2B3C] transition">
-                    ← Zurück
+                    &larr; Zurück
                   </button>
                 ) : (
                   <div />
                 )}
                 {step < steps.length - 1 ? (
                   <button type="button" onClick={next} className="bg-[#E8564A] text-white font-bold text-sm px-8 py-3 rounded-full hover:shadow-lg hover:shadow-[#E8564A]/30 hover:-translate-y-0.5 transition-all duration-200">
-                    Weiter →
+                    Weiter &rarr;
                   </button>
                 ) : (
-                  <button type="submit" className="bg-[#E8564A] text-white font-bold text-base px-10 py-4 rounded-full hover:shadow-lg hover:shadow-[#E8564A]/30 hover:-translate-y-0.5 transition-all duration-200">
-                    Kostenlos Website anfragen
+                  <button
+                    type="submit"
+                    disabled={senden}
+                    className="bg-[#E8564A] text-white font-bold text-base px-10 py-4 rounded-full hover:shadow-lg hover:shadow-[#E8564A]/30 hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
+                  >
+                    {senden ? "Wird gesendet..." : "Kostenlos Website anfragen"}
                   </button>
                 )}
               </div>

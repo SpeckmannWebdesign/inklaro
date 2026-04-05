@@ -11,7 +11,7 @@ export default function RestaurantPage() {
     <BranchenShowcase
       branche="Restaurants"
       beschreibung="So könnte Ihre Restaurant-Website aussehen — elegant, einladend und perfekt auf Ihre Gastronomie zugeschnitten. Für Restaurants, Cafés und Catering."
-      screenshot="/images/fullpage-restaurant.jpg"
+      screenshot="/images/fullpage-restaurant.avif"
       url="www.labella-vita-restaurant.de"
     />
   );

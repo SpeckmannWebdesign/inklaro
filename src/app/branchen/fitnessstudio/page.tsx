@@ -11,7 +11,7 @@ export default function FitnessstudioPage() {
     <BranchenShowcase
       branche="Fitnessstudios"
       beschreibung="So könnte Ihre Fitness-Website aussehen — kraftvoll, energetisch und motivierend. Für Gyms, Personal Trainer und Yoga-Studios."
-      screenshot="/images/fullpage-fitnessstudio.jpg"
+      screenshot="/images/fullpage-fitnessstudio.avif"
       url="www.kraft-fitness-oldenburg.de"
     />
   );

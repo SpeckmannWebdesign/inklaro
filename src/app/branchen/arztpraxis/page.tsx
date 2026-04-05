@@ -11,7 +11,7 @@ export default function ArztpraxisPage() {
     <BranchenShowcase
       branche="Arztpraxen"
       beschreibung="So könnte Ihre Praxis-Website aussehen — vertrauenswürdig, seriös und patientenfreundlich. Für Ärzte, Zahnärzte und Therapeuten."
-      screenshot="/images/fullpage-arztpraxis.jpg"
+      screenshot="/images/fullpage-arztpraxis.avif"
       url="www.praxis-dr-weber.de"
     />
   );

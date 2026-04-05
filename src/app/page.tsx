@@ -28,18 +28,18 @@ const C = {
 };
 
 const branchen = [
-  { name: "Fitnessstudio", desc: "Gym, Personal Training, Yoga", img: "/images/5cM2T.jpeg", href: "/branchen/fitnessstudio" },
-  { name: "Restaurant", desc: "Gastronomie, Café, Catering", img: "/images/nuGnq.jpeg", href: "/branchen/restaurant" },
-  { name: "Freelancer", desc: "Portfolio, Berater, Kreative", img: "/images/IPZsz.jpeg", href: "/branchen/freelancer" },
-  { name: "Arztpraxis", desc: "Ärzte, Zahnärzte, Therapeuten", img: "/images/Tfgar.jpeg", href: "/branchen/arztpraxis" },
-  { name: "Hochzeitsplanung", desc: "Hochzeitsplaner, Events", img: "/images/hero-hochzeit.jpeg", href: "/branchen/hochzeitsplanung" },
-  { name: "Immobilien", desc: "Makler, Hausverwaltung, Bauträger", img: "/images/q71eS.jpeg", href: "/branchen/immobilien" },
-  { name: "Rechtsanwalt", desc: "Kanzlei, Anwalt, Notar", img: "/images/hero-rechtsanwalt.jpeg", href: "/branchen/rechtsanwalt" },
-  { name: "Steuerberater", desc: "Buchhaltung, Steuern, Beratung", img: "/images/hero-steuerberater.jpeg", href: "/branchen/steuerberater" },
-  { name: "Café", desc: "Café, Bäckerei, Bistro", img: "/images/hero-cafe.jpeg", href: "/branchen/cafe" },
-  { name: "Tischler", desc: "Tischlerei, Schreiner, Möbelbau", img: "/images/hero-tischler.jpeg", href: "/branchen/tischler" },
-  { name: "SHK-Betrieb", desc: "Sanitär, Heizung, Klima", img: "/images/hero-shk.jpeg", href: "/branchen/shk" },
-  { name: "Elektriker", desc: "Elektroinstallation, Smart Home, Notdienst", img: "/images/oQ5OH.jpeg", href: "/branchen/elektriker" },
+  { name: "Fitnessstudio", desc: "Gym, Personal Training, Yoga", img: "/images/5cM2T.avif", href: "/branchen/fitnessstudio" },
+  { name: "Restaurant", desc: "Gastronomie, Café, Catering", img: "/images/nuGnq.avif", href: "/branchen/restaurant" },
+  { name: "Freelancer", desc: "Portfolio, Berater, Kreative", img: "/images/IPZsz.avif", href: "/branchen/freelancer" },
+  { name: "Arztpraxis", desc: "Ärzte, Zahnärzte, Therapeuten", img: "/images/Tfgar.avif", href: "/branchen/arztpraxis" },
+  { name: "Hochzeitsplanung", desc: "Hochzeitsplaner, Events", img: "/images/hero-hochzeit.avif", href: "/branchen/hochzeitsplanung" },
+  { name: "Immobilien", desc: "Makler, Hausverwaltung, Bauträger", img: "/images/q71eS.avif", href: "/branchen/immobilien" },
+  { name: "Rechtsanwalt", desc: "Kanzlei, Anwalt, Notar", img: "/images/hero-rechtsanwalt.avif", href: "/branchen/rechtsanwalt" },
+  { name: "Steuerberater", desc: "Buchhaltung, Steuern, Beratung", img: "/images/hero-steuerberater.avif", href: "/branchen/steuerberater" },
+  { name: "Café", desc: "Café, Bäckerei, Bistro", img: "/images/hero-cafe.avif", href: "/branchen/cafe" },
+  { name: "Tischler", desc: "Tischlerei, Schreiner, Möbelbau", img: "/images/hero-tischler.avif", href: "/branchen/tischler" },
+  { name: "SHK-Betrieb", desc: "Sanitär, Heizung, Klima", img: "/images/hero-shk.avif", href: "/branchen/shk" },
+  { name: "Elektriker", desc: "Elektroinstallation, Smart Home, Notdienst", img: "/images/oQ5OH.avif", href: "/branchen/elektriker" },
 ];
 
 /* ── Form Helpers ── */
@@ -130,7 +130,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex-1 max-w-[560px]">
-              <Image src="/images/hero.jpg" alt="Professionelle Website erstellen lassen" width={560} height={620} className="rounded-3xl w-full object-cover" />
+              <Image src="/images/hero.avif" alt="Professionelle Website erstellen lassen" width={560} height={620} className="rounded-3xl w-full object-cover" />
             </div>
           </div>
         </section>
@@ -282,7 +282,7 @@ export default function Home() {
           {/* Foto als breites Banner */}
           <div className="max-w-[1440px] mx-auto px-5 lg:px-16 pt-24 fade-in">
             <div className="relative rounded-3xl overflow-hidden max-w-[900px] mx-auto">
-              <Image src="/images/marcel-speckmann.jpg" alt="Marcel Speckmann — Wirtschaftspsychologe und Webdesigner" width={1000} height={800} className="w-full h-auto" />
+              <Image src="/images/marcel-speckmann.avif" alt="Marcel Speckmann — Wirtschaftspsychologe und Webdesigner" width={1000} height={800} className="w-full h-auto" />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0F2B3C] to-transparent h-32" />
             </div>
           </div>
