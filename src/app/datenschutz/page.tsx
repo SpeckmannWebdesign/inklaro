@@ -12,7 +12,7 @@ export default function Datenschutz() {
         <section>
           <h2 className="text-lg font-semibold mb-2">1. Verantwortlicher</h2>
           <p>
-            Speckmann Webdesign GmbH, Musterstraße 1, 26121 Oldenburg.
+            Speckmann Webdesign GmbH, Dwaschweg 5, 26133 Oldenburg.
             E-Mail: hallo@speckmann-webdesign.de
           </p>
         </section>

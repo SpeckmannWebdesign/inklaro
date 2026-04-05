@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -12,10 +13,7 @@ export default function Impressum() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#FFFAF5]/90 backdrop-blur-xl border-b border-[#E8DFD4]">
         <div className="max-w-[1440px] mx-auto flex items-center justify-between h-20 px-5 lg:px-16">
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 bg-[#0F2B3C] rounded-full flex items-center justify-center">
-              <span className="font-[family-name:var(--font-display)] text-lg text-white">S</span>
-            </div>
-            <span className="font-[family-name:var(--font-display)] text-lg text-[#0F2B3C] hidden sm:block">Speckmann Webdesign</span>
+            <Image src="/images/inklaro-logo.png" alt="Inklaro" width={120} height={40} className="h-8 w-auto" />
           </Link>
           <Link href="/" className="text-[#4A6274] hover:text-[#0F2B3C] transition text-sm font-medium px-5 py-2.5 rounded-full border border-[#E8DFD4] hover:border-[#0F2B3C]">
             ← Zurück zur Startseite
@@ -87,7 +85,7 @@ export default function Impressum() {
         <div className="max-w-[1440px] mx-auto">
           <div className="h-px bg-[#1A3D50]" />
           <div className="flex flex-col sm:flex-row justify-between items-center px-5 lg:px-16 py-6 gap-2">
-            <span className="text-[#5A7A8C] text-[13px]">© 2026 Speckmann Webdesign GmbH</span>
+            <span className="text-[#5A7A8C] text-[13px]">© 2026 Inklaro — Ein Angebot der Speckmann Webdesign GmbH</span>
             <div className="flex gap-6">
               <Link href="/impressum" className="text-[#5A7A8C] text-[13px] hover:text-[#8DA4B4] transition">Impressum</Link>
               <Link href="/datenschutz" className="text-[#5A7A8C] text-[13px] hover:text-[#8DA4B4] transition">Datenschutz</Link>
