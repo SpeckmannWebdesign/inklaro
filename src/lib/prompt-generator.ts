@@ -8,12 +8,9 @@ import { buildPromptGeneratorMessage } from "./prompt-mapping";
 
 const anthropic = new Anthropic();
 
-// System-Prompt aus der Skill-Datei laden
+// System-Prompt aus der lokalen Skill-Datei laden
 function loadSkillPrompt(): string {
-  const skillPath = join(
-    process.env.HOME || "/root",
-    ".claude/skills/pencil-prompt-generator/SKILL.md"
-  );
+  const skillPath = join(process.cwd(), "src/lib/skills/pencil-prompt-generator.md");
   const content = readFileSync(skillPath, "utf-8");
 
   // Frontmatter entfernen (alles zwischen --- und ---)
