@@ -23,11 +23,12 @@ export default function Impressum() {
 
       <main className="pt-20 bg-[#FFFAF5] min-h-screen">
         <div className="max-w-[720px] mx-auto px-5 lg:px-16 py-16">
-          <h1 className="font-[family-name:var(--font-display)] text-4xl text-[#0F2B3C] mb-12">Impressum</h1>
+          <h1 className="font-[family-name:var(--font-display)] text-4xl text-[#0F2B3C] mb-4">Impressum</h1>
+          <p className="text-[#4A6274] text-[15px] mb-12">Inklaro ist eine Marke der Speckmann Webdesign GmbH.</p>
 
           <div className="text-[#4A6274] text-[15px] leading-[1.8] space-y-8">
             <section>
-              <h2 className="font-semibold text-[#0F2B3C] text-lg mb-2">Angaben gemäß § 5 TMG</h2>
+              <h2 className="font-semibold text-[#0F2B3C] text-lg mb-2">Angaben gemäß DDG</h2>
               <p>
                 Speckmann Webdesign GmbH<br />
                 Dwaschweg 5<br />
@@ -75,6 +76,9 @@ export default function Impressum() {
               <h2 className="font-semibold text-[#0F2B3C] text-lg mb-2">Streitbeilegung</h2>
               <p>
                 Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+              </p>
+              <p className="mt-2">
+                Allgemeine Informationspflicht nach § 36 VSBG: Es besteht keine Pflicht und keine Bereitschaft, an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
               </p>
             </section>
           </div>
