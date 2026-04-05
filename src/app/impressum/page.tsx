@@ -13,7 +13,7 @@ export default function Impressum() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#FFFAF5]/90 backdrop-blur-xl border-b border-[#E8DFD4]">
         <div className="max-w-[1440px] mx-auto flex items-center justify-between h-20 px-5 lg:px-16">
           <Link href="/" className="flex items-center gap-2.5">
-            <Image src="/images/inklaro-logo.png" alt="Inklaro" width={120} height={40} className="h-8 w-auto" />
+            <Image src="/images/inklaro-logo.png" alt="Inklaro" width={180} height={60} className="h-12 w-auto" />
           </Link>
           <Link href="/" className="text-[#4A6274] hover:text-[#0F2B3C] transition text-sm font-medium px-5 py-2.5 rounded-full border border-[#E8DFD4] hover:border-[#0F2B3C]">
             ← Zurück zur Startseite
