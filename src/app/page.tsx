@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Footer from "@/components/Footer";
 
 /* ── SVG Icons ── */
 const ShieldCheck = ({ size = 24 }: { size?: number }) => (
@@ -358,41 +359,7 @@ export default function Home() {
         </section>
       </main>
 
-      {/* FOOTER */}
-      <footer className="bg-[#0A1F2B]">
-        <div className="max-w-[1440px] mx-auto">
-          <div className="flex flex-col md:flex-row justify-between gap-12 px-5 lg:px-16 py-16 pb-12">
-            <div className="max-w-[320px]">
-              <Link href="/" className="mb-4 block">
-                <Image src="/images/inklaro-logo.png" alt="Inklaro" width={200} height={66} className="h-14 w-auto brightness-0 invert" />
-              </Link>
-              <p className="text-[#5A7A8C] text-sm leading-[1.6]">Professionelle Websites zum Festpreis. Schnell, DSGVO-konform und persönlich betreut.</p>
-            </div>
-            <div className="flex gap-16 flex-wrap">
-              <div className="flex flex-col gap-4">
-                <span className="text-[#8DA4B4] text-[13px] font-bold tracking-[1px]">Navigation</span>
-                {[["#prozess","So funktioniert's"],["#features","Leistungen"],["#preise","Preise"],["#ueber-mich","Über mich"]].map(([h,t])=>(
-                  <a key={h} href={h} className="text-[#5A7A8C] text-sm hover:text-[#8DA4B4] transition">{t}</a>
-                ))}
-              </div>
-              <div className="flex flex-col gap-4">
-                <span className="text-[#8DA4B4] text-[13px] font-bold tracking-[1px]">Branchen</span>
-                {branchen.map((b)=>(<Link key={b.name} href={b.href} className="text-[#5A7A8C] text-sm hover:text-[#8DA4B4] transition">{b.name}</Link>))}
-              </div>
-              <div className="flex flex-col gap-4">
-                <span className="text-[#8DA4B4] text-[13px] font-bold tracking-[1px]">Rechtliches</span>
-                <Link href="/impressum" className="text-[#5A7A8C] text-sm hover:text-[#8DA4B4] transition">Impressum</Link>
-                <Link href="/datenschutz" className="text-[#5A7A8C] text-sm hover:text-[#8DA4B4] transition">Datenschutzerklärung</Link>
-              </div>
-            </div>
-          </div>
-          <div className="h-px bg-[#1A3D50]" />
-          <div className="flex flex-col sm:flex-row justify-between items-center px-5 lg:px-16 py-6 gap-2">
-            <span className="text-[#5A7A8C] text-[13px]">© 2026 Inklaro — Ein Angebot der Speckmann Webdesign GmbH</span>
-            <span className="text-[#5A7A8C] text-[13px]">Oldenburg, Deutschland</span>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
