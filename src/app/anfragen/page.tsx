@@ -184,25 +184,22 @@ export default function AnfragenPage() {
           </div>
 
           <div className="max-w-[760px] mx-auto">
-            {/* Stepper */}
-            <div className="flex items-center justify-between mb-10">
-              {steps.map((s, i) => (
-                <div key={i} className="flex items-center flex-1">
+            {/* Fortschrittsbalken */}
+            <div className="mb-10">
+              <div className="flex gap-1.5">
+                {steps.map((_, i) => (
                   <button
+                    key={i}
                     type="button"
                     onClick={() => setStep(i)}
-                    className={`flex items-center gap-2 transition-all ${i <= step ? "opacity-100" : "opacity-40"}`}
-                  >
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all ${i === step ? "bg-[#E8564A] text-white scale-110" : i < step ? "bg-[#0F2B3C] text-white" : "bg-[#E8DFD4] text-[#8DA4B4]"}`}>
-                      {i < step ? "\u2713" : s.num}
-                    </div>
-                    <span className={`text-sm font-medium hidden md:block ${i === step ? "text-[#0F2B3C]" : "text-[#8DA4B4]"}`}>{s.title}</span>
-                  </button>
-                  {i < steps.length - 1 && (
-                    <div className={`flex-1 h-0.5 mx-3 rounded ${i < step ? "bg-[#0F2B3C]" : "bg-[#E8DFD4]"}`} />
-                  )}
-                </div>
-              ))}
+                    className={`flex-1 h-2 rounded-full transition-all duration-300 ${i < step ? "bg-[#0F2B3C]" : i === step ? "bg-[#E8564A]" : "bg-[#E8DFD4]"}`}
+                  />
+                ))}
+              </div>
+              <div className="flex justify-between mt-3">
+                <span className="text-[#0F2B3C] text-sm font-semibold">Schritt {step + 1} von {steps.length}</span>
+                <span className="text-[#8DA4B4] text-sm">{steps[step].title}</span>
+              </div>
             </div>
 
             {/* Form Card */}
