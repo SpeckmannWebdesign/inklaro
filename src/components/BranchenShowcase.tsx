@@ -92,8 +92,7 @@ export default function BranchenShowcase({ branche, beschreibung, screenshot, ur
                 </div>
               </div>
               <div>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={screenshot} alt={`${branche} Website komplett`} className="w-full h-auto" loading="lazy" />
+                <Image src={screenshot} alt={`${branche} Website komplett`} width={1200} height={3000} className="w-full h-auto" sizes="(max-width: 1440px) 100vw, 1200px" />
               </div>
             </div>
           </div>
@@ -123,8 +122,7 @@ export default function BranchenShowcase({ branche, beschreibung, screenshot, ur
               {andereBranchen.map((b) => (
                 <Link key={b.name} href={b.href} className="bg-white rounded-2xl border border-[#E8DFD4] overflow-hidden card-hover transition-all duration-300 group">
                   <div className="overflow-hidden">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={b.img} alt={`${b.name} Website-Beispiel`} className="w-full h-auto group-hover:scale-105 transition-transform duration-500" />
+                    <Image src={b.img} alt={`${b.name} Website-Beispiel`} width={480} height={320} className="w-full h-auto group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
                   </div>
                   <div className="p-5">
                     <h4 className="font-[family-name:var(--font-display)] text-lg text-[#0F2B3C]">{b.name}</h4>

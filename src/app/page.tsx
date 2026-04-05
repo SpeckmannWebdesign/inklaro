@@ -130,7 +130,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex-1 max-w-[560px]">
-              <Image src="/images/hero.avif" alt="Professionelle Website erstellen lassen" width={560} height={620} className="rounded-3xl w-full object-cover" />
+              <Image src="/images/hero.avif" alt="Professionelle Website erstellen lassen" width={560} height={620} className="rounded-3xl w-full object-cover" priority sizes="(max-width: 1024px) 100vw, 560px" />
             </div>
           </div>
         </section>
@@ -205,8 +205,7 @@ export default function Home() {
               {branchen.map((b)=>(
                 <Link key={b.name} href={b.href} className="bg-white rounded-2xl border border-[#E8DFD4] overflow-hidden card-hover transition-all duration-300 group">
                   <div className="overflow-hidden">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={b.img} alt={`${b.name} Website-Beispiel`} className="w-full h-auto group-hover:scale-105 transition-transform duration-500" />
+                    <Image src={b.img} alt={`${b.name} Website-Beispiel`} width={480} height={320} className="w-full h-auto group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
                   </div>
                   <div className="p-5">
                     <h3 className="font-[family-name:var(--font-display)] text-lg text-[#0F2B3C]">{b.name}</h3>
@@ -282,7 +281,7 @@ export default function Home() {
           {/* Foto als breites Banner */}
           <div className="max-w-[1440px] mx-auto px-5 lg:px-16 pt-24 fade-in">
             <div className="relative rounded-3xl overflow-hidden max-w-[900px] mx-auto">
-              <Image src="/images/marcel-speckmann.avif" alt="Marcel Speckmann — Wirtschaftspsychologe und Webdesigner" width={1000} height={800} className="w-full h-auto" />
+              <Image src="/images/marcel-speckmann.avif" alt="Marcel Speckmann — Wirtschaftspsychologe und Webdesigner" width={1000} height={800} className="w-full h-auto" sizes="(max-width: 1440px) 100vw, 900px" />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0F2B3C] to-transparent h-32" />
             </div>
           </div>
