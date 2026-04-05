@@ -53,7 +53,7 @@ export default function Impressum() {
               <h2 className="font-semibold text-[#0F2B3C] text-lg mb-2">Kontakt</h2>
               <p>
                 Telefon: 015208709068<br />
-                E-Mail: info@speckmann-webdesign.de
+                E-Mail: info@inklaro.de
               </p>
             </section>
 

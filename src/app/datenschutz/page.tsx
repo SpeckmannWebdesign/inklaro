@@ -13,7 +13,7 @@ export default function Datenschutz() {
           <h2 className="text-lg font-semibold mb-2">1. Verantwortlicher</h2>
           <p>
             Speckmann Webdesign GmbH, Dwaschweg 5, 26133 Oldenburg.
-            E-Mail: hallo@speckmann-webdesign.de
+            E-Mail: info@inklaro.de
           </p>
         </section>
 
@@ -49,7 +49,7 @@ export default function Datenschutz() {
           <p>
             Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung
             der Verarbeitung Ihrer personenbezogenen Daten. Wenden Sie sich dazu an:
-            hallo@speckmann-webdesign.de
+            info@inklaro.de
           </p>
         </section>
 
