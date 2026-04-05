@@ -88,7 +88,28 @@ export default function AnfragenPage() {
         : [...prev.seiten, seite],
     }));
 
-  const next = () => setStep((s) => Math.min(s + 1, steps.length - 1));
+  const stepValid = (s: number): boolean => {
+    switch (s) {
+      case 0: return !!(form.firmenname && form.branche && form.beschreibung);
+      case 1: return !!(form.zielgruppe && form.websiteZiel && form.b2bB2c);
+      case 2: return !!(form.hatLogo && form.hatBrandfarben);
+      case 3: return true;
+      case 4: return !!(form.ansprechpartner && form.email);
+      default: return false;
+    }
+  };
+
+  const allPreviousValid = (target: number): boolean => {
+    for (let i = 0; i < target; i++) {
+      if (!stepValid(i)) return false;
+    }
+    return true;
+  };
+
+  const next = () => {
+    if (!stepValid(step)) return;
+    setStep((s) => Math.min(s + 1, steps.length - 1));
+  };
   const prev = () => setStep((s) => Math.max(s - 1, 0));
 
   const absenden = async (e: React.FormEvent) => {
@@ -191,8 +212,8 @@ export default function AnfragenPage() {
                   <button
                     key={i}
                     type="button"
-                    onClick={() => setStep(i)}
-                    className={`flex-1 h-2 rounded-full transition-all duration-300 ${i < step ? "bg-[#0F2B3C]" : i === step ? "bg-[#E8564A]" : "bg-[#E8DFD4]"}`}
+                    onClick={() => { if (i <= step || allPreviousValid(i)) setStep(i); }}
+                    className={`flex-1 h-2 rounded-full transition-all duration-300 ${i < step ? "bg-[#0F2B3C]" : i === step ? "bg-[#E8564A]" : "bg-[#E8DFD4]"} ${i > step && !allPreviousValid(i) ? "cursor-not-allowed" : "cursor-pointer"}`}
                   />
                 ))}
               </div>
@@ -389,7 +410,7 @@ export default function AnfragenPage() {
                   <div />
                 )}
                 {step < steps.length - 1 ? (
-                  <button type="button" onClick={next} className="bg-[#E8564A] text-white font-bold text-sm px-8 py-3 rounded-full hover:shadow-lg hover:shadow-[#E8564A]/30 hover:-translate-y-0.5 transition-all duration-200">
+                  <button type="button" onClick={next} disabled={!stepValid(step)} className="bg-[#E8564A] text-white font-bold text-sm px-8 py-3 rounded-full hover:shadow-lg hover:shadow-[#E8564A]/30 hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:shadow-none disabled:hover:translate-y-0">
                     Weiter &rarr;
                   </button>
                 ) : (
