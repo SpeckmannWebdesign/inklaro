@@ -3,6 +3,8 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 
 const ShieldCheck = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
@@ -44,23 +46,17 @@ export default function BranchenShowcase({ branche, beschreibung, screenshot, ur
 
   return (
     <>
-      {/* NAV */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#FFFAF5]/90 backdrop-blur-xl border-b border-[#E8DFD4]">
-        <div className="max-w-[1440px] mx-auto flex items-center justify-between h-20 px-5 lg:px-16">
-          <Link href="/" className="flex items-center gap-2">
-            <Image src="/images/inklaro-logo.png" alt="Inklaro" width={240} height={80} className="h-16 w-auto" />
+      <Nav>
+        <div className="flex items-center gap-4">
+          <Link href="/#branchen" className="flex items-center gap-2 text-[#4A6274] hover:text-[#0F2B3C] transition text-sm font-medium px-5 py-2.5 rounded-full border border-[#E8DFD4] hover:border-[#0F2B3C]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+            Zurück zur Übersicht
           </Link>
-          <div className="flex items-center gap-4">
-            <Link href="/#branchen" className="flex items-center gap-2 text-[#4A6274] hover:text-[#0F2B3C] transition text-sm font-medium px-5 py-2.5 rounded-full border border-[#E8DFD4] hover:border-[#0F2B3C]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
-              Zurück zur Übersicht
-            </Link>
-            <Link href="/anfragen" className="bg-[#E8564A] text-white font-bold text-sm px-7 py-2.5 rounded-full hover:shadow-lg hover:shadow-[#E8564A]/30 hover:-translate-y-0.5 transition-all duration-200">
-              Website anfragen
-            </Link>
-          </div>
+          <Link href="/anfragen" className="bg-[#E8564A] text-white font-bold text-sm px-7 py-2.5 rounded-full hover:shadow-lg hover:shadow-[#E8564A]/30 hover:-translate-y-0.5 transition-all duration-200">
+            Website anfragen
+          </Link>
         </div>
-      </nav>
+      </Nav>
 
       <main className="pt-20 bg-[#FFFAF5]">
         {/* HERO */}
@@ -88,7 +84,7 @@ export default function BranchenShowcase({ branche, beschreibung, screenshot, ur
                 <span className="w-3 h-3 rounded-full bg-[#F5A623]" />
                 <span className="w-3 h-3 rounded-full bg-[#4CD964]" />
                 <div className="bg-white rounded-full px-3 py-1 ml-2 border border-[#E8DFD4]">
-                  <span className="text-[#8DA4B4] text-[11px]">{url}</span>
+                  <span className="text-[#8DA4B4] text-[11px]">www.deine-website.de</span>
                 </div>
               </div>
               <div>
@@ -136,21 +132,7 @@ export default function BranchenShowcase({ branche, beschreibung, screenshot, ur
         </section>
       </main>
 
-      {/* FOOTER */}
-      <footer className="bg-[#0A1F2B]">
-        <div className="max-w-[1440px] mx-auto">
-          <div className="h-px bg-[#1A3D50]" />
-          <div className="flex flex-col sm:flex-row justify-between items-center px-5 lg:px-16 py-6 gap-2">
-            <Link href="/" className="flex items-center gap-2">
-              <span className="text-[#5A7A8C] text-[13px]">© 2026 Inklaro — Ein Angebot der Speckmann Webdesign GmbH</span>
-            </Link>
-            <div className="flex gap-6">
-              <Link href="/impressum" className="text-[#5A7A8C] text-[13px] hover:text-[#8DA4B4] transition">Impressum</Link>
-              <Link href="/datenschutz" className="text-[#5A7A8C] text-[13px] hover:text-[#8DA4B4] transition">Datenschutz</Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
