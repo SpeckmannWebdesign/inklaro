@@ -17,10 +17,7 @@ export async function POST(request: Request) {
       "email",
       "zielgruppe",
       "websiteZiel",
-      "b2bB2c",
       "hatLogo",
-      "hatBrandfarben",
-      "texteVorhanden",
     ];
 
     const fehlend = pflichtfelder.filter((feld) => {
@@ -47,7 +44,7 @@ export async function POST(request: Request) {
       );
     }
 
-    // Beide E-Mails parallel senden
+    // E-Mails parallel senden
     await Promise.all([
       sendAnfrageConfirmation(daten),
       sendAnfrageNotification(daten),
@@ -59,7 +56,8 @@ export async function POST(request: Request) {
     return Response.json(
       {
         erfolg: false,
-        fehler: "Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+        fehler:
+          "Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
       },
       { status: 500 }
     );
