@@ -96,7 +96,7 @@ export default function Home() {
       <nav ref={navRef} className="fixed top-0 left-0 right-0 z-50 bg-[#FFFAF5] border-b border-[#E8DFD4] transition-all duration-300">
         <div className="max-w-[1440px] mx-auto flex items-center justify-between h-20 px-5 lg:px-16">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/images/inklaro-logo.png" alt="Inklaro" width={180} height={60} className="h-12 w-auto" priority />
+            <Image src="/images/inklaro-logo.png" alt="Inklaro" width={240} height={80} className="h-16 w-auto" priority />
           </Link>
           <div className="hidden lg:flex items-center gap-10">
             {[["#prozess","So funktioniert's"],["#features","Leistungen"],["#preise","Preise"],["#ueber-mich","Über mich"]].map(([h,t])=>(
@@ -364,7 +364,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between gap-12 px-5 lg:px-16 py-16 pb-12">
             <div className="max-w-[320px]">
               <Link href="/" className="mb-4 block">
-                <Image src="/images/inklaro-logo.png" alt="Inklaro" width={150} height={50} className="h-10 w-auto brightness-0 invert" />
+                <Image src="/images/inklaro-logo.png" alt="Inklaro" width={200} height={66} className="h-14 w-auto brightness-0 invert" />
               </Link>
               <p className="text-[#5A7A8C] text-sm leading-[1.6]">Professionelle Websites zum Festpreis. Schnell, DSGVO-konform und persönlich betreut.</p>
             </div>
