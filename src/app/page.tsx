@@ -290,15 +290,11 @@ export default function Home() {
           <div className="max-w-[1440px] mx-auto px-5 lg:px-16 pb-24 pt-12">
             <div className="max-w-[760px] mx-auto text-center fade-in">
               <p className="text-[#E8564A] text-xs font-semibold tracking-[2px] mb-4">ÜBER MICH</p>
-              <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-[44px] text-white leading-[1.2] mb-8">Warum ich das zu diesem Preis anbieten kann</h2>
-              <p className="text-[#8DA4B4] text-[17px] leading-[1.7] mb-6 text-left max-w-[640px] mx-auto">Ich bin Marcel Speckmann — Wirtschaftspsychologe und Webdesigner aus Oldenburg. Seit Jahren baue ich professionelle Websites für Unternehmen. Individuelle Projekte, bei denen ich alles gemeinsam mit dem Kunden erarbeite, kosten schnell das Fünffache.</p>
-              <p className="text-[#8DA4B4] text-[17px] leading-[1.7] mb-6 text-left max-w-[640px] mx-auto">Aber die Wahrheit ist: Die meisten Unternehmen brauchen gar keine hochkomplexe Website. Sie brauchen einen <span className="text-white font-medium">professionellen Online-Auftritt</span>, der Vertrauen schafft, und ein <span className="text-white font-medium">Kontaktformular</span>, über das Kunden sie erreichen können. Mehr nicht.</p>
-              <p className="text-[#8DA4B4] text-[17px] leading-[1.7] mb-10 text-left max-w-[640px] mx-auto">Genau dafür habe ich dieses Angebot entwickelt. Durch effiziente Prozesse und moderne Technologie kann ich professionelle Websites zu einem Bruchteil des üblichen Preises erstellen — ohne Abstriche bei der Qualität. Und Sie überzeugen sich selbst: Sie sehen die fertige Website, bevor Sie zahlen.</p>
-              <div className="flex flex-col gap-3 max-w-[640px] mx-auto">
-                {["Wirtschaftspsychologe & Webdesigner","Hunderte Websites gebaut","Standort Oldenburg — persönlich erreichbar"].map((p)=>(
-                  <div key={p} className="flex items-center gap-3"><span className="text-[#E8564A]"><CircleCheck /></span><span className="text-white text-[15px]">{p}</span></div>
-                ))}
-              </div>
+              <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-[44px] text-white leading-[1.2] mb-8">Warum kostet das so wenig?</h2>
+              <p className="text-[#8DA4B4] text-[17px] leading-[1.7] mb-6 text-left max-w-[640px] mx-auto">Ich bin Marcel Speckmann — Wirtschaftspsychologe und Webdesigner aus Oldenburg. Seit Jahren baue ich professionelle Websites für Unternehmen. Und ich weiß: Ein großer Teil der Kosten entsteht gar nicht durch die Website selbst.</p>
+              <p className="text-[#8DA4B4] text-[17px] leading-[1.7] mb-6 text-left max-w-[640px] mx-auto">Was wirklich teuer macht: <span className="text-white font-medium">stundenlange Beratungsgespräche</span>, endlose Abstimmungsrunden, Änderungswünsche in jeder Phase. Der Kunde will — verständlicherweise — alles mitentscheiden, alles mitgestalten. Allein die Kommunikation frisst bei klassischen Projekten oft mehr Budget als die eigentliche Umsetzung.</p>
+              <p className="text-[#8DA4B4] text-[17px] leading-[1.7] mb-6 text-left max-w-[640px] mx-auto">Bei Inklaro läuft das anders. Sie füllen ein kurzes Formular aus — und wir erstellen Ihre Website <span className="text-white font-medium">komplett eigenständig</span>. Kein Hin und Her, keine wochenlangen Abstimmungen. Das gesamte Design und die Umsetzung laufen automatisiert und ohne Ihr Zutun.</p>
+              <p className="text-[#8DA4B4] text-[17px] leading-[1.7] mb-6 text-left max-w-[640px] mx-auto">Erst wenn alles fertig ist, stellen wir Ihnen die Website persönlich vor. Dann können Sie selbstverständlich noch Änderungswünsche äußern. Aber der Großteil der Arbeit ist zu diesem Zeitpunkt bereits erledigt — und genau das macht diesen Preis möglich.</p>
             </div>
           </div>
         </section>
