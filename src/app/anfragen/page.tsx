@@ -31,13 +31,12 @@ interface FormData {
   // Schritt 2
   zielgruppe: string;
   websiteZiel: string;
-  b2bB2c: string;
   zielgruppeBeschreibung: string;
   // Schritt 3
   hatLogo: string;
-  hatBrandfarben: string;
   farben: string;
   vorbilder: string;
+  stilPraeferenz: string;
   // Schritt 4
   seiten: string[];
   texteVorhanden: string;
@@ -62,12 +61,11 @@ export default function AnfragenPage() {
     website: "",
     zielgruppe: "",
     websiteZiel: "",
-    b2bB2c: "",
     zielgruppeBeschreibung: "",
     hatLogo: "",
-    hatBrandfarben: "",
     farben: "",
     vorbilder: "",
+    stilPraeferenz: "",
     seiten: [],
     texteVorhanden: "",
     sonstiges: "",
@@ -90,8 +88,8 @@ export default function AnfragenPage() {
   const stepValid = (s: number): boolean => {
     switch (s) {
       case 0: return !!(form.firmenname && form.branche && form.beschreibung);
-      case 1: return !!(form.zielgruppe && form.websiteZiel && form.b2bB2c);
-      case 2: return !!(form.hatLogo && form.hatBrandfarben);
+      case 1: return !!(form.zielgruppe && form.websiteZiel);
+      case 2: return !!form.hatLogo;
       case 3: return true;
       case 4: return !!(form.ansprechpartner && form.email);
       default: return false;
@@ -233,17 +231,6 @@ export default function AnfragenPage() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <span className="text-[#4A6274] text-xs font-semibold">Zielgruppe: B2B, B2C oder beides? *</span>
-                  <div className="flex gap-3">
-                    {["B2B", "B2C", "Beides"].map((opt) => (
-                      <label key={opt} className="flex-1 cursor-pointer">
-                        <input type="radio" name="b2b_b2c" value={opt} checked={form.b2bB2c === opt} onChange={() => set("b2bB2c", opt)} className="sr-only peer" />
-                        <div className="text-center py-3 rounded-full bg-[#FFF5EB] border border-[#E8DFD4] text-[#4A6274] text-sm font-medium peer-checked:border-[#E8564A] peer-checked:border-2 peer-checked:text-[#E8564A] peer-checked:font-semibold transition">{opt}</div>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-                <div className="flex flex-col gap-2">
                   <label className="text-[#4A6274] text-xs font-semibold">Beschreiben Sie Ihre Zielgruppe genauer (optional)</label>
                   <textarea rows={2} placeholder="z.B. Hausbesitzer 30–60 Jahre im Raum Oldenburg, die eine Heizungssanierung planen..." value={form.zielgruppeBeschreibung} onChange={(e) => set("zielgruppeBeschreibung", e.target.value)} className={`${inputCls} resize-none`} />
                 </div>
@@ -253,33 +240,38 @@ export default function AnfragenPage() {
               <div className={step === 2 ? "flex flex-col gap-6" : "hidden"}>
                 <h2 className="font-[family-name:var(--font-display)] text-2xl text-[#0F2B3C] mb-2">Design & Branding</h2>
                 <p className="text-[#4A6274] text-sm -mt-4 mb-2">Haben Sie schon ein Corporate Design? Falls nicht, kein Problem — wir kümmern uns darum.</p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="flex flex-col gap-2">
-                    <span className="text-[#4A6274] text-xs font-semibold">Haben Sie ein Logo? *</span>
-                    <div className="flex gap-3">
-                      {["Ja", "Nein"].map((opt) => (
-                        <label key={opt} className="flex-1 cursor-pointer">
-                          <input type="radio" name="logo" value={opt} checked={form.hatLogo === opt} onChange={() => set("hatLogo", opt)} className="sr-only peer" />
-                          <div className="text-center py-3 rounded-full bg-[#FFF5EB] border border-[#E8DFD4] text-[#4A6274] text-sm font-medium peer-checked:border-[#E8564A] peer-checked:border-2 peer-checked:text-[#E8564A] peer-checked:font-semibold transition">{opt}</div>
-                        </label>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <span className="text-[#4A6274] text-xs font-semibold">Haben Sie Brandfarben? *</span>
-                    <div className="flex gap-3">
-                      {["Ja", "Nein"].map((opt) => (
-                        <label key={opt} className="flex-1 cursor-pointer">
-                          <input type="radio" name="brandfarben" value={opt} checked={form.hatBrandfarben === opt} onChange={() => set("hatBrandfarben", opt)} className="sr-only peer" />
-                          <div className="text-center py-3 rounded-full bg-[#FFF5EB] border border-[#E8DFD4] text-[#4A6274] text-sm font-medium peer-checked:border-[#E8564A] peer-checked:border-2 peer-checked:text-[#E8564A] peer-checked:font-semibold transition">{opt}</div>
-                        </label>
-                      ))}
-                    </div>
+                <div className="flex flex-col gap-2">
+                  <span className="text-[#4A6274] text-xs font-semibold">Haben Sie ein Logo? *</span>
+                  <div className="flex gap-3">
+                    {["Ja", "Nein"].map((opt) => (
+                      <label key={opt} className="flex-1 cursor-pointer">
+                        <input type="radio" name="logo" value={opt} checked={form.hatLogo === opt} onChange={() => set("hatLogo", opt)} className="sr-only peer" />
+                        <div className="text-center py-3 rounded-full bg-[#FFF5EB] border border-[#E8DFD4] text-[#4A6274] text-sm font-medium peer-checked:border-[#E8564A] peer-checked:border-2 peer-checked:text-[#E8564A] peer-checked:font-semibold transition">{opt}</div>
+                      </label>
+                    ))}
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-[#4A6274] text-xs font-semibold">Welche Farben (Hex-Codes oder Beschreibung)?</label>
+                  <label className="text-[#4A6274] text-xs font-semibold">Haben Sie Markenfarben? (optional)</label>
                   <input type="text" placeholder="z.B. Dunkelblau + Gold, oder #1B3D70" value={form.farben} onChange={(e) => set("farben", e.target.value)} className={inputCls} />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <span className="text-[#4A6274] text-xs font-semibold">Welcher Stil gefällt Ihnen? (optional)</span>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      "Modern & Klar",
+                      "Warm & Persönlich",
+                      "Mutig & Auffällig",
+                      "Elegant & Hochwertig",
+                      "Kreativ & Verspielt",
+                      "Keine Präferenz",
+                    ].map((opt) => (
+                      <label key={opt} className="cursor-pointer">
+                        <input type="radio" name="stil" value={opt} checked={form.stilPraeferenz === opt} onChange={() => set("stilPraeferenz", opt)} className="sr-only peer" />
+                        <div className="px-4 py-2.5 rounded-full bg-[#FFF5EB] border border-[#E8DFD4] text-[#4A6274] text-[13px] font-medium peer-checked:border-[#E8564A] peer-checked:border-2 peer-checked:text-[#E8564A] peer-checked:font-semibold transition">{opt}</div>
+                      </label>
+                    ))}
+                  </div>
                 </div>
                 <div className="flex flex-col gap-2">
                   <label className="text-[#4A6274] text-xs font-semibold">Gibt es Websites, die Ihnen gefallen? (optional)</label>

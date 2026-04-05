@@ -3,10 +3,14 @@ import {
   sendAnfrageNotification,
   type AnfrageData,
 } from "@/lib/email";
+import { prisma } from "@/lib/prisma";
+
+const PIPELINE_SECRET = process.env.PIPELINE_SECRET;
 
 export async function POST(request: Request) {
   try {
-    const daten: AnfrageData = await request.json();
+    const daten: AnfrageData & { stilPraeferenz?: string } =
+      await request.json();
 
     // Pflichtfelder validieren
     const pflichtfelder: (keyof AnfrageData)[] = [
@@ -44,13 +48,53 @@ export async function POST(request: Request) {
       );
     }
 
+    // Anfrage in Datenbank speichern
+    const anfrage = await prisma.anfrage.create({
+      data: {
+        firmenname: daten.firmenname,
+        branche: daten.branche,
+        beschreibung: daten.beschreibung,
+        standort: daten.standort || null,
+        website: daten.website || null,
+        zielgruppe: daten.zielgruppe,
+        websiteZiel: daten.websiteZiel,
+        zielgruppeBeschreibung: daten.zielgruppeBeschreibung || null,
+        hatLogo: daten.hatLogo,
+        farben: daten.farben || null,
+        vorbilder: daten.vorbilder || null,
+        stilPraeferenz: daten.stilPraeferenz || null,
+        seiten: daten.seiten || [],
+        texteVorhanden: daten.texteVorhanden || "",
+        sonstiges: daten.sonstiges || null,
+        ansprechpartner: daten.ansprechpartner,
+        email: daten.email,
+        telefon: daten.telefon || null,
+      },
+    });
+
     // E-Mails parallel senden
     await Promise.all([
       sendAnfrageConfirmation(daten),
       sendAnfrageNotification(daten),
     ]);
 
-    return Response.json({ erfolg: true });
+    // Pipeline: Prompt-Generierung im Hintergrund anstoßen (fire-and-forget)
+    if (PIPELINE_SECRET) {
+      const baseUrl =
+        process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+      fetch(`${baseUrl}/api/pipeline/generate-prompt`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-pipeline-key": PIPELINE_SECRET,
+        },
+        body: JSON.stringify({ anfrageId: anfrage.id }),
+      }).catch((err: unknown) => {
+        console.error("Pipeline-Trigger fehlgeschlagen:", err);
+      });
+    }
+
+    return Response.json({ erfolg: true, anfrageId: anfrage.id });
   } catch (fehler) {
     console.error("Fehler beim Verarbeiten der Anfrage:", fehler);
     return Response.json(

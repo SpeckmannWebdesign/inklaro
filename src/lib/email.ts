@@ -75,13 +75,12 @@ export interface AnfrageData {
   // Schritt 2: Zielgruppe
   zielgruppe: string;
   websiteZiel: string;
-  b2bB2c: string;
   zielgruppeBeschreibung?: string;
   // Schritt 3: Branding
   hatLogo: string;
-  hatBrandfarben: string;
   farben?: string;
   vorbilder?: string;
+  stilPraeferenz?: string;
   // Schritt 4: Inhalte
   seiten: string[];
   texteVorhanden: string;
@@ -90,6 +89,48 @@ export interface AnfrageData {
   ansprechpartner: string;
   email: string;
   telefon?: string;
+}
+
+// ──────────────────────────────────────────────────
+// 3. Notification: Pencil-Prompt ist fertig
+// ──────────────────────────────────────────────────
+
+export async function sendPromptReadyNotification(
+  anfrageId: string,
+  firmenname: string,
+  branche: string,
+  promptLaenge: number
+) {
+  const inhalt = `
+    <h1 style="font-size:22px; font-weight:800; color:#0F2B3C; margin:0 0 4px 0;">
+      Pencil-Prompt fertig
+    </h1>
+    <p style="font-size:15px; color:#4A6274; line-height:1.7; margin:0 0 24px 0;">
+      Der Design-Prompt f&uuml;r <strong style="color:#0F2B3C;">${esc(firmenname)}</strong> (${esc(branche)}) wurde automatisch generiert.
+    </p>
+
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#FFF5EB; border-radius:12px; margin-bottom:24px;">
+      <tr>
+        <td style="padding:24px;">
+          <p style="font-size:14px; font-weight:700; color:#0F2B3C; margin:0 0 12px 0;">N&auml;chster Schritt:</p>
+          <p style="font-size:14px; color:#4A6274; line-height:1.7; margin:0 0 8px 0;">
+            &Ouml;ffne Claude Code im Inklaro-Projekt und f&uuml;hre aus:
+          </p>
+          <div style="background-color:#0F2B3C; border-radius:8px; padding:16px; margin:8px 0;">
+            <code style="color:#E8564A; font-size:14px; font-family:monospace;">claude /pencil-design ${esc(anfrageId)}</code>
+          </div>
+          <p style="font-size:13px; color:#8DA4B4; margin:12px 0 0 0;">
+            Prompt-L&auml;nge: ${promptLaenge} Zeichen &middot; Anfrage-ID: ${esc(anfrageId)}
+          </p>
+        </td>
+      </tr>
+    </table>`;
+
+  await sendEmail({
+    to: FROM_EMAIL,
+    subject: `Prompt fertig: ${firmenname} (${branche})`,
+    html: emailLayout(inhalt),
+  });
 }
 
 // ──────────────────────────────────────────────────
@@ -254,7 +295,6 @@ export async function sendAnfrageNotification(daten: AnfrageData) {
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#FFF5EB; border-radius:12px; margin-bottom:20px;">
       ${zeile("Zielgruppe", daten.zielgruppe)}
       ${zeile("Website-Ziel", daten.websiteZiel)}
-      ${zeile("B2B / B2C", daten.b2bB2c)}
       ${zeile("Details", daten.zielgruppeBeschreibung)}
     </table>
 
@@ -262,8 +302,8 @@ export async function sendAnfrageNotification(daten: AnfrageData) {
     <p style="font-size:12px; font-weight:700; color:#E8564A; text-transform:uppercase; letter-spacing:1px; margin:0 0 8px 0;">Design & Branding</p>
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#FFF5EB; border-radius:12px; margin-bottom:20px;">
       ${zeile("Logo vorhanden", daten.hatLogo)}
-      ${zeile("Brandfarben", daten.hatBrandfarben)}
       ${zeile("Farben", daten.farben)}
+      ${zeile("Stil-Präferenz", daten.stilPraeferenz)}
       ${zeile("Vorbilder", daten.vorbilder)}
     </table>
 

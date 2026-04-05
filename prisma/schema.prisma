@@ -116,3 +116,72 @@ model WaitlistEntry {
   name      String?
   createdAt DateTime @default(now())
 }
+
+// ──────────────────────────────────────────────────
+// Kostenlose Website-Anfragen (Vorschau-Flow)
+// ──────────────────────────────────────────────────
+
+enum AnfrageStatus {
+  SUBMITTED
+  PROMPT_GENERATING
+  PROMPT_GENERATED
+  DESIGN_CREATING
+  DESIGN_CREATED
+  DELIVERED
+  CONVERTED
+  REJECTED
+}
+
+model Anfrage {
+  id                     String        @id @default(cuid())
+
+  // Schritt 1: Unternehmen
+  firmenname             String
+  branche                String
+  beschreibung           String        @db.Text
+  standort               String?
+  website                String?
+
+  // Schritt 2: Zielgruppe
+  zielgruppe             String
+  websiteZiel            String
+  zielgruppeBeschreibung String?       @db.Text
+
+  // Schritt 3: Branding
+  hatLogo                String
+  farben                 String?
+  vorbilder              String?       @db.Text
+  stilPraeferenz         String?
+
+  // Schritt 4: Inhalte
+  seiten                 String[]
+  texteVorhanden         String
+  sonstiges              String?       @db.Text
+
+  // Schritt 5: Kontakt
+  ansprechpartner        String
+  email                  String
+  telefon                String?
+
+  // Pipeline
+  status                 AnfrageStatus @default(SUBMITTED)
+  pencilPrompt           String?       @db.Text
+  pencilDesignPath       String?
+  errorMessage           String?       @db.Text
+
+  createdAt              DateTime      @default(now())
+  updatedAt              DateTime      @updatedAt
+
+  logs                   AnfrageLog[]
+}
+
+model AnfrageLog {
+  id        String   @id @default(cuid())
+  anfrageId String
+  anfrage   Anfrage  @relation(fields: [anfrageId], references: [id])
+  step      String
+  status    String
+  message   String   @db.Text
+  metadata  Json?
+  createdAt DateTime @default(now())
+}
