@@ -104,7 +104,8 @@ export async function POST(request: Request) {
         anfrageId,
         anfrage.firmenname,
         anfrage.branche,
-        pencilPrompt.length
+        pencilPrompt.length,
+        pencilPrompt
       );
     } catch (emailError) {
       console.error("Prompt-Ready-Notification fehlgeschlagen:", emailError);

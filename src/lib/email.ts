@@ -3,6 +3,7 @@
 const BREVO_API_KEY = process.env.BREVO_API_KEY!;
 const FROM_EMAIL = "info@inklaro.de";
 const FROM_NAME = "Inklaro";
+const NOTIFY_EMAIL = "info@speckmann-webdesign.de";
 
 // ──────────────────────────────────────────────────
 // Basis: E-Mail über Brevo API senden
@@ -99,7 +100,8 @@ export async function sendPromptReadyNotification(
   anfrageId: string,
   firmenname: string,
   branche: string,
-  promptLaenge: number
+  promptLaenge: number,
+  pencilPrompt: string
 ) {
   const inhalt = `
     <h1 style="font-size:22px; font-weight:800; color:#0F2B3C; margin:0 0 4px 0;">
@@ -119,15 +121,20 @@ export async function sendPromptReadyNotification(
           <div style="background-color:#0F2B3C; border-radius:8px; padding:16px; margin:8px 0;">
             <code style="color:#E8564A; font-size:14px; font-family:monospace;">claude /pencil-design ${esc(anfrageId)}</code>
           </div>
-          <p style="font-size:13px; color:#8DA4B4; margin:12px 0 0 0;">
-            Prompt-L&auml;nge: ${promptLaenge} Zeichen &middot; Anfrage-ID: ${esc(anfrageId)}
-          </p>
         </td>
       </tr>
-    </table>`;
+    </table>
+
+    <p style="font-size:12px; font-weight:700; color:#E8564A; text-transform:uppercase; letter-spacing:1px; margin:0 0 8px 0;">Generierter Pencil-Prompt</p>
+    <div style="background-color:#F5F5F5; border-radius:12px; padding:20px; margin-bottom:16px; border:1px solid #E8DFD4;">
+      <pre style="font-size:13px; color:#0F2B3C; line-height:1.6; white-space:pre-wrap; word-wrap:break-word; margin:0; font-family:monospace;">${esc(pencilPrompt)}</pre>
+    </div>
+    <p style="font-size:13px; color:#8DA4B4; margin:0;">
+      Prompt-L&auml;nge: ${promptLaenge} Zeichen &middot; Anfrage-ID: ${esc(anfrageId)}
+    </p>`;
 
   await sendEmail({
-    to: FROM_EMAIL,
+    to: NOTIFY_EMAIL,
     subject: `Prompt fertig: ${firmenname} (${branche})`,
     html: emailLayout(inhalt),
   });
@@ -316,7 +323,7 @@ export async function sendAnfrageNotification(daten: AnfrageData) {
     </table>`;
 
   await sendEmail({
-    to: FROM_EMAIL,
+    to: NOTIFY_EMAIL,
     subject: `Neue Anfrage: ${daten.firmenname} (${daten.branche})`,
     html: emailLayout(inhalt),
   });
