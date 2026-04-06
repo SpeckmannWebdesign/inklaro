@@ -134,7 +134,7 @@ export default function Home() {
       <main id="main" className="pt-20">
         {/* HERO */}
         <section className="bg-[#FFFAF5]">
-          <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-16 px-5 lg:px-16 py-16 lg:py-0 lg:min-h-[700px]">
+          <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-16 px-5 lg:px-16 pt-8 pb-16 lg:py-0 lg:min-h-[700px]">
             <div className="flex-1 flex flex-col gap-8 max-w-[640px]">
               <div className="inline-flex items-center gap-2 bg-[#FFF5EB] border border-[#E8DFD4] rounded-full px-4 py-2 w-fit">
                 <span className="w-2 h-2 bg-[#E8564A] rounded-full" />
