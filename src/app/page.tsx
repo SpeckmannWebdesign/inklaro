@@ -158,22 +158,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* TRUST BAR */}
-        <section className="bg-[#FFF5EB]">
-          <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-start md:items-center md:justify-center gap-8 md:gap-20 px-5 lg:px-16 py-12">
-            {[{icon:<ShieldCheck />,t:"Zufriedenheitsgarantie",s:"Erst zahlen, wenn Sie begeistert sind"},{icon:<Smartphone />,t:"100% Responsive",s:"Perfekt auf jedem Gerät"},{icon:<LockIcon />,t:"DSGVO-konform",s:"Hosting auf deutschen Servern"}].map((item,i)=>(
-              <div key={i} className="flex items-center gap-4">
-                {i > 0 && <span className="hidden md:block w-px h-12 bg-[#E8DFD4] -ml-10 mr-10" />}
-                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm"><span className="text-[#0F2B3C]">{item.icon}</span></div>
-                <div>
-                  <div className="text-[15px] font-semibold text-[#0F2B3C]">{item.t}</div>
-                  <div className="text-[#8DA4B4] text-sm">{item.s}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* PROZESS */}
         <section id="prozess" className="bg-[#FFFAF5] scroll-mt-20">
           <div className="max-w-[1440px] mx-auto px-5 lg:px-16 py-24 flex flex-col items-center gap-16">
