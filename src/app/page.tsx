@@ -348,7 +348,7 @@ export default function Home() {
 
         {/* GARANTIE */}
         <section className="bg-[#FFF5EB]">
-          <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 px-5 lg:px-16 py-16">
+          <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-start md:items-center md:justify-center gap-8 md:gap-16 px-5 lg:px-16 py-16">
             {[{icon:<ShieldCheck size={28} />,t:"Zufriedenheitsgarantie",s:"Erst zahlen bei 100% Zufriedenheit"},{icon:<BanIcon />,t:"Keine versteckten Kosten",s:"Alle Preise transparent auf dieser Seite"},{icon:<UserIcon />,t:"Persönlicher Kontakt",s:"Deutscher Anbieter, direkt erreichbar"}].map((item,i)=>(
               <div key={i} className="flex items-center gap-4">
                 {i > 0 && <span className="hidden md:block w-px h-12 bg-[#E8DFD4] -ml-8 mr-8" />}
