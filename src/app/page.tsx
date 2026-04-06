@@ -146,10 +146,12 @@ export default function Home() {
                 <a href="/anfragen" className="bg-[#E8564A] text-white font-bold text-base px-8 py-4 rounded-full btn-primary transition-all duration-200">Website jetzt anfragen</a>
                 <a href="#prozess" className="text-[#0F2B3C] font-semibold text-base px-8 py-4 rounded-full border-2 border-[#0F2B3C] btn-secondary transition-all duration-200">So funktioniert&apos;s</a>
               </div>
-              <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-[#4A6274] text-sm font-medium">
-                <span className="flex items-center gap-1.5"><span className="text-[#E8564A] font-bold">35+</span> Websites erstellt</span>
-                <span className="flex items-center gap-1.5"><span className="text-[#E8564A] font-bold">100%</span> Zufriedenheit</span>
-                <span className="flex items-center gap-1.5"><span className="text-[#E8564A] font-bold">5.0 ★</span> bei Google</span>
+              <div className="flex items-center gap-x-5 text-[#4A6274] text-sm font-medium">
+                <span className="whitespace-nowrap"><span className="text-[#E8564A] font-bold">35+</span> Websites</span>
+                <span className="text-[#E8DFD4]">|</span>
+                <span className="whitespace-nowrap"><span className="text-[#E8564A] font-bold">100%</span> Zufriedenheit</span>
+                <span className="text-[#E8DFD4]">|</span>
+                <span className="whitespace-nowrap"><span className="text-[#E8564A] font-bold">5.0 ★</span> Google</span>
               </div>
             </div>
             <div className="flex-1 max-w-[560px]">
