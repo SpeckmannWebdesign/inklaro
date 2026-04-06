@@ -146,13 +146,6 @@ export default function Home() {
                 <a href="/anfragen" className="bg-[#E8564A] text-white font-bold text-base px-8 py-4 rounded-full btn-primary transition-all duration-200">Website jetzt anfragen</a>
                 <a href="#prozess" className="text-[#0F2B3C] font-semibold text-base px-8 py-4 rounded-full border-2 border-[#0F2B3C] btn-secondary transition-all duration-200">So funktioniert&apos;s</a>
               </div>
-              <div className="flex items-center gap-x-5 text-[#4A6274] text-sm font-medium">
-                <span className="whitespace-nowrap"><span className="text-[#E8564A] font-bold">35+</span> Websites</span>
-                <span className="text-[#E8DFD4]">|</span>
-                <span className="whitespace-nowrap"><span className="text-[#E8564A] font-bold">100%</span> Zufriedenheit</span>
-                <span className="text-[#E8DFD4]">|</span>
-                <span className="whitespace-nowrap"><span className="text-[#E8564A] font-bold">5.0 ★</span> Google</span>
-              </div>
             </div>
             <div className="flex-1 max-w-[560px]">
               <Image src="/images/hero.avif" alt="Professionelle Website erstellen lassen" width={560} height={620} className="rounded-3xl w-full object-cover" priority sizes="(max-width: 1024px) 100vw, 560px" />
