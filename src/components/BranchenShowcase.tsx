@@ -10,11 +10,24 @@ const ShieldCheck = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
 );
 
+interface BranchenFAQ {
+  frage: string;
+  antwort: string;
+}
+
+interface BranchenVorteil {
+  titel: string;
+  text: string;
+}
+
 interface BranchenShowcaseProps {
   branche: string;
   beschreibung: string;
   screenshot: string;
   url: string;
+  seoText?: string;
+  vorteile?: BranchenVorteil[];
+  faqs?: BranchenFAQ[];
 }
 
 const alleBranchen = [
@@ -32,7 +45,7 @@ const alleBranchen = [
   { name: "Hochzeitsplanung", desc: "Hochzeitsplaner, Events", img: "/images/hero-hochzeit.avif", href: "/branchen/hochzeitsplanung" },
 ];
 
-export default function BranchenShowcase({ branche, beschreibung, screenshot, url }: BranchenShowcaseProps) {
+export default function BranchenShowcase({ branche, beschreibung, screenshot, url, seoText, vorteile, faqs }: BranchenShowcaseProps) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("visible"); }),
@@ -94,11 +107,67 @@ export default function BranchenShowcase({ branche, beschreibung, screenshot, ur
           </div>
         </section>
 
+        {/* SEO CONTENT */}
+        {seoText && (
+          <section className="bg-[#FFFAF5]">
+            <div className="max-w-[1440px] mx-auto px-5 lg:px-16 py-24 fade-in">
+              <div className="max-w-[760px] mx-auto">
+                <p className="text-[#E8564A] text-xs font-semibold tracking-[2px] mb-4">WARUM EINE PROFESSIONELLE WEBSITE?</p>
+                <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-[40px] text-[#0F2B3C] leading-[1.2] mb-8">Warum {branche} eine starke Website brauchen</h2>
+                <p className="text-[#4A6274] text-[17px] leading-[1.8]">{seoText}</p>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* VORTEILE */}
+        {vorteile && vorteile.length > 0 && (
+          <section className="bg-[#FFF5EB]">
+            <div className="max-w-[1440px] mx-auto px-5 lg:px-16 py-24 fade-in">
+              <div className="text-center mb-16">
+                <p className="text-[#E8564A] text-xs font-semibold tracking-[2px] mb-4">DAS MACHT DEN UNTERSCHIED</p>
+                <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-[40px] text-[#0F2B3C] leading-[1.2]">Was Ihre {branche}-Website können muss</h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[900px] mx-auto">
+                {vorteile.map((v, i) => (
+                  <div key={i} className="bg-white rounded-2xl p-8 border border-[#E8DFD4]">
+                    <div className="w-10 h-10 bg-[#FFF5EB] rounded-xl flex items-center justify-center mb-4">
+                      <span className="text-[#E8564A] font-bold text-lg">{i + 1}</span>
+                    </div>
+                    <h3 className="font-[family-name:var(--font-display)] text-xl text-[#0F2B3C] mb-3">{v.titel}</h3>
+                    <p className="text-[#4A6274] text-[15px] leading-[1.7]">{v.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* FAQ */}
+        {faqs && faqs.length > 0 && (
+          <section className="bg-[#FFFAF5]">
+            <div className="max-w-[1440px] mx-auto px-5 lg:px-16 py-24 fade-in">
+              <div className="max-w-[760px] mx-auto">
+                <p className="text-[#E8564A] text-xs font-semibold tracking-[2px] mb-4">HÄUFIGE FRAGEN</p>
+                <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-[40px] text-[#0F2B3C] leading-[1.2] mb-12">Fragen zu Websites für {branche}</h2>
+                <div className="flex flex-col gap-6">
+                  {faqs.map((faq, i) => (
+                    <div key={i} className="bg-white rounded-2xl p-8 border border-[#E8DFD4]">
+                      <h3 className="font-semibold text-[17px] text-[#0F2B3C] mb-3">{faq.frage}</h3>
+                      <p className="text-[#4A6274] text-[15px] leading-[1.7]">{faq.antwort}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* CTA */}
         <section className="bg-[#0F2B3C]">
           <div className="max-w-[1440px] mx-auto px-5 lg:px-16 py-20 flex flex-col items-center gap-8 text-center fade-in">
             <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl text-white leading-[1.15]">Gefällt Ihnen diese Website?</h2>
-            <p className="text-[#8DA4B4] text-lg max-w-[600px] leading-[1.6]">Genau so — oder noch besser angepasst an Ihr Unternehmen. Ab 499 € netto, und Sie zahlen erst, wenn Sie zufrieden sind.</p>
+            <p className="text-[#8DA4B4] text-lg max-w-[600px] leading-[1.6]">Genau so — oder noch besser angepasst an Ihr Unternehmen. Ab 799 € netto, und Sie zahlen erst, wenn Sie zufrieden sind.</p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/anfragen" className="bg-[#E8564A] text-white font-bold text-[17px] px-10 py-[18px] rounded-full hover:shadow-lg hover:shadow-[#E8564A]/30 hover:-translate-y-0.5 transition-all duration-200">So eine Website möchte ich auch</Link>
               <Link href="/" className="text-white font-semibold text-[17px] px-10 py-[18px] rounded-full border border-white/25 hover:bg-white/5 transition-all duration-200">Weitere Beispiele ansehen</Link>
