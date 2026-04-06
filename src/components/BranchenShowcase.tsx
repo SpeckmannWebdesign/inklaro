@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import StructuredData from "@/components/StructuredData";
 
 const ShieldCheck = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
@@ -57,8 +58,37 @@ export default function BranchenShowcase({ branche, beschreibung, screenshot, ur
 
   const andereBranchen = alleBranchen.filter((b) => b.name !== branche);
 
+  const faqSchema = faqs && faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.frage,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.antwort,
+      },
+    })),
+  } : null;
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: `Website für ${branche} erstellen lassen`,
+    provider: { "@type": "Organization", name: "Inklaro", url: "https://inklaro.de" },
+    description: beschreibung,
+    areaServed: { "@type": "Country", name: "DE" },
+    offers: {
+      "@type": "Offer",
+      price: "799",
+      priceCurrency: "EUR",
+      description: `Professionelle Website für ${branche} ab 799 € netto`,
+    },
+  };
+
   return (
     <>
+      <StructuredData data={faqSchema ? [serviceSchema, faqSchema] : serviceSchema} />
       <Nav>
         <div className="flex items-center gap-4">
           <Link href="/#branchen" className="flex items-center gap-2 text-[#4A6274] hover:text-[#0F2B3C] transition text-sm font-medium px-5 py-2.5 rounded-full border border-[#E8DFD4] hover:border-[#0F2B3C]">
