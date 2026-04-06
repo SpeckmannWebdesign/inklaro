@@ -160,7 +160,7 @@ export default function Home() {
 
         {/* TRUST BAR */}
         <section className="bg-[#FFF5EB]">
-          <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-20 px-5 lg:px-16 py-12">
+          <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-start md:items-center md:justify-center gap-8 md:gap-20 px-5 lg:px-16 py-12">
             {[{icon:<ShieldCheck />,t:"Zufriedenheitsgarantie",s:"Erst zahlen, wenn Sie begeistert sind"},{icon:<Smartphone />,t:"100% Responsive",s:"Perfekt auf jedem Gerät"},{icon:<LockIcon />,t:"DSGVO-konform",s:"Hosting auf deutschen Servern"}].map((item,i)=>(
               <div key={i} className="flex items-center gap-4">
                 {i > 0 && <span className="hidden md:block w-px h-12 bg-[#E8DFD4] -ml-10 mr-10" />}
@@ -357,7 +357,7 @@ export default function Home() {
               <p className="text-[#8DA4B4] text-[17px] leading-[1.7] mb-6 text-left max-w-[640px] mx-auto">Ich bin Marcel Speckmann — Wirtschaftspsychologe und Webdesigner aus Oldenburg. Seit Jahren baue ich professionelle Websites für Unternehmen. Und ich weiß: Der größte Kostentreiber ist nicht die Website selbst — sondern alles drumherum.</p>
               <p className="text-[#8DA4B4] text-[17px] leading-[1.7] mb-6 text-left max-w-[640px] mx-auto">Bei klassischen Projekten kosten <span className="text-white font-medium">stundenlange Beratungsgespräche</span>, endlose Abstimmungsrunden und Änderungswünsche in jeder Phase oft mehr als die eigentliche Umsetzung. Die Kommunikation allein kann ein Projekt auf 5.000 – 10.000 € treiben.</p>
               <p className="text-[#8DA4B4] text-[17px] leading-[1.7] mb-6 text-left max-w-[640px] mx-auto">Bei Inklaro fällt das weg. Sie füllen ein kurzes Formular aus — und wir erstellen Ihre Website <span className="text-white font-medium">komplett eigenständig</span>. Kein Hin und Her, keine wochenlangen Abstimmungen. Design, Texte und Technik entstehen in einem durchgetakteten Prozess.</p>
-              <p className="text-[#8DA4B4] text-[17px] leading-[1.7] mb-6 text-left max-w-[640px] mx-auto">Erst wenn alles fertig ist, stellen wir Ihnen die Website persönlich vor. Dann können Sie Änderungswünsche äußern. Aber der Großteil der Arbeit ist bereits erledigt — <span className="text-white font-medium">und genau deshalb können wir Ihnen für 799 € eine Website liefern, die andere für das Fünffache anbieten.</span></p>
+              <p className="text-[#8DA4B4] text-[17px] leading-[1.7] mb-6 text-left max-w-[640px] mx-auto">Erst wenn alles fertig ist, erhalten Sie einen Link zu Ihrer Website. Dann können Sie Änderungswünsche äußern. Aber der Großteil der Arbeit ist bereits erledigt — <span className="text-white font-medium">und genau deshalb können wir Ihnen für 799 € eine Website liefern, die andere für das Fünf- bis Zehnfache anbieten.</span></p>
             </div>
           </div>
         </section>
