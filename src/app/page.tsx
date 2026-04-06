@@ -231,7 +231,7 @@ export default function Home() {
                       <td className="text-[#0F2B3C] text-[15px] font-semibold py-4 px-4 rounded-l-xl">{row.label}</td>
                       <td className="text-[#8DA4B4] text-[15px] text-center py-4 px-4">{row.self}</td>
                       <td className="text-[#8DA4B4] text-[15px] text-center py-4 px-4">{row.agency}</td>
-                      <td className="text-[#E8564A] text-[15px] text-center font-semibold py-4 px-4 rounded-r-xl">{row.inklaro}</td>
+                      <td className="text-[#E8564A] text-[15px] text-center font-bold py-4 px-4 rounded-r-xl">{row.inklaro}</td>
                     </tr>
                   ))}
                 </tbody>
