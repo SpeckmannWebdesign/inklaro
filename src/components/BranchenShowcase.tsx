@@ -111,7 +111,7 @@ export default function BranchenShowcase({ branche, beschreibung, screenshot, ur
             </h1>
             <p className="text-[#4A6274] text-lg max-w-[640px] leading-[1.6]">{beschreibung}</p>
             <div className="flex items-center gap-6 text-[#8DA4B4] text-[13px]">
-              {["Alle Geräte", "Rechtlich sicher", "Blitzschnell", "Bei Google sichtbar"].map((b) => (
+              {["Alle Geräte", "Rechtlich sicher", "Blitzschnell", "Bereit für Google"].map((b) => (
                 <span key={b} className="flex items-center gap-1.5">✓ {b}</span>
               ))}
             </div>

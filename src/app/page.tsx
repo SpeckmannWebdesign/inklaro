@@ -198,7 +198,7 @@ export default function Home() {
               <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl text-white leading-[1.15]">Was in deiner Website drinsteckt</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full fade-in-stagger">
-              {[{icon:<Smartphone />,t:"Auf allen Geräten perfekt",d:"Deine Website sieht auf Handy, Tablet und Computer gleich gut aus — ohne Kompromisse."},{icon:<SearchIcon />,t:"Bei Google sichtbar",d:"Wir sorgen dafür, dass deine Website bei Google gefunden wird — mit schneller Ladezeit und den richtigen Einstellungen."},{icon:<ZapIcon />,t:"Blitzschnelle Ladezeit",d:"Deine Website lädt sofort — ohne nervige Wartezeit. Gut für Besucher und für Google."},{icon:<LockIcon />,t:"Rechtlich sicher",d:"Impressum, Datenschutz, Cookie-Hinweis — alles dabei. Gehostet auf deutschen Servern."},{icon:<CodeIcon />,t:"Professionell gebaut",d:"Kein Baukastensystem — deine Website wird individuell und sauber programmiert."},{icon:<PenLine />,t:"Texte & Bilder änderbar",d:"Du möchtest etwas anpassen? Texte und Bilder kannst du jederzeit ändern lassen — im monatlichen Paket inklusive.",hl:true}].map((f,i)=>(
+              {[{icon:<Smartphone />,t:"Auf allen Geräten perfekt",d:"Deine Website sieht auf Handy, Tablet und Computer gleich gut aus — ohne Kompromisse."},{icon:<SearchIcon />,t:"Bereit für Google",d:"Deine Website ist technisch so aufgebaut, dass Google sie optimal lesen und anzeigen kann."},{icon:<ZapIcon />,t:"Blitzschnelle Ladezeit",d:"Deine Website lädt sofort — ohne nervige Wartezeit. Gut für Besucher und für Google."},{icon:<LockIcon />,t:"Rechtlich sicher",d:"Impressum, Datenschutz, Cookie-Hinweis — alles dabei. Gehostet auf deutschen Servern."},{icon:<CodeIcon />,t:"Professionell gebaut",d:"Kein Baukastensystem — deine Website wird individuell und sauber programmiert."},{icon:<PenLine />,t:"Texte & Bilder änderbar",d:"Du möchtest etwas anpassen? Texte und Bilder kannst du jederzeit ändern lassen — im monatlichen Paket inklusive.",hl:true}].map((f,i)=>(
                 <div key={i} className={`rounded-2xl p-8 ${f.hl ? "bg-[#E8564A]" : "bg-[#1A3D50]"} card-hover transition-all duration-300`}>
                   <div className={`w-12 h-12 ${f.hl ? "bg-[#D04A3F]" : "bg-[#0F2B3C]"} rounded-xl flex items-center justify-center mb-4`}>
                     <span className="text-white">{f.icon}</span>
@@ -313,7 +313,7 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
                   <div>
                     <p className="text-[#0F2B3C] text-xs font-bold tracking-[1px] mb-4">IN DER EINMALGEBÜHR</p>
-                    {["Individuelles Design für deine Branche","Sieht auf allen Geräten gut aus","Impressum & Datenschutz inklusive","Wird bei Google gefunden","Vorschau-Link vor Zahlung — kein Risiko"].map((f)=>(
+                    {["Individuelles Design für deine Branche","Sieht auf allen Geräten gut aus","Impressum & Datenschutz inklusive","Technisch bereit für Google","Vorschau-Link vor Zahlung — kein Risiko"].map((f)=>(
                       <div key={f} className="flex items-center gap-3 mb-3"><span className="text-[#E8564A]"><CircleCheck /></span><span className="text-[#0F2B3C] text-[15px]">{f}</span></div>
                     ))}
                   </div>
