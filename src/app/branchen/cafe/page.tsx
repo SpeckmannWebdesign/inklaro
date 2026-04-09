@@ -21,7 +21,7 @@ export default function Page() {
         { titel: "Events und Besonderheiten hervorheben", text: "Sonntagsbrunch, Live-Musik, saisonale Angebote — mach auf Besonderheiten aufmerksam und gib Stammgästen einen Grund, regelmäßig vorbeizuschauen." },
       ]}
       faqs={[
-        { frage: "Kann ich meine Speisekarte und Öffnungszeiten aktualisieren lassen?", antwort: "Ja, Änderungen an Speisekarte, Öffnungszeiten oder saisonalen Angeboten kannst du jederzeit bei uns beauftragen. Das ist im monatlichen Paket (79 €/Monat) inklusive." },
+        { frage: "Kann ich meine Speisekarte und Öffnungszeiten aktualisieren lassen?", antwort: "Ja, Änderungen an Speisekarte, Öffnungszeiten oder saisonalen Angeboten kannst du jederzeit bei uns beauftragen. Das ist im monatlichen Paket (39 €/Monat) inklusive." },
         { frage: "Brauche ich professionelle Fotos von meinem Café?", antwort: "Eigene Fotos wirken am authentischsten — aber auch gute Smartphone-Fotos reichen oft aus. Alternativ arbeiten wir mit passenden Stockfotos, die die Atmosphäre deines Cafés transportieren." },
         { frage: "Kann ich Events oder Aktionen auf der Website ankündigen?", antwort: "Ja, wir können einen Bereich für aktuelle Events, Wochenangebote oder saisonale Aktionen einrichten. So bleiben deine Stammgäste immer informiert." },
         { frage: "Wie schnell ist meine Café-Website fertig?", antwort: "In der Regel senden wir dir innerhalb von 1–2 Werktagen einen Vorschau-Link zur fertigen Website. Wenn du zufrieden bist, stellen wir die Rechnung — und nach Zahlung geht deine Website sofort live." },

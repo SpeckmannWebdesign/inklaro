@@ -92,7 +92,7 @@ export default function RootLayout({
                 {
                   "@type": "Offer",
                   name: "Hosting & Wartung",
-                  price: "79",
+                  price: "39",
                   priceCurrency: "EUR",
                   description: "Monatliches Hosting, SSL, Domain, Wartung und Änderungen",
                 },

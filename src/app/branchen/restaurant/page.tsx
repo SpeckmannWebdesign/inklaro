@@ -21,7 +21,7 @@ export default function RestaurantPage() {
         { titel: "Öffnungszeiten und Anfahrt", text: "Deine Gäste finden sofort, wann du geöffnet hast und wie sie zu dir kommen — mit Karteneinbindung und Parkmöglichkeiten." },
       ]}
       faqs={[
-        { frage: "Kann ich meine Speisekarte selbst aktualisieren?", antwort: "Änderungen an deiner Speisekarte kannst du jederzeit bei uns beauftragen — das ist im monatlichen Paket (79 €/Monat) inklusive. So bleibt deine Karte immer aktuell." },
+        { frage: "Kann ich meine Speisekarte selbst aktualisieren?", antwort: "Änderungen an deiner Speisekarte kannst du jederzeit bei uns beauftragen — das ist im monatlichen Paket (39 €/Monat) inklusive. So bleibt deine Karte immer aktuell." },
         { frage: "Wie schnell ist meine Restaurant-Website fertig?", antwort: "In der Regel senden wir dir innerhalb von 1–2 Werktagen einen Vorschau-Link zur fertigen Website. Wenn du zufrieden bist, stellen wir die Rechnung — und nach Zahlung geht deine Website sofort live." },
         { frage: "Kann ich eine Online-Reservierung einbinden?", antwort: "Ja, wir binden gängige Reservierungssysteme wie Google Reservierung oder ein einfaches Kontaktformular ein. So können Gäste direkt über deine Website buchen." },
         { frage: "Brauche ich professionelle Fotos meiner Gerichte?", antwort: "Eigene Fotos wirken am besten — aber wir können auch mit professionellen Stockfotos arbeiten, die zu deinem Konzept passen. Ein Smartphone-Foto in guter Qualität reicht oft schon aus." },

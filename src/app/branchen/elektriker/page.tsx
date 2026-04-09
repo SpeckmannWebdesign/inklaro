@@ -22,7 +22,7 @@ export default function ElektrikerPage() {
       ]}
       faqs={[
         { frage: "Wie schnell ist meine Elektriker-Website online?", antwort: "In der Regel senden wir dir innerhalb von 1–2 Werktagen einen Vorschau-Link zur fertigen Website. Wenn du zufrieden bist, stellen wir die Rechnung — und nach Zahlung geht deine Website sofort live." },
-        { frage: "Kann ich meine Leistungen selbst ändern?", antwort: "Ja — Textänderungen, neue Fotos oder zusätzliche Leistungen kannst du jederzeit bei uns beauftragen. Das ist im monatlichen Paket (79 €/Monat) bereits enthalten." },
+        { frage: "Kann ich meine Leistungen selbst ändern?", antwort: "Ja — Textänderungen, neue Fotos oder zusätzliche Leistungen kannst du jederzeit bei uns beauftragen. Das ist im monatlichen Paket (39 €/Monat) bereits enthalten." },
         { frage: "Wird die Website bei Google gefunden?", antwort: "Ja, jede Website wird so gebaut, dass Google sie gut findet — mit schnellen Ladezeiten, sauberer Technik und passenden Suchbegriffen wie 'Elektriker in [Stadt]'. Wenn du noch mehr Sichtbarkeit möchtest, beraten wir dich gerne." },
         { frage: "Brauche ich vorher ein Logo oder Fotos?", antwort: "Nicht zwingend. Wir arbeiten auch mit Textlogos und professionellen Stockfotos. Wenn du eigene Fotos hast, umso besser — echte Bilder von deinem Team und deiner Arbeit wirken am stärksten." },
       ]}

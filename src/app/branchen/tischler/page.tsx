@@ -21,7 +21,7 @@ export default function Page() {
         { titel: "Anfragen über die Website generieren", text: "Ein Kontaktformular mit der Möglichkeit, Fotos oder Skizzen hochzuladen, macht es Kunden leicht, ihr Projekt zu beschreiben und eine Anfrage zu stellen." },
       ]}
       faqs={[
-        { frage: "Kann ich neue Projekte regelmäßig hinzufügen?", antwort: "Ja, neue Referenzprojekte mit Fotos und Beschreibungen pflegen wir jederzeit für dich ein. Das ist im monatlichen Paket (79 €/Monat) inklusive." },
+        { frage: "Kann ich neue Projekte regelmäßig hinzufügen?", antwort: "Ja, neue Referenzprojekte mit Fotos und Beschreibungen pflegen wir jederzeit für dich ein. Das ist im monatlichen Paket (39 €/Monat) inklusive." },
         { frage: "Brauche ich professionelle Fotos meiner Arbeiten?", antwort: "Professionelle Fotos sind ideal, aber gute Smartphone-Fotos bei Tageslicht reichen oft aus. Wichtig ist, dass die Qualität deiner Arbeit erkennbar ist." },
         { frage: "Wird meine Tischlerei bei Google gefunden?", antwort: "Ja, jede Website wird so gebaut, dass sie bei Google gut sichtbar ist — mit passenden Suchbegriffen wie 'Tischlerei in [Stadt]' oder 'Maßmöbel [Region]', sauberer Technik und schnellen Ladezeiten." },
         { frage: "Wie schnell ist meine Tischlerei-Website fertig?", antwort: "In der Regel senden wir dir innerhalb von 1–2 Werktagen einen Vorschau-Link zur fertigen Website. Wenn du zufrieden bist, stellen wir die Rechnung — und nach Zahlung geht deine Website sofort live." },

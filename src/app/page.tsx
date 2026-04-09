@@ -231,7 +231,7 @@ export default function Home() {
                 <tbody>
                   {[
                     { label: "Einmalige Kosten", self: "0 €", agency: "5.000–15.000 €", inklaro: "799 €" },
-                    { label: "Monatliche Kosten", self: "15–30 €/Monat", agency: "0–200 €/Monat", inklaro: "79 €/Monat" },
+                    { label: "Monatliche Kosten", self: "15–30 €/Monat", agency: "0–200 €/Monat", inklaro: "39 €/Monat" },
                     { label: "Qualität", self: "Template-Look", agency: "Individuell", inklaro: "Individuell" },
                     { label: "Aufwand für dich", self: "Alles selbst", agency: "Viele Meetings", inklaro: "5 Min Formular" },
                     { label: "Fertig in", self: "Tage bis Wochen", agency: "4–8 Wochen", inklaro: "1–2 Tage" },
@@ -300,7 +300,7 @@ export default function Home() {
                   <div>
                     <p className="text-[#8DA4B4] text-[11px] font-bold tracking-[2px] mb-2">MONATLICH</p>
                     <div className="flex items-end gap-1">
-                      <span className="font-[family-name:var(--font-display)] text-[56px] text-[#0F2B3C] leading-none">79 €</span>
+                      <span className="font-[family-name:var(--font-display)] text-[56px] text-[#0F2B3C] leading-none">39 €</span>
                       <span className="text-[#8DA4B4] text-base pb-1">/ Monat netto</span>
                     </div>
                     <p className="text-[#E8564A] text-sm font-medium mt-1">Monatlich kündbar — ohne Mindestlaufzeit</p>
@@ -386,7 +386,7 @@ export default function Home() {
                 { q: "Was passiert, wenn mir die Website nicht gefällt?", a: "Dann zahlst du nichts. Wir passen die Website nach deinem Feedback an oder belassen es — ganz ohne Risiko für dich." },
                 { q: "Gehört mir die Website?", a: "Das Modell funktioniert als Abo: Wir stellen dir Server, Technik und Wartung zur Verfügung. Die Website läuft, solange das Abo aktiv ist. Eine Herausgabe des Quellcodes ist nicht vorgesehen — dafür kümmern wir uns um alles Technische." },
                 { q: "Was passiert, wenn ich kündige?", a: "Du kannst monatlich kündigen. Nach der Kündigung wird die Website zum Ende des Abrechnungszeitraums abgeschaltet. Deine Internetadresse (Domain) kannst du selbstverständlich mitnehmen." },
-                { q: "Wofür sind die monatlichen Kosten?", a: "Die 79 € / Monat decken Hosting auf deutschen Servern, Sicherheitszertifikat, technische Tools (z.B. Kontaktformular), Wartung, Sicherheitsupdates und die Möglichkeit, Texte und Bilder ändern zu lassen." },
+                { q: "Wofür sind die monatlichen Kosten?", a: "Die 39 € / Monat decken Hosting auf deutschen Servern, Sicherheitszertifikat, technische Tools (z.B. Kontaktformular), Wartung, Sicherheitsupdates und die Möglichkeit, Texte und Bilder ändern zu lassen." },
                 { q: "Brauche ich technisches Wissen?", a: "Nein, überhaupt nicht. Du füllst ein Formular aus, wir machen den Rest. Wenn du später etwas ändern möchtest, sag uns einfach Bescheid." },
                 { q: "Kann ich meine eigene Internetadresse verwenden?", a: "Ja, selbstverständlich. Wenn du bereits eine Internetadresse (z.B. www.dein-name.de) hast, verbinden wir diese mit deiner neuen Website. Falls nicht, helfen wir dir bei der Registrierung." },
               ].map((faq, i) => (

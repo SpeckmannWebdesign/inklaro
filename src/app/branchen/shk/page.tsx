@@ -21,7 +21,7 @@ export default function Page() {
         { titel: "Fördermittel-Hinweise als Mehrwert", text: "Informiere deine Kunden über aktuelle Förderprogramme für Heizungstausch oder energetische Sanierung. Das zeigt Kompetenz und generiert Anfragen." },
       ]}
       faqs={[
-        { frage: "Kann ich mein Leistungsangebot anpassen lassen?", antwort: "Ja, Änderungen an Leistungen, Texten oder Referenzprojekten kannst du jederzeit bei uns beauftragen. Das ist im monatlichen Paket (79 €/Monat) inklusive." },
+        { frage: "Kann ich mein Leistungsangebot anpassen lassen?", antwort: "Ja, Änderungen an Leistungen, Texten oder Referenzprojekten kannst du jederzeit bei uns beauftragen. Das ist im monatlichen Paket (39 €/Monat) inklusive." },
         { frage: "Kann ich auf Fördermittel und Gesetze hinweisen?", antwort: "Ja, wir richten einen Bereich für aktuelle Informationen zu Förderprogrammen wie BEG oder GEG ein. So positionierst du dich als kompetenter Berater." },
         { frage: "Wird mein SHK-Betrieb lokal bei Google gefunden?", antwort: "Ja, jede Website wird so gebaut, dass sie bei Google gut sichtbar ist — mit passenden Suchbegriffen wie 'Heizungsbauer in [Stadt]' oder 'Badsanierung [Region]', sauberer Technik und schnellen Ladezeiten." },
         { frage: "Wie schnell ist meine SHK-Website fertig?", antwort: "In der Regel senden wir dir innerhalb von 1–2 Werktagen einen Vorschau-Link zur fertigen Website. Wenn du zufrieden bist, stellen wir die Rechnung — und nach Zahlung geht deine Website sofort live." },

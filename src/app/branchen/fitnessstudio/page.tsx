@@ -21,7 +21,7 @@ export default function FitnessstudioPage() {
         { titel: "Mitgliedschaften transparent darstellen", text: "Klare Preismodelle und Mitgliedschaftsoptionen direkt auf der Website schaffen Vertrauen und vermeiden Überraschungen beim Erstgespräch." },
       ]}
       faqs={[
-        { frage: "Kann ich meinen Kursplan regelmäßig aktualisieren lassen?", antwort: "Ja, Änderungen am Kursplan oder an Öffnungszeiten kannst du jederzeit bei uns beauftragen. Das ist im monatlichen Paket (79 €/Monat) inklusive." },
+        { frage: "Kann ich meinen Kursplan regelmäßig aktualisieren lassen?", antwort: "Ja, Änderungen am Kursplan oder an Öffnungszeiten kannst du jederzeit bei uns beauftragen. Das ist im monatlichen Paket (39 €/Monat) inklusive." },
         { frage: "Kann ich ein Probetraining-Formular einbinden?", antwort: "Ja, wir integrieren ein Anmeldeformular für Probetrainings, das direkt auf deiner Startseite oder einer separaten Landingpage platziert wird." },
         { frage: "Funktioniert die Website auch gut auf dem Handy?", antwort: "Absolut — alle unsere Websites sind mobile-first entwickelt. Gerade im Fitnessbereich suchen die meisten Interessenten am Smartphone." },
         { frage: "Wie schnell ist meine Fitness-Website online?", antwort: "In der Regel senden wir dir innerhalb von 1–2 Werktagen einen Vorschau-Link zur fertigen Website. Wenn du zufrieden bist, stellen wir die Rechnung — und nach Zahlung geht deine Website sofort live." },

@@ -21,7 +21,7 @@ export default function Page() {
         { titel: "Einfache Kontaktaufnahme", text: "Ein Anfrage-Formular mit Feldern für Datum, Location und Vorstellungen macht es Brautpaaren leicht, den ersten Schritt zu gehen — unverbindlich und unkompliziert." },
       ]}
       faqs={[
-        { frage: "Kann ich neue Hochzeiten ins Portfolio aufnehmen lassen?", antwort: "Ja, neue Referenz-Hochzeiten mit Fotos und Beschreibungen pflegen wir jederzeit für dich ein. Das ist im monatlichen Paket (79 €/Monat) inklusive." },
+        { frage: "Kann ich neue Hochzeiten ins Portfolio aufnehmen lassen?", antwort: "Ja, neue Referenz-Hochzeiten mit Fotos und Beschreibungen pflegen wir jederzeit für dich ein. Das ist im monatlichen Paket (39 €/Monat) inklusive." },
         { frage: "Kann ich ein Anfrage-Formular für Brautpaare einbinden?", antwort: "Ja, wir erstellen ein Kontaktformular mit individuellen Feldern — zum Beispiel für Hochzeitsdatum, Gästezahl und besondere Wünsche. So erhältst du direkt qualifizierte Anfragen." },
         { frage: "Wird meine Website bei Google gefunden?", antwort: "Ja, jede Website wird so gebaut, dass sie bei Google gut sichtbar ist — mit passenden Suchbegriffen wie 'Hochzeitsplaner in [Stadt]', sauberer Technik und schnellen Ladezeiten." },
         { frage: "Wie schnell ist meine Hochzeitsplaner-Website fertig?", antwort: "In der Regel senden wir dir innerhalb von 1–2 Werktagen einen Vorschau-Link zur fertigen Website. Wenn du zufrieden bist, stellen wir die Rechnung — und nach Zahlung geht deine Website sofort live." },

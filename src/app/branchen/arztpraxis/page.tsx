@@ -22,7 +22,7 @@ export default function ArztpraxisPage() {
       ]}
       faqs={[
         { frage: "Ist die Website rechtlich sicher für Arztpraxen?", antwort: "Ja, selbstverständlich. Alle unsere Websites sind datenschutzkonform — inklusive Datenschutzerklärung, Cookie-Hinweis und sicherer Verschlüsselung. Patientendaten werden nicht über die Website verarbeitet." },
-        { frage: "Kann ich Sprechzeiten selbst ändern?", antwort: "Änderungen an Sprechzeiten, Urlaubszeiten oder Leistungen kannst du jederzeit bei uns beauftragen. Das ist im monatlichen Paket (79 €/Monat) inklusive." },
+        { frage: "Kann ich Sprechzeiten selbst ändern?", antwort: "Änderungen an Sprechzeiten, Urlaubszeiten oder Leistungen kannst du jederzeit bei uns beauftragen. Das ist im monatlichen Paket (39 €/Monat) inklusive." },
         { frage: "Kann ich eine Online-Terminbuchung integrieren?", antwort: "Ja, wir binden gängige Buchungssysteme wie Doctolib oder Jameda ein. So können Patienten rund um die Uhr Termine buchen." },
         { frage: "Wie schnell ist die Praxis-Website fertig?", antwort: "Wir senden dir innerhalb von 1–2 Werktagen einen Vorschau-Link zur fertigen Website. Wenn du zufrieden bist, stellen wir die Rechnung — und nach Zahlung geht deine Website sofort live." },
       ]}

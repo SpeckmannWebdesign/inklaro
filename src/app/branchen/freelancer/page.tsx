@@ -21,7 +21,7 @@ export default function FreelancerPage() {
         { titel: "Sichtbar für neue Auftraggeber", text: "Deine Website wird für relevante Suchbegriffe optimiert — so finden nicht nur Empfehlungskunden, sondern auch neue Auftraggeber direkt zu dir." },
       ]}
       faqs={[
-        { frage: "Kann ich mein Portfolio regelmäßig erweitern?", antwort: "Ja — neue Projekte, Referenzen oder Kundenstimmen kannst du jederzeit bei uns beauftragen. Das ist im monatlichen Paket (79 €/Monat) bereits enthalten." },
+        { frage: "Kann ich mein Portfolio regelmäßig erweitern?", antwort: "Ja — neue Projekte, Referenzen oder Kundenstimmen kannst du jederzeit bei uns beauftragen. Das ist im monatlichen Paket (39 €/Monat) bereits enthalten." },
         { frage: "Brauche ich als Freelancer wirklich eine eigene Website?", antwort: "Definitiv. Social-Media-Profile und Plattformen wie Fiverr oder Upwork gehören dir nicht. Deine eigene Website ist der einzige Kanal, den du vollständig kontrollierst — und der professionellste Eindruck, den du hinterlassen kannst." },
         { frage: "Kann ich einen Buchungskalender einbinden?", antwort: "Ja, wir integrieren Tools wie Calendly oder Cal.com, damit Interessenten direkt einen Termin mit dir buchen können — ohne E-Mail-Pingpong." },
         { frage: "Wie schnell ist meine Freelancer-Website online?", antwort: "In der Regel senden wir dir innerhalb von 1–2 Werktagen einen Vorschau-Link zur fertigen Website. Wenn du zufrieden bist, stellen wir die Rechnung — und nach Zahlung geht deine Website sofort live." },
