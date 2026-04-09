@@ -3,7 +3,7 @@ import BranchenShowcase from "@/components/BranchenShowcase";
 
 export const metadata: Metadata = {
   title: "Website für Rechtsanwälte erstellen lassen – Ab 799 € | Inklaro",
-  description: "Professionelle Website für Rechtsanwälte und Kanzleien. Seriös, DSGVO-konform, mit Rechtsgebieten und Kontakt. Ab 799 € netto — erst zahlen bei Zufriedenheit.",
+  description: "Professionelle Website für Rechtsanwälte und Kanzleien. Seriös, rechtlich sicher, mit Rechtsgebieten und Kontakt. Ab 799 € netto — erst zahlen bei Zufriedenheit.",
 };
 
 export default function Page() {
@@ -21,9 +21,9 @@ export default function Page() {
         { titel: "Seriöse Außenwirkung", text: "Design, Sprache und Struktur deiner Website transportieren Professionalität. Das ist gerade bei Kanzleien entscheidend — Mandanten vertrauen dir schließlich ihre wichtigsten Angelegenheiten an." },
       ]}
       faqs={[
-        { frage: "Ist die Website berufsrechtlich konform?", antwort: "Ja, wir achten auf die Anforderungen der BRAO und BORA — insbesondere bei Pflichtangaben im Impressum und der Darstellung deiner Kanzlei. DSGVO-Konformität ist ebenfalls Standard." },
+        { frage: "Ist die Website berufsrechtlich konform?", antwort: "Ja, wir achten auf die Anforderungen der BRAO und BORA — insbesondere bei Pflichtangaben im Impressum und der Darstellung deiner Kanzlei. Der vollständige Datenschutz ist bei uns natürlich immer mit dabei." },
         { frage: "Kann ich meine Rechtsgebiete selbst anpassen?", antwort: "Änderungen an Rechtsgebieten, Anwaltsprofilen oder Texten kannst du jederzeit bei uns beauftragen. Das ist im monatlichen Paket (79 €/Monat) inklusive." },
-        { frage: "Wird meine Kanzlei bei Google gefunden?", antwort: "Jede Website wird mit SEO-Grundoptimierung ausgeliefert — mit lokalen Keywords wie 'Rechtsanwalt in [Stadt]', sauberem Code und schnellen Ladezeiten." },
+        { frage: "Wird meine Kanzlei bei Google gefunden?", antwort: "Ja, jede Website wird so gebaut, dass sie bei Google gut sichtbar ist — mit passenden Suchbegriffen wie 'Rechtsanwalt in [Stadt]', sauberer Technik und schnellen Ladezeiten." },
         { frage: "Wie schnell ist die Kanzlei-Website fertig?", antwort: "In der Regel senden wir dir innerhalb von 1–2 Werktagen einen Vorschau-Link zur fertigen Website. Wenn du zufrieden bist, stellen wir die Rechnung — und nach Zahlung geht deine Website sofort live." },
       ]}
     />

@@ -141,7 +141,7 @@ export default function Home() {
                 <span className="text-[#E8564A] text-[13px] font-medium">Erst zahlen, wenn du zufrieden bist</span>
               </div>
               <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl lg:text-[60px] text-[#0F2B3C] leading-[1.1]">Deine professionelle Website ab 799 €. Erst zahlen, wenn du begeistert bist.</h1>
-              <p className="text-[#4A6274] text-lg leading-[1.7] max-w-[540px]">Individuell für dein Unternehmen — responsive, DSGVO-konform, blitzschnell geladen. Kein Risiko: Du zahlst nur, wenn dir die Website gefällt.</p>
+              <p className="text-[#4A6274] text-lg leading-[1.7] max-w-[540px]">Individuell für dein Unternehmen — sieht auf jedem Gerät gut aus, rechtlich sicher und blitzschnell geladen. Kein Risiko: Du zahlst nur, wenn dir die Website gefällt.</p>
               <div className="flex flex-wrap items-center gap-4">
                 <a href="/anfragen" className="bg-[#E8564A] text-white font-bold text-base px-8 py-4 rounded-full btn-primary transition-all duration-200">Website jetzt anfragen</a>
                 <a href="#prozess" className="text-[#0F2B3C] font-semibold text-base px-8 py-4 rounded-full border-2 border-[#0F2B3C] btn-secondary transition-all duration-200">So funktioniert&apos;s</a>
@@ -156,7 +156,7 @@ export default function Home() {
         {/* TRUST BAR */}
         <section className="bg-[#FFF5EB]">
           <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-start md:items-center md:justify-center gap-8 md:gap-20 px-5 lg:px-16 py-12">
-            {[{icon:<ShieldCheck />,t:"Zufriedenheitsgarantie",s:"Erst zahlen, wenn du begeistert bist"},{icon:<Smartphone />,t:"100% Responsive",s:"Perfekt auf jedem Gerät"},{icon:<LockIcon />,t:"DSGVO-konform",s:"Hosting auf deutschen Servern"}].map((item,i)=>(
+            {[{icon:<ShieldCheck />,t:"Zufriedenheitsgarantie",s:"Erst zahlen, wenn du begeistert bist"},{icon:<Smartphone />,t:"Auf allen Geräten perfekt",s:"Handy, Tablet & Desktop"},{icon:<LockIcon />,t:"Rechtlich sicher",s:"Datenschutz & Hosting in Deutschland"}].map((item,i)=>(
               <div key={i} className="flex items-center gap-4">
                 {i > 0 && <span className="hidden md:block w-px h-12 bg-[#E8DFD4] -ml-10 mr-10" />}
                 <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm"><span className="text-[#0F2B3C]">{item.icon}</span></div>
@@ -198,7 +198,7 @@ export default function Home() {
               <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl text-white leading-[1.15]">Was in deiner Website drinsteckt</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full fade-in-stagger">
-              {[{icon:<Smartphone />,t:"Responsive Design",d:"Deine Website sieht auf Smartphone, Tablet und Desktop gleich gut aus — ohne Kompromisse."},{icon:<SearchIcon />,t:"SEO-optimiert",d:"Sauberer Code, schnelle Ladezeiten und die richtigen Meta-Daten — damit Google dich findet."},{icon:<ZapIcon />,t:"Blitzschnelle Ladezeit",d:"Optimierte Performance für ein Erlebnis ohne Wartezeit — wichtig für Besucher und Google."},{icon:<LockIcon />,t:"DSGVO-konform",d:"Impressum, Datenschutz, Cookie-Hinweis — alles auf deutschen Servern gehostet."},{icon:<CodeIcon />,t:"Sauberer Code",d:"Kein aufgeblähtes Baukastensystem — handgeschriebener, wartbarer Code für maximale Qualität."},{icon:<PenLine />,t:"Texte & Bilder änderbar",d:"Du möchtest etwas anpassen? Texte und Bilder kannst du jederzeit ändern lassen — im monatlichen Paket inklusive.",hl:true}].map((f,i)=>(
+              {[{icon:<Smartphone />,t:"Auf allen Geräten perfekt",d:"Deine Website sieht auf Handy, Tablet und Computer gleich gut aus — ohne Kompromisse."},{icon:<SearchIcon />,t:"Bei Google sichtbar",d:"Wir sorgen dafür, dass deine Website bei Google gefunden wird — mit schneller Ladezeit und den richtigen Einstellungen."},{icon:<ZapIcon />,t:"Blitzschnelle Ladezeit",d:"Deine Website lädt sofort — ohne nervige Wartezeit. Gut für Besucher und für Google."},{icon:<LockIcon />,t:"Rechtlich sicher",d:"Impressum, Datenschutz, Cookie-Hinweis — alles dabei. Gehostet auf deutschen Servern."},{icon:<CodeIcon />,t:"Professionell gebaut",d:"Kein Baukastensystem — deine Website wird individuell und sauber programmiert."},{icon:<PenLine />,t:"Texte & Bilder änderbar",d:"Du möchtest etwas anpassen? Texte und Bilder kannst du jederzeit ändern lassen — im monatlichen Paket inklusive.",hl:true}].map((f,i)=>(
                 <div key={i} className={`rounded-2xl p-8 ${f.hl ? "bg-[#E8564A]" : "bg-[#1A3D50]"} card-hover transition-all duration-300`}>
                   <div className={`w-12 h-12 ${f.hl ? "bg-[#D04A3F]" : "bg-[#0F2B3C]"} rounded-xl flex items-center justify-center mb-4`}>
                     <span className="text-white">{f.icon}</span>
@@ -235,7 +235,7 @@ export default function Home() {
                     { label: "Qualität", self: "Template-Look", agency: "Individuell", inklaro: "Individuell" },
                     { label: "Aufwand für dich", self: "Alles selbst", agency: "Viele Meetings", inklaro: "5 Min Formular" },
                     { label: "Fertig in", self: "Tage bis Wochen", agency: "4–8 Wochen", inklaro: "1–2 Tage" },
-                    { label: "DSGVO-konform", self: "Selbst kümmern", agency: "Meist inklusive", inklaro: "Inklusive" },
+                    { label: "Rechtlich sicher", self: "Selbst kümmern", agency: "Meist inklusive", inklaro: "Inklusive" },
                     { label: "Risiko", self: "Eigenes Ergebnis", agency: "Anzahlung nötig", inklaro: "Erst zahlen bei Zufriedenheit" },
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? "bg-[#FFF5EB]" : ""}>
@@ -313,13 +313,13 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
                   <div>
                     <p className="text-[#0F2B3C] text-xs font-bold tracking-[1px] mb-4">IN DER EINMALGEBÜHR</p>
-                    {["Individuelles Design für deine Branche","Responsive für alle Geräte","DSGVO-konform (Impressum, Datenschutz)","SEO-Grundoptimierung","Vorschau-Link vor Zahlung — kein Risiko"].map((f)=>(
+                    {["Individuelles Design für deine Branche","Sieht auf allen Geräten gut aus","Impressum & Datenschutz inklusive","Wird bei Google gefunden","Vorschau-Link vor Zahlung — kein Risiko"].map((f)=>(
                       <div key={f} className="flex items-center gap-3 mb-3"><span className="text-[#E8564A]"><CircleCheck /></span><span className="text-[#0F2B3C] text-[15px]">{f}</span></div>
                     ))}
                   </div>
                   <div>
                     <p className="text-[#0F2B3C] text-xs font-bold tracking-[1px] mb-4">DARUM MONATLICHE KOSTEN</p>
-                    {["Hosting auf deutschen Servern","SSL-Zertifikat & Domain-Verwaltung","Formular-Zustellung & technische Tools","Texte & Bilder ändern lassen","Technische Wartung & Sicherheitsupdates"].map((f)=>(
+                    {["Hosting auf deutschen Servern","Sicherheitszertifikat & Internetadresse","Kontaktformular & technische Tools","Texte & Bilder ändern lassen","Technische Wartung & Sicherheitsupdates"].map((f)=>(
                       <div key={f} className="flex items-center gap-3 mb-3"><span className="text-[#E8564A]"><CircleCheck /></span><span className="text-[#0F2B3C] text-[15px]">{f}</span></div>
                     ))}
                   </div>
@@ -385,10 +385,10 @@ export default function Home() {
                 { q: "Wie lange dauert es, bis meine Website fertig ist?", a: "In der Regel bekommst du innerhalb von 1–2 Tagen einen Vorschau-Link zu deiner fertigen Website. Je nach Umfang der Angaben kann es auch mal einen Tag länger dauern." },
                 { q: "Was passiert, wenn mir die Website nicht gefällt?", a: "Dann zahlst du nichts. Wir passen die Website nach deinem Feedback an oder belassen es — ganz ohne Risiko für dich." },
                 { q: "Gehört mir die Website?", a: "Das Modell funktioniert als Abo: Wir stellen dir Server, Technik und Wartung zur Verfügung. Die Website läuft, solange das Abo aktiv ist. Eine Herausgabe des Quellcodes ist nicht vorgesehen — dafür kümmern wir uns um alles Technische." },
-                { q: "Was passiert, wenn ich kündige?", a: "Du kannst monatlich kündigen. Nach der Kündigung wird die Website zum Ende des Abrechnungszeitraums abgeschaltet. Die Domain kannst du selbstverständlich mitnehmen." },
-                { q: "Wofür sind die monatlichen Kosten?", a: "Die 79 € / Monat decken Hosting auf deutschen Servern, SSL-Zertifikat, technische Tools (z.B. Formular-Zustellung), Wartung, Sicherheitsupdates und die Möglichkeit, Texte und Bilder ändern zu lassen." },
+                { q: "Was passiert, wenn ich kündige?", a: "Du kannst monatlich kündigen. Nach der Kündigung wird die Website zum Ende des Abrechnungszeitraums abgeschaltet. Deine Internetadresse (Domain) kannst du selbstverständlich mitnehmen." },
+                { q: "Wofür sind die monatlichen Kosten?", a: "Die 79 € / Monat decken Hosting auf deutschen Servern, Sicherheitszertifikat, technische Tools (z.B. Kontaktformular), Wartung, Sicherheitsupdates und die Möglichkeit, Texte und Bilder ändern zu lassen." },
                 { q: "Brauche ich technisches Wissen?", a: "Nein, überhaupt nicht. Du füllst ein Formular aus, wir machen den Rest. Wenn du später etwas ändern möchtest, sag uns einfach Bescheid." },
-                { q: "Kann ich meine eigene Domain verwenden?", a: "Ja, selbstverständlich. Wenn du bereits eine Domain hast, verbinden wir diese mit deiner neuen Website. Falls nicht, helfen wir dir bei der Registrierung." },
+                { q: "Kann ich meine eigene Internetadresse verwenden?", a: "Ja, selbstverständlich. Wenn du bereits eine Internetadresse (z.B. www.dein-name.de) hast, verbinden wir diese mit deiner neuen Website. Falls nicht, helfen wir dir bei der Registrierung." },
               ].map((faq, i) => (
                 <details key={i} className="group bg-white rounded-2xl border border-[#E8DFD4] overflow-hidden">
                   <summary className="flex items-center justify-between px-6 py-5 cursor-pointer list-none">

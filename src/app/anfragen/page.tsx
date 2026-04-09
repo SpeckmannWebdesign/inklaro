@@ -222,7 +222,7 @@ export default function AnfragenPage() {
                       <option value="" disabled>Bitte wählen...</option>
                       <option>Mehr Kundenanfragen</option>
                       <option>Professioneller Online-Auftritt</option>
-                      <option>Online gefunden werden (SEO)</option>
+                      <option>Bei Google gefunden werden</option>
                       <option>Terminbuchungen ermöglichen</option>
                       <option>Produkte / Leistungen präsentieren</option>
                     </select>

@@ -21,9 +21,9 @@ export default function Page() {
         { titel: "Branchenspezifische Kompetenz zeigen", text: "Ob Ärzte, Gastronomen oder E-Commerce — zeig, für welche Branchen du besondere Expertise mitbringst. Das spricht gezielt die richtigen Mandanten an." },
       ]}
       faqs={[
-        { frage: "Ist die Website berufsrechtlich konform?", antwort: "Ja, wir achten auf die Anforderungen des Steuerberatungsgesetzes — insbesondere Impressumspflicht und Berufspflichten. DSGVO-Konformität ist bei jeder Website Standard." },
+        { frage: "Ist die Website berufsrechtlich konform?", antwort: "Ja, wir achten auf die Anforderungen des Steuerberatungsgesetzes — insbesondere Impressumspflicht und Berufspflichten. Der vollständige Datenschutz ist bei jeder Website selbstverständlich mit dabei." },
         { frage: "Kann ich meine Leistungen und Teamseite aktualisieren lassen?", antwort: "Ja, Änderungen an Texten, Teamfotos oder Leistungsbeschreibungen kannst du jederzeit bei uns beauftragen. Das ist im monatlichen Paket (79 €/Monat) inklusive." },
-        { frage: "Wird meine Kanzlei bei Google gefunden?", antwort: "Jede Website wird mit SEO-Grundoptimierung ausgeliefert — mit Keywords wie 'Steuerberater in [Stadt]', sauberem Code und schnellen Ladezeiten für bessere Sichtbarkeit." },
+        { frage: "Wird meine Kanzlei bei Google gefunden?", antwort: "Ja, jede Website wird so gebaut, dass sie bei Google gut sichtbar ist — mit passenden Suchbegriffen wie 'Steuerberater in [Stadt]', sauberer Technik und schnellen Ladezeiten." },
         { frage: "Wie schnell ist meine Steuerberater-Website fertig?", antwort: "In der Regel senden wir dir innerhalb von 1–2 Werktagen einen Vorschau-Link zur fertigen Website. Wenn du zufrieden bist, stellen wir die Rechnung — und nach Zahlung geht deine Website sofort live." },
       ]}
     />

@@ -23,7 +23,7 @@ export default function Page() {
       faqs={[
         { frage: "Kann ich neue Projekte regelmäßig hinzufügen?", antwort: "Ja, neue Referenzprojekte mit Fotos und Beschreibungen pflegen wir jederzeit für dich ein. Das ist im monatlichen Paket (79 €/Monat) inklusive." },
         { frage: "Brauche ich professionelle Fotos meiner Arbeiten?", antwort: "Professionelle Fotos sind ideal, aber gute Smartphone-Fotos bei Tageslicht reichen oft aus. Wichtig ist, dass die Qualität deiner Arbeit erkennbar ist." },
-        { frage: "Wird meine Tischlerei bei Google gefunden?", antwort: "Jede Website wird mit SEO-Grundoptimierung ausgeliefert — mit Keywords wie 'Tischlerei in [Stadt]' oder 'Maßmöbel [Region]', sauberem Code und schnellen Ladezeiten." },
+        { frage: "Wird meine Tischlerei bei Google gefunden?", antwort: "Ja, jede Website wird so gebaut, dass sie bei Google gut sichtbar ist — mit passenden Suchbegriffen wie 'Tischlerei in [Stadt]' oder 'Maßmöbel [Region]', sauberer Technik und schnellen Ladezeiten." },
         { frage: "Wie schnell ist meine Tischlerei-Website fertig?", antwort: "In der Regel senden wir dir innerhalb von 1–2 Werktagen einen Vorschau-Link zur fertigen Website. Wenn du zufrieden bist, stellen wir die Rechnung — und nach Zahlung geht deine Website sofort live." },
       ]}
     />

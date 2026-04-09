@@ -20,11 +20,11 @@ const nunito = Nunito({
 export const metadata: Metadata = {
   title: "Inklaro – Professionelle Website zum Festpreis",
   description:
-    "Professionelle Website ab 799 € netto. Responsive, DSGVO-konform, blitzschnell. Erst zahlen, wenn du zufrieden bist.",
+    "Professionelle Website ab 799 € netto. Sieht auf allen Geräten gut aus, rechtlich sicher, blitzschnell. Erst zahlen, wenn du zufrieden bist.",
   openGraph: {
     title: "Inklaro – Professionelle Website zum Festpreis",
     description:
-      "Professionelle Website ab 799 € netto. Responsive, DSGVO-konform, blitzschnell. Erst zahlen, wenn du zufrieden bist.",
+      "Professionelle Website ab 799 € netto. Sieht auf allen Geräten gut aus, rechtlich sicher, blitzschnell. Erst zahlen, wenn du zufrieden bist.",
     type: "website",
     locale: "de_DE",
   },

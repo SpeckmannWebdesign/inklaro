@@ -22,7 +22,7 @@ export default function ImmobilienPage() {
       ]}
       faqs={[
         { frage: "Kann ich Immobilien-Objekte auf der Website zeigen?", antwort: "Ja, wir können einen Bereich für deine aktuellen Objekte einrichten — mit Fotos, Eckdaten und Kontaktmöglichkeit. Neue Objekte pflegen wir im Rahmen des Monatspakets (79 €/Monat) ein." },
-        { frage: "Wird meine Website bei Google für lokale Suchen gefunden?", antwort: "Jede Website wird mit SEO-Grundoptimierung ausgeliefert: sauberer Code, Meta-Daten und lokale Keywords wie 'Immobilienmakler in [Stadt]'. Das verbessert deine Sichtbarkeit deutlich." },
+        { frage: "Wird meine Website bei Google für lokale Suchen gefunden?", antwort: "Ja, jede Website wird so gebaut, dass sie bei Google gut gefunden wird — mit den richtigen technischen Einstellungen, passenden Suchbegriffen wie 'Immobilienmakler in [Stadt]' und schnellen Ladezeiten. Das verbessert deine Sichtbarkeit deutlich." },
         { frage: "Kann ich ein Kontaktformular für Eigentümer einbinden?", antwort: "Ja, wir erstellen ein Formular speziell für Eigentümer-Anfragen — zum Beispiel für eine kostenlose Immobilienbewertung. So generierst du direkt qualifizierte Kontakte." },
         { frage: "Wie schnell ist meine Immobilien-Website fertig?", antwort: "In der Regel senden wir dir innerhalb von 1–2 Werktagen einen Vorschau-Link zur fertigen Website. Wenn du zufrieden bist, stellen wir die Rechnung — und nach Zahlung geht deine Website sofort live." },
       ]}
