@@ -156,7 +156,7 @@ export default function BranchenShowcase({ branche, beschreibung, screenshot, ur
             <div className="max-w-[1440px] mx-auto px-5 lg:px-16 py-24 fade-in">
               <div className="text-center mb-16">
                 <p className="text-[#E8564A] text-xs font-semibold tracking-[2px] mb-4">DAS MACHT DEN UNTERSCHIED</p>
-                <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-[40px] text-[#0F2B3C] leading-[1.2]">Was Ihre {branche}-Website können muss</h2>
+                <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-[40px] text-[#0F2B3C] leading-[1.2]">Was deine {branche}-Website können muss</h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[900px] mx-auto">
                 {vorteile.map((v, i) => (
@@ -196,13 +196,13 @@ export default function BranchenShowcase({ branche, beschreibung, screenshot, ur
         {/* CTA */}
         <section className="bg-[#0F2B3C]">
           <div className="max-w-[1440px] mx-auto px-5 lg:px-16 py-20 flex flex-col items-center gap-8 text-center fade-in">
-            <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl text-white leading-[1.15]">Gefällt Ihnen diese Website?</h2>
-            <p className="text-[#8DA4B4] text-lg max-w-[600px] leading-[1.6]">Genau so — oder noch besser angepasst an Ihr Unternehmen. Ab 799 € netto, und Sie zahlen erst, wenn Sie zufrieden sind.</p>
+            <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl text-white leading-[1.15]">Gefällt dir diese Website?</h2>
+            <p className="text-[#8DA4B4] text-lg max-w-[600px] leading-[1.6]">Genau so — oder noch besser angepasst an dein Unternehmen. Ab 799 € netto, und du zahlst erst, wenn du zufrieden bist.</p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/anfragen" className="bg-[#E8564A] text-white font-bold text-[17px] px-10 py-[18px] rounded-full hover:shadow-lg hover:shadow-[#E8564A]/30 hover:-translate-y-0.5 transition-all duration-200">So eine Website möchte ich auch</Link>
               <Link href="/" className="text-white font-semibold text-[17px] px-10 py-[18px] rounded-full border border-white/25 hover:bg-white/5 transition-all duration-200">Weitere Beispiele ansehen</Link>
             </div>
-            <div className="flex items-center gap-2"><span className="text-[#E8564A]"><ShieldCheck /></span><span className="text-[#8DA4B4] text-sm">Kostenlos anfragen — Zahlung erst nach Ihrer Zufriedenheit</span></div>
+            <div className="flex items-center gap-2"><span className="text-[#E8564A]"><ShieldCheck /></span><span className="text-[#8DA4B4] text-sm">Kostenlos anfragen — Zahlung erst nach deiner Zufriedenheit</span></div>
           </div>
         </section>
 

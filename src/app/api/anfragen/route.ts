@@ -101,7 +101,7 @@ export async function POST(request: Request) {
       {
         erfolg: false,
         fehler:
-          "Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+          "Beim Senden ist ein Fehler aufgetreten. Bitte versuche es erneut.",
       },
       { status: 500 }
     );

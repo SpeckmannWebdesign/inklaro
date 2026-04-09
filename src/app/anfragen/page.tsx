@@ -12,7 +12,7 @@ const ShieldCheck = () => (
 );
 
 const steps = [
-  { num: "1", title: "Ihr Unternehmen" },
+  { num: "1", title: "Dein Unternehmen" },
   { num: "2", title: "Zielgruppe & Ziele" },
   { num: "3", title: "Design & Branding" },
   { num: "4", title: "Inhalte" },
@@ -39,7 +39,6 @@ interface FormData {
   stilPraeferenz: string;
   // Schritt 4
   seiten: string[];
-  texteVorhanden: string;
   sonstiges: string;
   // Schritt 5
   ansprechpartner: string;
@@ -67,7 +66,6 @@ export default function AnfragenPage() {
     vorbilder: "",
     stilPraeferenz: "",
     seiten: [],
-    texteVorhanden: "",
     sonstiges: "",
     ansprechpartner: "",
     email: "",
@@ -126,7 +124,7 @@ export default function AnfragenPage() {
       if (!res.ok || !daten.erfolg) {
         setFehler(
           daten.fehler ||
-            "Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
+            "Beim Senden ist ein Fehler aufgetreten. Bitte versuche es erneut."
         );
         return;
       }
@@ -134,7 +132,7 @@ export default function AnfragenPage() {
       router.push("/danke");
     } catch {
       setFehler(
-        "Verbindungsfehler — bitte prüfen Sie Ihre Internetverbindung und versuchen Sie es erneut."
+        "Verbindungsfehler — bitte prüfe deine Internetverbindung und versuche es erneut."
       );
     } finally {
       setSenden(false);
@@ -149,8 +147,8 @@ export default function AnfragenPage() {
         <div className="max-w-[1440px] mx-auto px-5 lg:px-16 py-16">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl text-[#0F2B3C] leading-[1.15] mb-4">Erzählen Sie uns von Ihrem Unternehmen</h1>
-            <p className="text-[#4A6274] text-lg max-w-[600px] mx-auto leading-[1.6]">Je mehr wir wissen, desto besser wird Ihre Website. Wir melden uns in 1–2 Tagen mit Ihrer fertigen Vorschau.</p>
+            <h1 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl text-[#0F2B3C] leading-[1.15] mb-4">Erzähl uns von deinem Unternehmen</h1>
+            <p className="text-[#4A6274] text-lg max-w-[600px] mx-auto leading-[1.6]">Je mehr wir wissen, desto besser wird deine Website. Wir melden uns in 1–2 Tagen mit deiner fertigen Vorschau.</p>
           </div>
 
           <div className="max-w-[760px] mx-auto">
@@ -176,8 +174,8 @@ export default function AnfragenPage() {
             <form onSubmit={absenden} className="bg-white rounded-2xl border border-[#E8DFD4] shadow-sm p-8 md:p-12">
               {/* Step 1: Unternehmen */}
               <div className={step === 0 ? "flex flex-col gap-6" : "hidden"}>
-                <h2 className="font-[family-name:var(--font-display)] text-2xl text-[#0F2B3C] mb-2">Über Ihr Unternehmen</h2>
-                <p className="text-[#4A6274] text-sm -mt-4 mb-2">Erzählen Sie uns die Basics — damit wir Ihre Branche und Ihr Angebot verstehen.</p>
+                <h2 className="font-[family-name:var(--font-display)] text-2xl text-[#0F2B3C] mb-2">Über dein Unternehmen</h2>
+                <p className="text-[#4A6274] text-sm -mt-4 mb-2">Erzähl uns die Basics — damit wir deine Branche und dein Angebot verstehen.</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-2">
                     <label className="text-[#4A6274] text-xs font-semibold">Firmenname *</label>
@@ -189,8 +187,8 @@ export default function AnfragenPage() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-[#4A6274] text-xs font-semibold">Was macht Ihr Unternehmen? *</label>
-                  <textarea rows={3} placeholder="Beschreiben Sie kurz, was Sie anbieten und was Sie von der Konkurrenz unterscheidet..." required value={form.beschreibung} onChange={(e) => set("beschreibung", e.target.value)} className={`${inputCls} resize-none`} />
+                  <label className="text-[#4A6274] text-xs font-semibold">Was macht dein Unternehmen? *</label>
+                  <textarea rows={3} placeholder="Beschreibe kurz, was du anbietest und was dich von der Konkurrenz unterscheidet..." required value={form.beschreibung} onChange={(e) => set("beschreibung", e.target.value)} className={`${inputCls} resize-none`} />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-2">
@@ -199,7 +197,7 @@ export default function AnfragenPage() {
                   </div>
                   <div className="flex flex-col gap-2">
                     <label className="text-[#4A6274] text-xs font-semibold">Website-URL (falls vorhanden)</label>
-                    <input type="text" placeholder="www.ihre-aktuelle-seite.de" value={form.website} onChange={(e) => set("website", e.target.value)} className={inputCls} />
+                    <input type="text" placeholder="www.deine-aktuelle-seite.de" value={form.website} onChange={(e) => set("website", e.target.value)} className={inputCls} />
                   </div>
                 </div>
               </div>
@@ -207,7 +205,7 @@ export default function AnfragenPage() {
               {/* Step 2: Zielgruppe */}
               <div className={step === 1 ? "flex flex-col gap-6" : "hidden"}>
                 <h2 className="font-[family-name:var(--font-display)] text-2xl text-[#0F2B3C] mb-2">Zielgruppe & Ziele</h2>
-                <p className="text-[#4A6274] text-sm -mt-4 mb-2">Wen wollen Sie erreichen und was soll Ihre Website bewirken?</p>
+                <p className="text-[#4A6274] text-sm -mt-4 mb-2">Wen willst du erreichen und was soll deine Website bewirken?</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-2">
                     <label className="text-[#4A6274] text-xs font-semibold">Primäre Zielgruppe *</label>
@@ -231,7 +229,7 @@ export default function AnfragenPage() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-[#4A6274] text-xs font-semibold">Beschreiben Sie Ihre Zielgruppe genauer (optional)</label>
+                  <label className="text-[#4A6274] text-xs font-semibold">Beschreibe deine Zielgruppe genauer (optional)</label>
                   <textarea rows={2} placeholder="z.B. Hausbesitzer 30–60 Jahre im Raum Oldenburg, die eine Heizungssanierung planen..." value={form.zielgruppeBeschreibung} onChange={(e) => set("zielgruppeBeschreibung", e.target.value)} className={`${inputCls} resize-none`} />
                 </div>
               </div>
@@ -241,7 +239,7 @@ export default function AnfragenPage() {
                 <h2 className="font-[family-name:var(--font-display)] text-2xl text-[#0F2B3C] mb-2">Design & Branding</h2>
                 <p className="text-[#4A6274] text-sm -mt-4 mb-2">Haben Sie schon ein Corporate Design? Falls nicht, kein Problem — wir kümmern uns darum.</p>
                 <div className="flex flex-col gap-2">
-                  <span className="text-[#4A6274] text-xs font-semibold">Haben Sie ein Logo? *</span>
+                  <span className="text-[#4A6274] text-xs font-semibold">Hast du ein Logo? *</span>
                   <div className="flex gap-3">
                     {["Ja", "Nein"].map((opt) => (
                       <label key={opt} className="flex-1 cursor-pointer">
@@ -252,11 +250,11 @@ export default function AnfragenPage() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-[#4A6274] text-xs font-semibold">Haben Sie Markenfarben? (optional)</label>
+                  <label className="text-[#4A6274] text-xs font-semibold">Hast du Markenfarben? (optional)</label>
                   <input type="text" placeholder="z.B. Dunkelblau + Gold, oder #1B3D70" value={form.farben} onChange={(e) => set("farben", e.target.value)} className={inputCls} />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <span className="text-[#4A6274] text-xs font-semibold">Welcher Stil gefällt Ihnen? (optional)</span>
+                  <span className="text-[#4A6274] text-xs font-semibold">Welcher Stil gefällt dir? (optional)</span>
                   <div className="flex flex-wrap gap-2">
                     {[
                       "Modern & Klar",
@@ -274,7 +272,7 @@ export default function AnfragenPage() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-[#4A6274] text-xs font-semibold">Gibt es Websites, die Ihnen gefallen? (optional)</label>
+                  <label className="text-[#4A6274] text-xs font-semibold">Gibt es Websites, die dir gefallen? (optional)</label>
                   <textarea rows={2} placeholder="z.B. www.beispiel-firma.de — gefällt mir der Stil, die Farben, das Layout..." value={form.vorbilder} onChange={(e) => set("vorbilder", e.target.value)} className={`${inputCls} resize-none`} />
                 </div>
               </div>
@@ -282,25 +280,14 @@ export default function AnfragenPage() {
               {/* Step 4: Inhalte */}
               <div className={step === 3 ? "flex flex-col gap-6" : "hidden"}>
                 <h2 className="font-[family-name:var(--font-display)] text-2xl text-[#0F2B3C] mb-2">Inhalte & Seiten</h2>
-                <p className="text-[#4A6274] text-sm -mt-4 mb-2">Was soll alles auf Ihrer Website zu finden sein?</p>
+                <p className="text-[#4A6274] text-sm -mt-4 mb-2">Was soll alles auf deiner Website zu finden sein?</p>
                 <div className="flex flex-col gap-2">
-                  <span className="text-[#4A6274] text-xs font-semibold">Welche Seiten brauchen Sie? (Mehrfachauswahl)</span>
+                  <span className="text-[#4A6274] text-xs font-semibold">Welche Seiten brauchst du? (Mehrfachauswahl)</span>
                   <div className="flex flex-wrap gap-2">
                     {["Startseite", "Leistungen", "Über uns", "Kontakt", "Team", "Referenzen", "FAQ"].map((page) => (
                       <label key={page} className="cursor-pointer">
                         <input type="checkbox" value={page} checked={form.seiten.includes(page)} onChange={() => toggleSeite(page)} className="sr-only peer" />
                         <div className="px-4 py-2.5 rounded-full bg-[#FFF5EB] border border-[#E8DFD4] text-[#4A6274] text-[13px] font-medium peer-checked:border-[#E8564A] peer-checked:border-2 peer-checked:text-[#E8564A] peer-checked:font-semibold transition">{page}</div>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label className="text-[#4A6274] text-xs font-semibold">Haben Sie schon Texte oder Inhalte vorbereitet?</label>
-                  <div className="flex gap-3">
-                    {["Ja, teilweise", "Nein, bitte erstellen", "Ich liefere alles"].map((opt) => (
-                      <label key={opt} className="flex-1 cursor-pointer">
-                        <input type="radio" name="texte" value={opt} checked={form.texteVorhanden === opt} onChange={() => set("texteVorhanden", opt)} className="sr-only peer" />
-                        <div className="text-center py-3 rounded-full bg-[#FFF5EB] border border-[#E8DFD4] text-[#4A6274] text-[13px] font-medium peer-checked:border-[#E8564A] peer-checked:border-2 peer-checked:text-[#E8564A] peer-checked:font-semibold transition">{opt}</div>
                       </label>
                     ))}
                   </div>
@@ -313,8 +300,8 @@ export default function AnfragenPage() {
 
               {/* Step 5: Kontakt */}
               <div className={step === 4 ? "flex flex-col gap-6" : "hidden"}>
-                <h2 className="font-[family-name:var(--font-display)] text-2xl text-[#0F2B3C] mb-2">Ihre Kontaktdaten</h2>
-                <p className="text-[#4A6274] text-sm -mt-4 mb-2">Fast geschafft! Wie können wir Sie erreichen?</p>
+                <h2 className="font-[family-name:var(--font-display)] text-2xl text-[#0F2B3C] mb-2">Deine Kontaktdaten</h2>
+                <p className="text-[#4A6274] text-sm -mt-4 mb-2">Fast geschafft! Wie können wir dich erreichen?</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-2">
                     <label className="text-[#4A6274] text-xs font-semibold">Ansprechpartner *</label>
@@ -322,7 +309,7 @@ export default function AnfragenPage() {
                   </div>
                   <div className="flex flex-col gap-2">
                     <label className="text-[#4A6274] text-xs font-semibold">E-Mail-Adresse *</label>
-                    <input type="email" placeholder="ihre@email.de" required value={form.email} onChange={(e) => set("email", e.target.value)} className={inputCls} />
+                    <input type="email" placeholder="deine@email.de" required value={form.email} onChange={(e) => set("email", e.target.value)} className={inputCls} />
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -331,7 +318,7 @@ export default function AnfragenPage() {
                 </div>
                 <div className="bg-[#FFF5EB] rounded-xl p-4 border border-[#E8DFD4]">
                   <p className="text-[#4A6274] text-sm leading-[1.6]">
-                    <span className="font-semibold text-[#0F2B3C]">Was passiert als Nächstes?</span> Wir schauen uns Ihre Angaben an und erstellen innerhalb von 1–2 Tagen eine fertige Website-Vorschau. Dann melden wir uns bei Ihnen für eine persönliche Live-Vorstellung. Sie zahlen erst, wenn Sie begeistert sind.
+                    <span className="font-semibold text-[#0F2B3C]">Was passiert als Nächstes?</span> Wir schauen uns deine Angaben an und erstellen innerhalb von 1–2 Tagen eine fertige Website-Vorschau. Du bekommst einen Vorschau-Link und kannst dir alles in Ruhe anschauen. Erst wenn du zufrieden bist, wird die Rechnung gestellt.
                   </p>
                 </div>
 

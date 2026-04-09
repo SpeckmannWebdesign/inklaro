@@ -39,7 +39,7 @@ export default function Datenschutz() {
             <section>
               <h2 className="font-semibold text-[#0F2B3C] text-lg mb-2">3. Zahlungsabwicklung</h2>
               <p>
-                Zahlungen werden über Stripe Inc. abgewickelt. Stripe verarbeitet Ihre
+                Zahlungen werden über Stripe Inc. abgewickelt. Stripe verarbeitet deine
                 Zahlungsdaten gemäß eigener Datenschutzrichtlinie. Wir speichern keine
                 vollständigen Kreditkartendaten.
               </p>
@@ -48,16 +48,16 @@ export default function Datenschutz() {
             <section>
               <h2 className="font-semibold text-[#0F2B3C] text-lg mb-2">4. E-Mail-Versand</h2>
               <p>
-                Transaktionale E-Mails werden über Resend versendet. Ihre E-Mail-Adresse
+                Transaktionale E-Mails werden über Resend versendet. Deine E-Mail-Adresse
                 wird ausschließlich für auftragsrelevante Kommunikation genutzt.
               </p>
             </section>
 
             <section>
-              <h2 className="font-semibold text-[#0F2B3C] text-lg mb-2">5. Ihre Rechte</h2>
+              <h2 className="font-semibold text-[#0F2B3C] text-lg mb-2">5. Deine Rechte</h2>
               <p>
-                Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung
-                der Verarbeitung Ihrer personenbezogenen Daten. Wenden Sie sich dazu an:
+                Du hast das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung
+                der Verarbeitung deiner personenbezogenen Daten. Wende dich dazu an:
                 info@inklaro.de
               </p>
             </section>
@@ -74,7 +74,7 @@ export default function Datenschutz() {
             <section>
               <h2 className="font-semibold text-[#0F2B3C] text-lg mb-2">7. Beschwerderecht</h2>
               <p>
-                Sie haben das Recht, sich bei einer Datenschutzbehörde zu beschweren.
+                Du hast das Recht, dich bei einer Datenschutzbehörde zu beschweren.
                 Zuständige Behörde: Landesbeauftragter für Datenschutz Niedersachsen.
               </p>
             </section>

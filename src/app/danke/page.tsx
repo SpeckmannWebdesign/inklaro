@@ -5,29 +5,29 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Vielen Dank – Inklaro",
-  description: "Ihre Anfrage ist eingegangen. Wir erstellen jetzt Ihre Website-Vorschau.",
+  description: "Deine Anfrage ist eingegangen. Wir erstellen jetzt deine Website-Vorschau.",
 };
 
 const schritte = [
   {
     nummer: "1",
     titel: "Anfrage prüfen",
-    text: "Anhand Ihrer Angaben prüfen wir jetzt, ob wir die perfekte Website für Sie umsetzen können.",
+    text: "Anhand deiner Angaben prüfen wir jetzt, ob wir die perfekte Website für dich umsetzen können.",
   },
   {
     nummer: "2",
     titel: "Vorschau erstellen",
-    text: "Ihre Website-Vorschau ist in 1–2 Werktagen fertig.",
+    text: "Deine Website-Vorschau ist in 1–2 Werktagen fertig.",
   },
   {
     nummer: "3",
-    titel: "Persönliche Vorstellung",
-    text: "Dann vereinbaren wir einen persönlichen Termin, um Ihnen die Website live zu zeigen.",
+    titel: "Vorschau-Link erhalten",
+    text: "Du bekommst einen Vorschau-Link, über den du dir die komplette Website in Ruhe anschauen kannst.",
   },
   {
     nummer: "4",
     titel: "Erst bei Zufriedenheit zahlen",
-    text: "Erst wenn Sie wirklich zufrieden sind, zahlen Sie. Vorher können Sie jederzeit ohne Kosten abbrechen.",
+    text: "Erst wenn du wirklich zufrieden bist, wird die Rechnung gestellt — und deine Website geht live.",
   },
 ];
 
@@ -50,10 +50,10 @@ export default function DankePage() {
 
           {/* Überschrift */}
           <h1 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl text-[#0F2B3C] leading-[1.15] text-center mb-4">
-            Vielen Dank für Ihre Anfrage!
+            Vielen Dank für deine Anfrage!
           </h1>
           <p className="text-[#4A6274] text-lg text-center leading-[1.6] mb-12 max-w-[520px] mx-auto">
-            Wir haben Ihre Angaben erhalten und legen direkt los. So geht es jetzt weiter:
+            Wir haben deine Angaben erhalten und legen direkt los. So geht es jetzt weiter:
           </p>
 
           {/* Schritte */}

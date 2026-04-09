@@ -138,10 +138,10 @@ export default function Home() {
             <div className="flex-1 flex flex-col gap-8 max-w-[640px]">
               <div className="inline-flex items-center gap-2 bg-[#FFF5EB] border border-[#E8DFD4] rounded-full px-4 py-2 w-fit">
                 <span className="w-2 h-2 bg-[#E8564A] rounded-full" />
-                <span className="text-[#E8564A] text-[13px] font-medium">Erst zahlen, wenn Sie zufrieden sind</span>
+                <span className="text-[#E8564A] text-[13px] font-medium">Erst zahlen, wenn du zufrieden bist</span>
               </div>
-              <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl lg:text-[60px] text-[#0F2B3C] leading-[1.1]">Ihre professionelle Website ab 799 €. Erst zahlen, wenn Sie begeistert sind.</h1>
-              <p className="text-[#4A6274] text-lg leading-[1.7] max-w-[540px]">Individuell für Ihr Unternehmen — responsive, DSGVO-konform, blitzschnell geladen. Kein Risiko: Sie zahlen nur, wenn die Website Ihnen gefällt.</p>
+              <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl lg:text-[60px] text-[#0F2B3C] leading-[1.1]">Deine professionelle Website ab 799 €. Erst zahlen, wenn du begeistert bist.</h1>
+              <p className="text-[#4A6274] text-lg leading-[1.7] max-w-[540px]">Individuell für dein Unternehmen — responsive, DSGVO-konform, blitzschnell geladen. Kein Risiko: Du zahlst nur, wenn dir die Website gefällt.</p>
               <div className="flex flex-wrap items-center gap-4">
                 <a href="/anfragen" className="bg-[#E8564A] text-white font-bold text-base px-8 py-4 rounded-full btn-primary transition-all duration-200">Website jetzt anfragen</a>
                 <a href="#prozess" className="text-[#0F2B3C] font-semibold text-base px-8 py-4 rounded-full border-2 border-[#0F2B3C] btn-secondary transition-all duration-200">So funktioniert&apos;s</a>
@@ -156,7 +156,7 @@ export default function Home() {
         {/* TRUST BAR */}
         <section className="bg-[#FFF5EB]">
           <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-start md:items-center md:justify-center gap-8 md:gap-20 px-5 lg:px-16 py-12">
-            {[{icon:<ShieldCheck />,t:"Zufriedenheitsgarantie",s:"Erst zahlen, wenn Sie begeistert sind"},{icon:<Smartphone />,t:"100% Responsive",s:"Perfekt auf jedem Gerät"},{icon:<LockIcon />,t:"DSGVO-konform",s:"Hosting auf deutschen Servern"}].map((item,i)=>(
+            {[{icon:<ShieldCheck />,t:"Zufriedenheitsgarantie",s:"Erst zahlen, wenn du begeistert bist"},{icon:<Smartphone />,t:"100% Responsive",s:"Perfekt auf jedem Gerät"},{icon:<LockIcon />,t:"DSGVO-konform",s:"Hosting auf deutschen Servern"}].map((item,i)=>(
               <div key={i} className="flex items-center gap-4">
                 {i > 0 && <span className="hidden md:block w-px h-12 bg-[#E8DFD4] -ml-10 mr-10" />}
                 <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm"><span className="text-[#0F2B3C]">{item.icon}</span></div>
@@ -174,11 +174,11 @@ export default function Home() {
           <div className="max-w-[1440px] mx-auto px-5 lg:px-16 py-24 flex flex-col items-center gap-16">
             <div className="text-center fade-in">
               <p className="text-[#E8564A] text-xs font-semibold tracking-[2px] mb-4">SO EINFACH GEHT&apos;S</p>
-              <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl text-[#0F2B3C] leading-[1.15]">Ihre Website in 3 Schritten</h2>
+              <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl text-[#0F2B3C] leading-[1.15]">Deine Website in 3 Schritten</h2>
               <p className="text-[#4A6274] text-lg mt-4 max-w-[500px] mx-auto leading-[1.6]">Kein technisches Wissen nötig. Einfach Angaben machen — wir erledigen den Rest.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full fade-in-stagger">
-              {[{num:"01",icon:<FileText />,title:"Formular ausfüllen",desc:"Beschreiben Sie Ihr Unternehmen, Ihre Branche und Ihre Ziele. In 5 Minuten haben wir alles, was wir brauchen.",highlight:false},{num:"02",icon:<CodeIcon />,title:"Website wird erstellt",desc:"Im Hintergrund entsteht Ihre komplette Website — Design, Texte, Technik. Alles aus einer Hand, ohne Ihr Zutun.",highlight:true},{num:"03",icon:<VideoIcon />,title:"Ansehen & Entscheiden",desc:"In 1–2 Tagen erhalten Sie einen Link zu Ihrer fertigen Website. Gefällt sie Ihnen? Dann geht sie live. Wenn nicht — kein Problem.",highlight:false,badge:true}].map((step)=>(
+              {[{num:"01",icon:<FileText />,title:"Formular ausfüllen",desc:"Beschreibe dein Unternehmen, deine Branche und deine Ziele. In 5 Minuten haben wir alles, was wir brauchen.",highlight:false},{num:"02",icon:<CodeIcon />,title:"Website wird erstellt",desc:"Im Hintergrund entsteht deine komplette Website — Design, Texte, Technik. Alles aus einer Hand, ohne dein Zutun.",highlight:true},{num:"03",icon:<VideoIcon />,title:"Ansehen & Entscheiden",desc:"In 1–2 Tagen bekommst du einen Vorschau-Link zu deiner fertigen Website. Gefällt sie dir? Dann geht sie live. Wenn nicht — kein Problem.",highlight:false,badge:true}].map((step)=>(
                 <div key={step.num} className={`rounded-2xl p-10 ${step.highlight ? "bg-[#0F2B3C]" : "bg-[#FFF5EB]"} card-hover transition-all duration-300`}>
                   <div className={`font-[family-name:var(--font-display)] text-5xl ${step.highlight ? "text-[#8DA4B4]" : "text-[#C7AE8E]"} mb-6`}>{step.num}</div>
                   <h3 className={`font-[family-name:var(--font-display)] text-[22px] ${step.highlight ? "text-white" : "text-[#0F2B3C]"} mb-4`}>{step.title}</h3>
@@ -195,10 +195,10 @@ export default function Home() {
           <div className="max-w-[1440px] mx-auto px-5 lg:px-16 py-24 flex flex-col items-center gap-16">
             <div className="text-center fade-in">
               <p className="text-[#E8564A] text-xs font-semibold tracking-[2px] mb-4">ALLES INKLUSIVE</p>
-              <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl text-white leading-[1.15]">Was in Ihrer Website drinsteckt</h2>
+              <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl text-white leading-[1.15]">Was in deiner Website drinsteckt</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full fade-in-stagger">
-              {[{icon:<Smartphone />,t:"Responsive Design",d:"Ihre Website sieht auf Smartphone, Tablet und Desktop gleich gut aus — ohne Kompromisse."},{icon:<SearchIcon />,t:"SEO-optimiert",d:"Sauberer Code, schnelle Ladezeiten und die richtigen Meta-Daten — damit Google Sie findet."},{icon:<ZapIcon />,t:"Blitzschnelle Ladezeit",d:"Optimierte Performance für ein Erlebnis ohne Wartezeit — wichtig für Besucher und Google."},{icon:<LockIcon />,t:"DSGVO-konform",d:"Impressum, Datenschutz, Cookie-Hinweis — alles auf deutschen Servern gehostet."},{icon:<CodeIcon />,t:"Sauberer Code",d:"Kein aufgeblähtes Baukastensystem — handgeschriebener, wartbarer Code für maximale Qualität."},{icon:<PenLine />,t:"Texte & Bilder änderbar",d:"Sie möchten etwas anpassen? Texte und Bilder können Sie jederzeit ändern lassen — im monatlichen Paket inklusive.",hl:true}].map((f,i)=>(
+              {[{icon:<Smartphone />,t:"Responsive Design",d:"Deine Website sieht auf Smartphone, Tablet und Desktop gleich gut aus — ohne Kompromisse."},{icon:<SearchIcon />,t:"SEO-optimiert",d:"Sauberer Code, schnelle Ladezeiten und die richtigen Meta-Daten — damit Google dich findet."},{icon:<ZapIcon />,t:"Blitzschnelle Ladezeit",d:"Optimierte Performance für ein Erlebnis ohne Wartezeit — wichtig für Besucher und Google."},{icon:<LockIcon />,t:"DSGVO-konform",d:"Impressum, Datenschutz, Cookie-Hinweis — alles auf deutschen Servern gehostet."},{icon:<CodeIcon />,t:"Sauberer Code",d:"Kein aufgeblähtes Baukastensystem — handgeschriebener, wartbarer Code für maximale Qualität."},{icon:<PenLine />,t:"Texte & Bilder änderbar",d:"Du möchtest etwas anpassen? Texte und Bilder kannst du jederzeit ändern lassen — im monatlichen Paket inklusive.",hl:true}].map((f,i)=>(
                 <div key={i} className={`rounded-2xl p-8 ${f.hl ? "bg-[#E8564A]" : "bg-[#1A3D50]"} card-hover transition-all duration-300`}>
                   <div className={`w-12 h-12 ${f.hl ? "bg-[#D04A3F]" : "bg-[#0F2B3C]"} rounded-xl flex items-center justify-center mb-4`}>
                     <span className="text-white">{f.icon}</span>
@@ -233,7 +233,7 @@ export default function Home() {
                     { label: "Einmalige Kosten", self: "0 €", agency: "5.000–15.000 €", inklaro: "799 €" },
                     { label: "Monatliche Kosten", self: "15–30 €/Monat", agency: "0–200 €/Monat", inklaro: "79 €/Monat" },
                     { label: "Qualität", self: "Template-Look", agency: "Individuell", inklaro: "Individuell" },
-                    { label: "Aufwand für Sie", self: "Alles selbst", agency: "Viele Meetings", inklaro: "5 Min Formular" },
+                    { label: "Aufwand für dich", self: "Alles selbst", agency: "Viele Meetings", inklaro: "5 Min Formular" },
                     { label: "Fertig in", self: "Tage bis Wochen", agency: "4–8 Wochen", inklaro: "1–2 Tage" },
                     { label: "DSGVO-konform", self: "Selbst kümmern", agency: "Meist inklusive", inklaro: "Inklusive" },
                     { label: "Risiko", self: "Eigenes Ergebnis", agency: "Anzahlung nötig", inklaro: "Erst zahlen bei Zufriedenheit" },
@@ -257,8 +257,8 @@ export default function Home() {
           <div className="max-w-[1440px] mx-auto px-5 lg:px-16 py-24 flex flex-col items-center gap-16">
             <div className="text-center fade-in">
               <p className="text-[#E8564A] text-xs font-semibold tracking-[2px] mb-4">BRANCHEN-BEISPIELE</p>
-              <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl text-[#0F2B3C] leading-[1.15]">Eine Website für Ihre Branche</h2>
-              <p className="text-[#4A6274] text-lg mt-4 max-w-[620px] mx-auto leading-[1.6]">Sehen Sie sich echte Beispiel-Websites an — genau so könnte Ihre aussehen.</p>
+              <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl text-[#0F2B3C] leading-[1.15]">Eine Website für deine Branche</h2>
+              <p className="text-[#4A6274] text-lg mt-4 max-w-[620px] mx-auto leading-[1.6]">Schau dir echte Beispiel-Websites an — genau so könnte deine aussehen.</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full fade-in-stagger">
               {branchen.map((b)=>(
@@ -294,7 +294,7 @@ export default function Home() {
                       <span className="font-[family-name:var(--font-display)] text-[56px] text-[#0F2B3C] leading-none">799 €</span>
                       <span className="text-[#8DA4B4] text-base pb-1">netto</span>
                     </div>
-                    <p className="text-[#4A6274] text-sm mt-1">Einmalige Erstellung Ihrer Website</p>
+                    <p className="text-[#4A6274] text-sm mt-1">Einmalige Erstellung deiner Website</p>
                   </div>
                   <div className="hidden md:block text-[#E8DFD4] text-3xl font-light pb-3">+</div>
                   <div>
@@ -306,14 +306,14 @@ export default function Home() {
                     <p className="text-[#E8564A] text-sm font-medium mt-1">Monatlich kündbar — ohne Mindestlaufzeit</p>
                   </div>
                 </div>
-                <p className="text-[#4A6274] text-[15px] leading-[1.6]">Sie zahlen die Einmalgebühr erst, wenn Sie mit der Website zufrieden sind. Die monatlichen Kosten decken Server, Hosting, technische Tools (z.B. Formular-Zustellung) und laufende Wartung — alles, was Ihre Website am Laufen hält. Monatlich kündbar.</p>
+                <p className="text-[#4A6274] text-[15px] leading-[1.6]">Du zahlst die Einmalgebühr erst, wenn du mit der Website zufrieden bist. Die monatlichen Kosten decken Server, Hosting, technische Tools (z.B. Formular-Zustellung) und laufende Wartung — alles, was deine Website am Laufen hält. Monatlich kündbar.</p>
               </div>
               <div className="h-px bg-[#E8DFD4]" />
               <div className="p-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
                   <div>
                     <p className="text-[#0F2B3C] text-xs font-bold tracking-[1px] mb-4">IN DER EINMALGEBÜHR</p>
-                    {["Individuelles Design für Ihre Branche","Responsive für alle Geräte","DSGVO-konform (Impressum, Datenschutz)","SEO-Grundoptimierung","Vorschau-Link vor Zahlung — kein Risiko"].map((f)=>(
+                    {["Individuelles Design für deine Branche","Responsive für alle Geräte","DSGVO-konform (Impressum, Datenschutz)","SEO-Grundoptimierung","Vorschau-Link vor Zahlung — kein Risiko"].map((f)=>(
                       <div key={f} className="flex items-center gap-3 mb-3"><span className="text-[#E8564A]"><CircleCheck /></span><span className="text-[#0F2B3C] text-[15px]">{f}</span></div>
                     ))}
                   </div>
@@ -327,9 +327,9 @@ export default function Home() {
               </div>
               <div className="h-px bg-[#E8DFD4]" />
               <div className="p-10">
-                <p className="text-[#8DA4B4] text-[13px] leading-[1.6] mb-6"><span className="text-[#E8564A] font-semibold">Gut zu wissen:</span> Das Modell funktioniert als Abo — wir stellen Ihnen Server, Tools und Technik zur Verfügung und halten alles am Laufen. Eine Herausgabe der Website ist nicht vorgesehen. Dafür kümmern wir uns um alles, damit Sie sich auf Ihr Geschäft konzentrieren können.</p>
+                <p className="text-[#8DA4B4] text-[13px] leading-[1.6] mb-6"><span className="text-[#E8564A] font-semibold">Gut zu wissen:</span> Das Modell funktioniert als Abo — wir stellen dir Server, Tools und Technik zur Verfügung und halten alles am Laufen. Eine Herausgabe der Website ist nicht vorgesehen. Dafür kümmern wir uns um alles, damit du dich auf dein Geschäft konzentrieren kannst.</p>
                 <a href="/anfragen" className="block w-full text-center bg-[#E8564A] text-white font-bold text-base py-4 rounded-full btn-primary transition-all duration-200">Jetzt kostenlos anfragen</a>
-                <div className="flex items-center justify-center gap-2 mt-4"><span className="text-[#E8564A]"><ShieldCheck size={16} /></span><span className="text-[#8DA4B4] text-sm">Erst zahlen, wenn Sie 100% zufrieden sind</span></div>
+                <div className="flex items-center justify-center gap-2 mt-4"><span className="text-[#E8564A]"><ShieldCheck size={16} /></span><span className="text-[#8DA4B4] text-sm">Erst zahlen, wenn du 100% zufrieden bist</span></div>
               </div>
             </div>
           </div>
@@ -351,8 +351,8 @@ export default function Home() {
               <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-[44px] text-white leading-[1.2] mb-8">799 € für eine professionelle Website — wie geht das?</h2>
               <p className="text-[#8DA4B4] text-[17px] leading-[1.7] mb-6 text-left max-w-[640px] mx-auto">Ich bin Marcel Speckmann — Wirtschaftspsychologe und Webdesigner aus Oldenburg. Seit Jahren baue ich professionelle Websites für Unternehmen. Und ich weiß: Der größte Kostentreiber ist nicht die Website selbst — sondern alles drumherum.</p>
               <p className="text-[#8DA4B4] text-[17px] leading-[1.7] mb-6 text-left max-w-[640px] mx-auto">Bei klassischen Projekten kosten <span className="text-white font-medium">stundenlange Beratungsgespräche</span>, endlose Abstimmungsrunden und Änderungswünsche in jeder Phase oft mehr als die eigentliche Umsetzung. Die Kommunikation allein kann ein Projekt auf 5.000 – 10.000 € treiben.</p>
-              <p className="text-[#8DA4B4] text-[17px] leading-[1.7] mb-6 text-left max-w-[640px] mx-auto">Bei Inklaro fällt das weg. Sie füllen ein kurzes Formular aus — und wir erstellen Ihre Website <span className="text-white font-medium">komplett eigenständig</span>. Kein Hin und Her, keine wochenlangen Abstimmungen. Design, Texte und Technik entstehen in einem durchgetakteten Prozess.</p>
-              <p className="text-[#8DA4B4] text-[17px] leading-[1.7] mb-6 text-left max-w-[640px] mx-auto">Erst wenn alles fertig ist, erhalten Sie einen Link zu Ihrer Website. Dann können Sie Änderungswünsche äußern. Aber der Großteil der Arbeit ist bereits erledigt — <span className="text-white font-medium">und genau deshalb können wir Ihnen für 799 € eine Website liefern, die andere für das Fünf- bis Zehnfache anbieten.</span></p>
+              <p className="text-[#8DA4B4] text-[17px] leading-[1.7] mb-6 text-left max-w-[640px] mx-auto">Bei Inklaro fällt das weg. Du füllst ein kurzes Formular aus — und wir erstellen deine Website <span className="text-white font-medium">komplett eigenständig</span>. Kein Hin und Her, keine wochenlangen Abstimmungen. Design, Texte und Technik entstehen in einem durchgetakteten Prozess.</p>
+              <p className="text-[#8DA4B4] text-[17px] leading-[1.7] mb-6 text-left max-w-[640px] mx-auto">Erst wenn alles fertig ist, bekommst du einen Vorschau-Link zu deiner Website. Dann kannst du Änderungswünsche äußern. Aber der Großteil der Arbeit ist bereits erledigt — <span className="text-white font-medium">und genau deshalb können wir dir für 799 € eine Website liefern, die andere für das Fünf- bis Zehnfache anbieten.</span></p>
             </div>
           </div>
         </section>
@@ -382,13 +382,13 @@ export default function Home() {
             </div>
             <div className="w-full max-w-[720px] flex flex-col gap-4 fade-in">
               {[
-                { q: "Wie lange dauert es, bis meine Website fertig ist?", a: "In der Regel stellen wir Ihnen Ihre Website innerhalb von 1–2 Tagen persönlich vor. Je nach Umfang der Angaben kann es auch mal einen Tag länger dauern." },
-                { q: "Was passiert, wenn mir die Website nicht gefällt?", a: "Dann zahlen Sie nichts. Wir passen die Website nach Ihrem Feedback an oder belassen es — ganz ohne Risiko für Sie." },
-                { q: "Gehört mir die Website?", a: "Das Modell funktioniert als Abo: Wir stellen Ihnen Server, Technik und Wartung zur Verfügung. Die Website läuft, solange das Abo aktiv ist. Eine Herausgabe des Quellcodes ist nicht vorgesehen — dafür kümmern wir uns um alles Technische." },
-                { q: "Was passiert, wenn ich kündige?", a: "Sie können monatlich kündigen. Nach der Kündigung wird die Website zum Ende des Abrechnungszeitraums abgeschaltet. Die Domain können Sie selbstverständlich mitnehmen." },
+                { q: "Wie lange dauert es, bis meine Website fertig ist?", a: "In der Regel bekommst du innerhalb von 1–2 Tagen einen Vorschau-Link zu deiner fertigen Website. Je nach Umfang der Angaben kann es auch mal einen Tag länger dauern." },
+                { q: "Was passiert, wenn mir die Website nicht gefällt?", a: "Dann zahlst du nichts. Wir passen die Website nach deinem Feedback an oder belassen es — ganz ohne Risiko für dich." },
+                { q: "Gehört mir die Website?", a: "Das Modell funktioniert als Abo: Wir stellen dir Server, Technik und Wartung zur Verfügung. Die Website läuft, solange das Abo aktiv ist. Eine Herausgabe des Quellcodes ist nicht vorgesehen — dafür kümmern wir uns um alles Technische." },
+                { q: "Was passiert, wenn ich kündige?", a: "Du kannst monatlich kündigen. Nach der Kündigung wird die Website zum Ende des Abrechnungszeitraums abgeschaltet. Die Domain kannst du selbstverständlich mitnehmen." },
                 { q: "Wofür sind die monatlichen Kosten?", a: "Die 79 € / Monat decken Hosting auf deutschen Servern, SSL-Zertifikat, technische Tools (z.B. Formular-Zustellung), Wartung, Sicherheitsupdates und die Möglichkeit, Texte und Bilder ändern zu lassen." },
-                { q: "Brauche ich technisches Wissen?", a: "Nein, überhaupt nicht. Sie füllen ein Formular aus, wir machen den Rest. Wenn Sie später etwas ändern möchten, sagen Sie uns einfach Bescheid." },
-                { q: "Kann ich meine eigene Domain verwenden?", a: "Ja, selbstverständlich. Wenn Sie bereits eine Domain haben, verbinden wir diese mit Ihrer neuen Website. Falls nicht, helfen wir Ihnen bei der Registrierung." },
+                { q: "Brauche ich technisches Wissen?", a: "Nein, überhaupt nicht. Du füllst ein Formular aus, wir machen den Rest. Wenn du später etwas ändern möchtest, sag uns einfach Bescheid." },
+                { q: "Kann ich meine eigene Domain verwenden?", a: "Ja, selbstverständlich. Wenn du bereits eine Domain hast, verbinden wir diese mit deiner neuen Website. Falls nicht, helfen wir dir bei der Registrierung." },
               ].map((faq, i) => (
                 <details key={i} className="group bg-white rounded-2xl border border-[#E8DFD4] overflow-hidden">
                   <summary className="flex items-center justify-between px-6 py-5 cursor-pointer list-none">
@@ -405,10 +405,10 @@ export default function Home() {
         {/* CTA BANNER */}
         <section className="bg-[#0F2B3C]">
           <div className="max-w-[1440px] mx-auto px-5 lg:px-16 py-20 flex flex-col items-center gap-8 text-center fade-in">
-            <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl text-white leading-[1.15]">Bereit für Ihre neue Website?</h2>
-            <p className="text-[#8DA4B4] text-lg max-w-[540px] leading-[1.6]">In 5 Minuten ausgefüllt — in 1–2 Tagen sehen Sie Ihre fertige Website. Kostenlos und unverbindlich.</p>
+            <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl text-white leading-[1.15]">Bereit für deine neue Website?</h2>
+            <p className="text-[#8DA4B4] text-lg max-w-[540px] leading-[1.6]">In 5 Minuten ausgefüllt — in 1–2 Tagen bekommst du deinen Vorschau-Link. Kostenlos und unverbindlich.</p>
             <Link href="/anfragen" className="bg-[#E8564A] text-white font-bold text-[17px] px-10 py-[18px] rounded-full btn-primary transition-all duration-200">Jetzt Website anfragen →</Link>
-            <div className="flex items-center gap-2"><span className="text-[#E8564A]"><ShieldCheck size={16} /></span><span className="text-[#8DA4B4] text-sm">Erst zahlen, wenn Sie 100% zufrieden sind</span></div>
+            <div className="flex items-center gap-2"><span className="text-[#E8564A]"><ShieldCheck size={16} /></span><span className="text-[#8DA4B4] text-sm">Erst zahlen, wenn du 100% zufrieden bist</span></div>
           </div>
         </section>
       </main>

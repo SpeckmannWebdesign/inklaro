@@ -194,10 +194,10 @@ export async function sendAnfrageConfirmation(daten: AnfrageData) {
 
   const inhalt = `
     <h1 style="font-size:24px; font-weight:800; color:#0F2B3C; margin:0 0 8px 0;">
-      Vielen Dank für Ihre Anfrage, ${name}!
+      Vielen Dank für deine Anfrage, ${name}!
     </h1>
     <p style="font-size:15px; color:#4A6274; line-height:1.7; margin:0 0 24px 0;">
-      Wir haben Ihre Website-Anfrage für <strong style="color:#0F2B3C;">${esc(daten.firmenname)}</strong> erhalten und freuen uns darauf, Ihnen eine beeindruckende Website zu erstellen.
+      Wir haben deine Website-Anfrage für <strong style="color:#0F2B3C;">${esc(daten.firmenname)}</strong> erhalten und freuen uns darauf, dir eine beeindruckende Website zu erstellen.
     </p>
 
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#FFF5EB; border-radius:12px; padding:24px; margin-bottom:24px;">
@@ -210,7 +210,7 @@ export async function sendAnfrageConfirmation(daten: AnfrageData) {
                 <table role="presentation" cellpadding="0" cellspacing="0">
                   <tr>
                     <td style="width:32px; height:32px; background-color:#E8564A; border-radius:50%; text-align:center; vertical-align:middle; color:#FFFFFF; font-size:14px; font-weight:700;">1</td>
-                    <td style="padding-left:12px; font-size:14px; color:#4A6274; line-height:1.5;">Wir analysieren Ihre Angaben und erstellen eine <strong style="color:#0F2B3C;">fertige Website-Vorschau</strong></td>
+                    <td style="padding-left:12px; font-size:14px; color:#4A6274; line-height:1.5;">Wir analysieren deine Angaben und erstellen eine <strong style="color:#0F2B3C;">fertige Website-Vorschau</strong></td>
                   </tr>
                 </table>
               </td>
@@ -220,7 +220,7 @@ export async function sendAnfrageConfirmation(daten: AnfrageData) {
                 <table role="presentation" cellpadding="0" cellspacing="0">
                   <tr>
                     <td style="width:32px; height:32px; background-color:#E8564A; border-radius:50%; text-align:center; vertical-align:middle; color:#FFFFFF; font-size:14px; font-weight:700;">2</td>
-                    <td style="padding-left:12px; font-size:14px; color:#4A6274; line-height:1.5;">In <strong style="color:#0F2B3C;">1–2 Werktagen</strong> melden wir uns bei Ihnen</td>
+                    <td style="padding-left:12px; font-size:14px; color:#4A6274; line-height:1.5;">In <strong style="color:#0F2B3C;">1–2 Werktagen</strong> bekommst du deinen Vorschau-Link</td>
                   </tr>
                 </table>
               </td>
@@ -230,7 +230,7 @@ export async function sendAnfrageConfirmation(daten: AnfrageData) {
                 <table role="presentation" cellpadding="0" cellspacing="0">
                   <tr>
                     <td style="width:32px; height:32px; background-color:#E8564A; border-radius:50%; text-align:center; vertical-align:middle; color:#FFFFFF; font-size:14px; font-weight:700;">3</td>
-                    <td style="padding-left:12px; font-size:14px; color:#4A6274; line-height:1.5;">Sie sehen Ihre Website in einer <strong style="color:#0F2B3C;">persönlichen Live-Vorstellung</strong></td>
+                    <td style="padding-left:12px; font-size:14px; color:#4A6274; line-height:1.5;">Du kannst dir deine Website über den <strong style="color:#0F2B3C;">Vorschau-Link in Ruhe anschauen</strong></td>
                   </tr>
                 </table>
               </td>
@@ -241,17 +241,17 @@ export async function sendAnfrageConfirmation(daten: AnfrageData) {
     </table>
 
     <p style="font-size:14px; color:#4A6274; line-height:1.7; margin:0 0 4px 0;">
-      Sie haben Fragen? Antworten Sie einfach auf diese E-Mail oder schreiben Sie uns an
+      Du hast Fragen? Antworte einfach auf diese E-Mail oder schreib uns an
       <a href="mailto:info@inklaro.de" style="color:#E8564A; text-decoration:none; font-weight:600;">info@inklaro.de</a>.
     </p>
     <p style="font-size:14px; color:#4A6274; line-height:1.7; margin:24px 0 0 0;">
       Herzliche Grüße<br />
-      <strong style="color:#0F2B3C;">Ihr Inklaro-Team</strong>
+      <strong style="color:#0F2B3C;">Dein Inklaro-Team</strong>
     </p>`;
 
   await sendEmail({
     to: daten.email,
-    subject: `Ihre Website-Anfrage für ${daten.firmenname} ist eingegangen`,
+    subject: `Deine Website-Anfrage für ${daten.firmenname} ist eingegangen`,
     html: emailLayout(inhalt),
   });
 }
