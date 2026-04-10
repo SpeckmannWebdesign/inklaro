@@ -4,7 +4,7 @@
 import { prisma } from "@/lib/prisma";
 import { mapAnfrageToPencilInput } from "@/lib/prompt-mapping";
 import { generatePencilPrompt } from "@/lib/prompt-generator";
-import { sendPromptReadyNotification } from "@/lib/email";
+
 
 const PIPELINE_SECRET = process.env.PIPELINE_SECRET;
 
@@ -107,19 +107,6 @@ export async function POST(request: Request) {
         message: `Pencil-Prompt erfolgreich generiert (${pencilPrompt.length} Zeichen)`,
       },
     });
-
-    // Marcel benachrichtigen
-    try {
-      await sendPromptReadyNotification(
-        anfrageId,
-        anfrage.firmenname,
-        anfrage.branche,
-        pencilPrompt.length,
-        pencilPrompt
-      );
-    } catch (emailError) {
-      console.error("Prompt-Ready-Notification fehlgeschlagen:", emailError);
-    }
 
     // Design-Erstellung automatisch triggern (fire-and-forget)
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
