@@ -327,7 +327,7 @@ export default function Home() {
               </div>
               <div className="h-px bg-[#E8DFD4]" />
               <div className="p-10">
-                <p className="text-[#8DA4B4] text-[13px] leading-[1.6] mb-6"><span className="text-[#E8564A] font-semibold">Gut zu wissen:</span> Das Modell funktioniert als Abo — wir stellen dir Server, Tools und Technik zur Verfügung und halten alles am Laufen. Eine Herausgabe der Website ist nicht vorgesehen. Dafür kümmern wir uns um alles, damit du dich auf dein Geschäft konzentrieren kannst.</p>
+                <p className="text-[#8DA4B4] text-[13px] leading-[1.6] mb-6"><span className="text-[#E8564A] font-semibold">Wichtig zu wissen:</span> Das Modell funktioniert als Abo — wir stellen dir Server, Tools und Technik zur Verfügung und halten alles am Laufen. Eine Herausgabe der Website ist nicht vorgesehen. Dafür kümmern wir uns um alles, damit du dich auf dein Geschäft konzentrieren kannst.</p>
                 <a href="/anfragen" className="block w-full text-center bg-[#E8564A] text-white font-bold text-base py-4 rounded-full btn-primary transition-all duration-200">Jetzt kostenlos anfragen</a>
                 <div className="flex items-center justify-center gap-2 mt-4"><span className="text-[#E8564A]"><ShieldCheck size={16} /></span><span className="text-[#8DA4B4] text-sm">Erst zahlen, wenn du 100% zufrieden bist</span></div>
               </div>
