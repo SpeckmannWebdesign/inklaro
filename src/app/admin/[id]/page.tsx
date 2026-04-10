@@ -150,9 +150,21 @@ export default function AnfrageDetailPage() {
             {anfrage.branche} &middot; {new Date(anfrage.createdAt).toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" })}
           </p>
         </div>
-        <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold w-fit" style={{ color: status.color, backgroundColor: status.bg }}>
-          {status.label}
-        </span>
+        <div className="flex items-center gap-3">
+          <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold" style={{ color: status.color, backgroundColor: status.bg }}>
+            {status.label}
+          </span>
+          <button
+            onClick={() => {
+              if (!confirm(`"${anfrage.firmenname}" wirklich löschen? Das kann nicht rückgängig gemacht werden.`)) return;
+              fetch(`/api/admin/anfragen/${id}/delete`, { method: "DELETE" })
+                .then((res) => { if (res.ok) router.push("/admin"); });
+            }}
+            className="text-[#8DA4B4] text-xs font-medium hover:text-[#DC2626] transition px-3 py-1.5 rounded-full border border-[#E8DFD4] hover:border-[#DC2626]"
+          >
+            Löschen
+          </button>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

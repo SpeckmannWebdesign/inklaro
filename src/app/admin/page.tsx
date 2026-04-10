@@ -79,6 +79,7 @@ export default function AdminDashboardPage() {
                 <th className="text-left px-5 py-3 text-[#8DA4B4] text-xs font-semibold uppercase tracking-wider">Status</th>
                 <th className="text-left px-5 py-3 text-[#8DA4B4] text-xs font-semibold uppercase tracking-wider">Datum</th>
                 <th className="text-left px-5 py-3 text-[#8DA4B4] text-xs font-semibold uppercase tracking-wider">Design</th>
+                <th className="px-5 py-3"></th>
               </tr>
             </thead>
             <tbody>
@@ -122,6 +123,21 @@ export default function AdminDashboardPage() {
                       ) : (
                         <span className="text-[#8DA4B4] text-sm">—</span>
                       )}
+                    </td>
+                    <td className="px-5 py-4">
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          if (!confirm(`"${a.firmenname}" wirklich löschen? Das kann nicht rückgängig gemacht werden.`)) return;
+                          fetch(`/api/admin/anfragen/${a.id}/delete`, { method: "DELETE" })
+                            .then((res) => {
+                              if (res.ok) setAnfragen((prev) => prev.filter((x) => x.id !== a.id));
+                            });
+                        }}
+                        className="text-[#8DA4B4] text-xs font-medium hover:text-[#DC2626] transition"
+                      >
+                        Löschen
+                      </button>
                     </td>
                   </tr>
                 );

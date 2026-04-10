@@ -258,59 +258,44 @@ export async function sendDesignToCustomer({
     .toLowerCase();
 
   const inhalt = `
-    <h1 style="font-size:24px; font-weight:800; color:#0F2B3C; margin:0 0 8px 0;">
-      Dein Website-Design ist fertig, ${name}!
+    <h1 style="font-size:26px; font-weight:800; color:#0F2B3C; margin:0 0 16px 0; line-height:1.3;">
+      ${name}, dein Website-Design ist da!
     </h1>
-    <p style="font-size:15px; color:#4A6274; line-height:1.7; margin:0 0 24px 0;">
-      Wir haben das Design f&uuml;r <strong style="color:#0F2B3C;">${esc(firmenname)}</strong> fertiggestellt. Im Anhang findest du die Vorschau als PDF.
+    <p style="font-size:16px; color:#4A6274; line-height:1.8; margin:0 0 28px 0;">
+      Wir haben das Design f&uuml;r <strong style="color:#0F2B3C;">${esc(firmenname)}</strong> fertiggestellt &mdash; du findest es als PDF im Anhang dieser E-Mail.
     </p>
 
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#FFF5EB; border-radius:12px; margin-bottom:24px;">
-      <tr>
-        <td style="padding:24px;">
-          <p style="font-size:14px; font-weight:700; color:#0F2B3C; margin:0 0 16px 0;">So geht es weiter:</p>
-          <table role="presentation" cellpadding="0" cellspacing="0">
-            <tr>
-              <td style="padding-bottom:12px;">
-                <table role="presentation" cellpadding="0" cellspacing="0">
-                  <tr>
-                    <td style="width:32px; height:32px; background-color:#E8564A; border-radius:50%; text-align:center; vertical-align:middle; color:#FFFFFF; font-size:14px; font-weight:700;">1</td>
-                    <td style="padding-left:12px; font-size:14px; color:#4A6274; line-height:1.5;">Schau dir das Design <strong style="color:#0F2B3C;">in Ruhe an</strong></td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding-bottom:12px;">
-                <table role="presentation" cellpadding="0" cellspacing="0">
-                  <tr>
-                    <td style="width:32px; height:32px; background-color:#E8564A; border-radius:50%; text-align:center; vertical-align:middle; color:#FFFFFF; font-size:14px; font-weight:700;">2</td>
-                    <td style="padding-left:12px; font-size:14px; color:#4A6274; line-height:1.5;">Antworte auf diese E-Mail mit deinem <strong style="color:#0F2B3C;">Feedback oder Anpassungsw&uuml;nschen</strong></td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <table role="presentation" cellpadding="0" cellspacing="0">
-                  <tr>
-                    <td style="width:32px; height:32px; background-color:#E8564A; border-radius:50%; text-align:center; vertical-align:middle; color:#FFFFFF; font-size:14px; font-weight:700;">3</td>
-                    <td style="padding-left:12px; font-size:14px; color:#4A6274; line-height:1.5;">Wir setzen deine Website <strong style="color:#0F2B3C;">fertig um</strong> — erst dann wird die Rechnung gestellt</td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
+    <div style="background-color:#E8564A; border-radius:16px; padding:28px; margin-bottom:28px; text-align:center;">
+      <p style="font-size:18px; font-weight:700; color:#FFFFFF; margin:0 0 8px 0;">
+        Schau dir dein Design in Ruhe an
+      </p>
+      <p style="font-size:14px; color:rgba(255,255,255,0.85); margin:0;">
+        Die PDF-Datei ist an diese E-Mail angeh&auml;ngt
+      </p>
+    </div>
 
-    <p style="font-size:14px; color:#4A6274; line-height:1.7; margin:0 0 4px 0;">
-      Du hast Fragen? Antworte einfach auf diese E-Mail oder schreib uns an
-      <a href="mailto:info@inklaro.de" style="color:#E8564A; text-decoration:none; font-weight:600;">info@inklaro.de</a>.
+    <div style="background: linear-gradient(135deg, #FFF5EB 0%, #FFFFFF 100%); border-radius:16px; padding:28px; margin-bottom:28px; border:1px solid #E8DFD4;">
+      <p style="font-size:15px; font-weight:700; color:#0F2B3C; margin:0 0 12px 0;">Gef&auml;llt dir, was du siehst?</p>
+      <p style="font-size:15px; color:#4A6274; line-height:1.8; margin:0 0 12px 0;">
+        Antworte einfach auf diese E-Mail und sag uns Bescheid. Wir k&ouml;nnen gerne noch Anpassungen vornehmen, bevor wir deine Website final umsetzen.
+      </p>
+      <p style="font-size:15px; color:#4A6274; line-height:1.8; margin:0;">
+        <strong style="color:#0F2B3C;">Keine versteckten Kosten:</strong> Erst wenn du rundum zufrieden bist, besprechen wir die Umsetzung und Konditionen.
+      </p>
+    </div>
+
+    <div style="background-color:#0F2B3C; border-radius:16px; padding:24px 28px; margin-bottom:28px;">
+      <p style="font-size:14px; color:#8DA4B4; margin:0 0 8px 0;">Du m&ouml;chtest &Auml;nderungen?</p>
+      <p style="font-size:15px; color:#FFFFFF; line-height:1.7; margin:0;">
+        Kein Problem! Schreib uns einfach, was du dir anders vorstellst &mdash; andere Farben, anderes Layout, mehr Sektionen. Wir passen alles nach deinen W&uuml;nschen an.
+      </p>
+    </div>
+
+    <p style="font-size:15px; color:#4A6274; line-height:1.7; margin:0 0 4px 0;">
+      Wir freuen uns auf dein Feedback!
     </p>
-    <p style="font-size:14px; color:#4A6274; line-height:1.7; margin:24px 0 0 0;">
-      Herzliche Gr&uuml;&szlig;e<br />
+    <p style="font-size:15px; color:#4A6274; line-height:1.7; margin:24px 0 0 0;">
+      Beste Gr&uuml;&szlig;e<br />
       <strong style="color:#0F2B3C;">Dein Inklaro-Team</strong>
     </p>`;
 
@@ -355,65 +340,38 @@ export async function sendAnfrageConfirmation(daten: AnfrageData) {
   const name = esc(vorname(daten.ansprechpartner));
 
   const inhalt = `
-    <h1 style="font-size:24px; font-weight:800; color:#0F2B3C; margin:0 0 8px 0;">
-      Vielen Dank für deine Anfrage, ${name}!
+    <h1 style="font-size:26px; font-weight:800; color:#0F2B3C; margin:0 0 16px 0; line-height:1.3;">
+      Hey ${name}, deine Anfrage ist bei uns!
     </h1>
-    <p style="font-size:15px; color:#4A6274; line-height:1.7; margin:0 0 24px 0;">
-      Wir haben deine Website-Anfrage für <strong style="color:#0F2B3C;">${esc(daten.firmenname)}</strong> erhalten und freuen uns darauf, dir eine beeindruckende Website zu erstellen.
+    <p style="font-size:16px; color:#4A6274; line-height:1.8; margin:0 0 28px 0;">
+      Wir haben alles, was wir brauchen, um ein Website-Design f&uuml;r <strong style="color:#0F2B3C;">${esc(daten.firmenname)}</strong> zu erstellen. Unser Team macht sich jetzt an die Arbeit.
     </p>
 
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#FFF5EB; border-radius:12px; padding:24px; margin-bottom:24px;">
-      <tr>
-        <td style="padding:24px;">
-          <p style="font-size:14px; font-weight:700; color:#0F2B3C; margin:0 0 16px 0;">So geht es weiter:</p>
-          <table role="presentation" cellpadding="0" cellspacing="0">
-            <tr>
-              <td style="padding-bottom:12px;">
-                <table role="presentation" cellpadding="0" cellspacing="0">
-                  <tr>
-                    <td style="width:32px; height:32px; background-color:#E8564A; border-radius:50%; text-align:center; vertical-align:middle; color:#FFFFFF; font-size:14px; font-weight:700;">1</td>
-                    <td style="padding-left:12px; font-size:14px; color:#4A6274; line-height:1.5;">Wir analysieren deine Angaben und erstellen eine <strong style="color:#0F2B3C;">fertige Website-Vorschau</strong></td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding-bottom:12px;">
-                <table role="presentation" cellpadding="0" cellspacing="0">
-                  <tr>
-                    <td style="width:32px; height:32px; background-color:#E8564A; border-radius:50%; text-align:center; vertical-align:middle; color:#FFFFFF; font-size:14px; font-weight:700;">2</td>
-                    <td style="padding-left:12px; font-size:14px; color:#4A6274; line-height:1.5;">In <strong style="color:#0F2B3C;">1–2 Werktagen</strong> bekommst du deinen Vorschau-Link</td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <table role="presentation" cellpadding="0" cellspacing="0">
-                  <tr>
-                    <td style="width:32px; height:32px; background-color:#E8564A; border-radius:50%; text-align:center; vertical-align:middle; color:#FFFFFF; font-size:14px; font-weight:700;">3</td>
-                    <td style="padding-left:12px; font-size:14px; color:#4A6274; line-height:1.5;">Du kannst dir deine Website über den <strong style="color:#0F2B3C;">Vorschau-Link in Ruhe anschauen</strong></td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
+    <div style="background: linear-gradient(135deg, #FFF5EB 0%, #FFFFFF 100%); border-radius:16px; padding:28px; margin-bottom:28px; border:1px solid #E8DFD4;">
+      <p style="font-size:15px; font-weight:700; color:#0F2B3C; margin:0 0 16px 0;">Was jetzt passiert:</p>
+      <p style="font-size:15px; color:#4A6274; line-height:1.8; margin:0;">
+        Wir erstellen ein individuelles Design basierend auf deinen Angaben. Sobald es fertig ist, bekommst du eine E-Mail mit der <strong style="color:#0F2B3C;">kompletten Vorschau als PDF</strong>. Das dauert in der Regel <strong style="color:#0F2B3C;">1&ndash;2 Werktage</strong>.
+      </p>
+    </div>
 
-    <p style="font-size:14px; color:#4A6274; line-height:1.7; margin:0 0 4px 0;">
-      Du hast Fragen? Antworte einfach auf diese E-Mail oder schreib uns an
-      <a href="mailto:info@inklaro.de" style="color:#E8564A; text-decoration:none; font-weight:600;">info@inklaro.de</a>.
+    <div style="background-color:#0F2B3C; border-radius:16px; padding:24px 28px; margin-bottom:28px;">
+      <p style="font-size:14px; color:#8DA4B4; margin:0 0 4px 0;">Wichtig zu wissen:</p>
+      <p style="font-size:15px; color:#FFFFFF; line-height:1.7; margin:0;">
+        Du gehst keinerlei Verpflichtung ein. Erst wenn du dein Design gesehen hast und zufrieden bist, sprechen wir &uuml;ber die n&auml;chsten Schritte.
+      </p>
+    </div>
+
+    <p style="font-size:15px; color:#4A6274; line-height:1.7; margin:0 0 4px 0;">
+      Falls du in der Zwischenzeit Fragen hast &mdash; antworte einfach auf diese E-Mail.
     </p>
-    <p style="font-size:14px; color:#4A6274; line-height:1.7; margin:24px 0 0 0;">
-      Herzliche Grüße<br />
+    <p style="font-size:15px; color:#4A6274; line-height:1.7; margin:24px 0 0 0;">
+      Bis bald!<br />
       <strong style="color:#0F2B3C;">Dein Inklaro-Team</strong>
     </p>`;
 
   await sendEmail({
     to: daten.email,
-    subject: `Deine Website-Anfrage für ${daten.firmenname} ist eingegangen`,
+    subject: `${name}, wir starten mit deinem Website-Design!`,
     html: emailLayout(inhalt),
   });
 }
