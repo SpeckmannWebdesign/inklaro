@@ -6,7 +6,7 @@
 DESIGNS_DIR="/var/designs"
 QUEUE_DIR="$DESIGNS_DIR/queue"
 DONE_DIR="$DESIGNS_DIR/done"
-MODEL="claude-sonnet-4-6"
+MODEL="claude-opus-4-6"
 DB_URL="${DATABASE_URL:-postgres://postgres:postgres@localhost:5432/postgres}"
 
 mkdir -p "$QUEUE_DIR" "$DONE_DIR"
