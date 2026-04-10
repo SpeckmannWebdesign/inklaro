@@ -29,7 +29,7 @@ export default function AdminLoginPage() {
         return;
       }
 
-      router.push("/admin");
+      window.location.href = "/admin";
     } catch {
       setFehler("Verbindungsfehler — bitte versuche es erneut.");
     } finally {
