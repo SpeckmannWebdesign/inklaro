@@ -121,6 +121,19 @@ export async function POST(request: Request) {
       console.error("Prompt-Ready-Notification fehlgeschlagen:", emailError);
     }
 
+    // Design-Erstellung automatisch triggern (fire-and-forget)
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+    fetch(`${baseUrl}/api/pipeline/create-design`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-pipeline-key": PIPELINE_SECRET!,
+      },
+      body: JSON.stringify({ anfrageId }),
+    }).catch((err) =>
+      console.error("Design-Pipeline-Trigger fehlgeschlagen:", err)
+    );
+
     return Response.json({
       erfolg: true,
       anfrageId,

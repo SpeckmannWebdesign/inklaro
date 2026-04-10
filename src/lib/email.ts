@@ -197,6 +197,157 @@ function emailLayout(inhalt: string): string {
 }
 
 // ──────────────────────────────────────────────────
+// 4. Notification: Design ist fertig (an Marcel)
+// ──────────────────────────────────────────────────
+
+export async function sendDesignReadyNotification(
+  anfrageId: string,
+  firmenname: string,
+  branche: string
+) {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://inklaro.de";
+
+  const inhalt = `
+    <h1 style="font-size:22px; font-weight:800; color:#0F2B3C; margin:0 0 4px 0;">
+      Design fertig!
+    </h1>
+    <p style="font-size:15px; color:#4A6274; line-height:1.7; margin:0 0 24px 0;">
+      Das Design f&uuml;r <strong style="color:#0F2B3C;">${esc(firmenname)}</strong> (${esc(branche)}) wurde automatisch erstellt.
+    </p>
+
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:24px;">
+      <tr>
+        <td align="center">
+          <a href="${baseUrl}/admin/${esc(anfrageId)}" style="display:inline-block; background-color:#E8564A; color:#FFFFFF; font-size:15px; font-weight:700; text-decoration:none; padding:14px 32px; border-radius:50px;">
+            Design pr&uuml;fen &amp; freigeben
+          </a>
+        </td>
+      </tr>
+    </table>
+
+    <p style="font-size:13px; color:#8DA4B4; margin:0;">
+      Anfrage-ID: ${esc(anfrageId)}
+    </p>`;
+
+  await sendEmail({
+    to: NOTIFY_EMAIL,
+    subject: `Design fertig: ${firmenname} (${branche})`,
+    html: emailLayout(inhalt),
+  });
+}
+
+// ──────────────────────────────────────────────────
+// 5. Design an Kunden senden (mit PDF-Anhang)
+// ──────────────────────────────────────────────────
+
+export async function sendDesignToCustomer({
+  kundenEmail,
+  kundenName,
+  firmenname,
+  pdfBase64,
+}: {
+  kundenEmail: string;
+  kundenName: string;
+  firmenname: string;
+  pdfBase64: string;
+}) {
+  const name = esc(vorname(kundenName));
+  const safeName = firmenname
+    .replace(/[^a-zA-Z0-9äöüÄÖÜß\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .toLowerCase();
+
+  const inhalt = `
+    <h1 style="font-size:24px; font-weight:800; color:#0F2B3C; margin:0 0 8px 0;">
+      Dein Website-Design ist fertig, ${name}!
+    </h1>
+    <p style="font-size:15px; color:#4A6274; line-height:1.7; margin:0 0 24px 0;">
+      Wir haben das Design f&uuml;r <strong style="color:#0F2B3C;">${esc(firmenname)}</strong> fertiggestellt. Im Anhang findest du die Vorschau als PDF.
+    </p>
+
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#FFF5EB; border-radius:12px; margin-bottom:24px;">
+      <tr>
+        <td style="padding:24px;">
+          <p style="font-size:14px; font-weight:700; color:#0F2B3C; margin:0 0 16px 0;">So geht es weiter:</p>
+          <table role="presentation" cellpadding="0" cellspacing="0">
+            <tr>
+              <td style="padding-bottom:12px;">
+                <table role="presentation" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td style="width:32px; height:32px; background-color:#E8564A; border-radius:50%; text-align:center; vertical-align:middle; color:#FFFFFF; font-size:14px; font-weight:700;">1</td>
+                    <td style="padding-left:12px; font-size:14px; color:#4A6274; line-height:1.5;">Schau dir das Design <strong style="color:#0F2B3C;">in Ruhe an</strong></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding-bottom:12px;">
+                <table role="presentation" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td style="width:32px; height:32px; background-color:#E8564A; border-radius:50%; text-align:center; vertical-align:middle; color:#FFFFFF; font-size:14px; font-weight:700;">2</td>
+                    <td style="padding-left:12px; font-size:14px; color:#4A6274; line-height:1.5;">Antworte auf diese E-Mail mit deinem <strong style="color:#0F2B3C;">Feedback oder Anpassungsw&uuml;nschen</strong></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table role="presentation" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td style="width:32px; height:32px; background-color:#E8564A; border-radius:50%; text-align:center; vertical-align:middle; color:#FFFFFF; font-size:14px; font-weight:700;">3</td>
+                    <td style="padding-left:12px; font-size:14px; color:#4A6274; line-height:1.5;">Wir setzen deine Website <strong style="color:#0F2B3C;">fertig um</strong> — erst dann wird die Rechnung gestellt</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <p style="font-size:14px; color:#4A6274; line-height:1.7; margin:0 0 4px 0;">
+      Du hast Fragen? Antworte einfach auf diese E-Mail oder schreib uns an
+      <a href="mailto:info@inklaro.de" style="color:#E8564A; text-decoration:none; font-weight:600;">info@inklaro.de</a>.
+    </p>
+    <p style="font-size:14px; color:#4A6274; line-height:1.7; margin:24px 0 0 0;">
+      Herzliche Gr&uuml;&szlig;e<br />
+      <strong style="color:#0F2B3C;">Dein Inklaro-Team</strong>
+    </p>`;
+
+  const empfaenger = [{ email: kundenEmail }];
+
+  const body = {
+    sender: { name: FROM_NAME, email: FROM_EMAIL },
+    to: empfaenger,
+    subject: `Dein Website-Design für ${firmenname} ist fertig!`,
+    htmlContent: emailLayout(inhalt),
+    attachment: [
+      {
+        content: pdfBase64,
+        name: `${safeName}-design.pdf`,
+      },
+    ],
+  };
+
+  const res = await fetch("https://api.brevo.com/v3/smtp/email", {
+    method: "POST",
+    headers: {
+      accept: "application/json",
+      "api-key": BREVO_API_KEY,
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+
+  if (!res.ok) {
+    const fehler = await res.text();
+    throw new Error(
+      `Design-E-Mail fehlgeschlagen (${res.status}): ${fehler}`
+    );
+  }
+}
+
+// ──────────────────────────────────────────────────
 // 1. Bestätigungs-E-Mail an den Kunden
 // ──────────────────────────────────────────────────
 

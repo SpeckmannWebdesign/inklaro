@@ -187,6 +187,18 @@ model Anfrage {
   logs                   AnfrageLog[]
 }
 
+// ──────────────────────────────────────────────────
+// Admin-Benutzer (Dashboard-Zugang)
+// ──────────────────────────────────────────────────
+
+model AdminUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
 model AnfrageLog {
   id        String   @id @default(cuid())
   anfrageId String
