@@ -12,6 +12,16 @@ export interface PencilPromptInput {
   zielgruppe?: string;
   standort?: string;
   vorbilder?: string;
+  leistungen?: string;
+  usp?: string;
+  slogan?: string;
+  tonalitaet?: string;
+  erfahrung?: string;
+  teamgroesse?: string;
+  eigeneFotos?: string;
+  gewuenschteCta?: string[];
+  socialMedia?: string;
+  oeffnungszeiten?: string;
 }
 
 // Stil-Präferenz auf Pencil-Design-Konzept mappen
@@ -82,6 +92,19 @@ export function mapAnfrageToPencilInput(
     zielgruppe: daten.zielgruppe || undefined,
     standort: daten.standort || undefined,
     vorbilder: daten.vorbilder || undefined,
+    leistungen: daten.leistungen || undefined,
+    usp: daten.usp || undefined,
+    slogan: daten.slogan || undefined,
+    tonalitaet: daten.tonalitaet || undefined,
+    erfahrung: daten.erfahrung || undefined,
+    teamgroesse: daten.teamgroesse || undefined,
+    eigeneFotos: daten.eigeneFotos || undefined,
+    gewuenschteCta:
+      daten.gewuenschteCta && daten.gewuenschteCta.length > 0
+        ? daten.gewuenschteCta
+        : undefined,
+    socialMedia: daten.socialMedia || undefined,
+    oeffnungszeiten: daten.oeffnungszeiten || undefined,
   };
 }
 
@@ -110,6 +133,38 @@ export function buildPromptGeneratorMessage(input: PencilPromptInput): string {
   }
   if (input.vorbilder) {
     teile.push(`Websites die dem Kunden gefallen: ${input.vorbilder}`);
+  }
+  if (input.leistungen) {
+    teile.push(`Wichtigste Leistungen: ${input.leistungen}`);
+  }
+  if (input.usp) {
+    teile.push(`USP / Alleinstellungsmerkmal: ${input.usp}`);
+  }
+  if (input.slogan) {
+    teile.push(`Slogan: ${input.slogan}`);
+  }
+  if (input.tonalitaet) {
+    teile.push(`Kundenansprache: ${input.tonalitaet}`);
+  }
+  if (input.erfahrung) {
+    teile.push(`Unternehmenserfahrung: ${input.erfahrung}`);
+  }
+  if (input.teamgroesse) {
+    teile.push(`Teamgröße: ${input.teamgroesse}`);
+  }
+  if (input.eigeneFotos) {
+    teile.push(`Eigene Fotos: ${input.eigeneFotos}`);
+  }
+  if (input.gewuenschteCta && input.gewuenschteCta.length > 0) {
+    teile.push(
+      `Gewünschte Kontaktmöglichkeiten: ${input.gewuenschteCta.join(", ")}`
+    );
+  }
+  if (input.socialMedia) {
+    teile.push(`Social Media: ${input.socialMedia}`);
+  }
+  if (input.oeffnungszeiten) {
+    teile.push(`Öffnungszeiten: ${input.oeffnungszeiten}`);
   }
 
   return teile.join("\n");

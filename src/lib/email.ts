@@ -73,20 +73,31 @@ export interface AnfrageData {
   beschreibung: string;
   standort?: string;
   website?: string;
-  // Schritt 2: Zielgruppe
+  erfahrung?: string;
+  teamgroesse?: string;
+  // Schritt 2: Leistungen & USP
+  leistungen?: string;
+  usp?: string;
+  slogan?: string;
+  // Schritt 3: Zielgruppe & Ziele
   zielgruppe: string;
   websiteZiel: string;
   zielgruppeBeschreibung?: string;
-  // Schritt 3: Branding
+  tonalitaet?: string;
+  gewuenschteCta?: string[];
+  // Schritt 4: Design & Branding
   hatLogo: string;
   farben?: string;
   vorbilder?: string;
   stilPraeferenz?: string;
-  // Schritt 4: Inhalte
+  eigeneFotos?: string;
+  // Schritt 5: Seiten & Extras
   seiten: string[];
   texteVorhanden: string;
   sonstiges?: string;
-  // Schritt 5: Kontakt
+  socialMedia?: string;
+  oeffnungszeiten?: string;
+  // Schritt 6: Kontakt
   ansprechpartner: string;
   email: string;
   telefon?: string;
@@ -295,6 +306,16 @@ export async function sendAnfrageNotification(daten: AnfrageData) {
       ${zeile("Beschreibung", daten.beschreibung)}
       ${zeile("Standort", daten.standort)}
       ${zeile("Aktuelle Website", daten.website)}
+      ${zeile("Erfahrung", daten.erfahrung)}
+      ${zeile("Teamgröße", daten.teamgroesse)}
+    </table>
+
+    <!-- Leistungen & USP -->
+    <p style="font-size:12px; font-weight:700; color:#E8564A; text-transform:uppercase; letter-spacing:1px; margin:0 0 8px 0;">Leistungen & USP</p>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#FFF5EB; border-radius:12px; margin-bottom:20px;">
+      ${zeile("Leistungen", daten.leistungen)}
+      ${zeile("USP", daten.usp)}
+      ${zeile("Slogan", daten.slogan)}
     </table>
 
     <!-- Zielgruppe -->
@@ -303,6 +324,8 @@ export async function sendAnfrageNotification(daten: AnfrageData) {
       ${zeile("Zielgruppe", daten.zielgruppe)}
       ${zeile("Website-Ziel", daten.websiteZiel)}
       ${zeile("Details", daten.zielgruppeBeschreibung)}
+      ${zeile("Tonalität", daten.tonalitaet)}
+      ${zeile("Gewünschte CTA", daten.gewuenschteCta)}
     </table>
 
     <!-- Branding -->
@@ -312,14 +335,16 @@ export async function sendAnfrageNotification(daten: AnfrageData) {
       ${zeile("Farben", daten.farben)}
       ${zeile("Stil-Präferenz", daten.stilPraeferenz)}
       ${zeile("Vorbilder", daten.vorbilder)}
+      ${zeile("Eigene Fotos", daten.eigeneFotos)}
     </table>
 
-    <!-- Inhalte -->
-    <p style="font-size:12px; font-weight:700; color:#E8564A; text-transform:uppercase; letter-spacing:1px; margin:0 0 8px 0;">Inhalte & Seiten</p>
+    <!-- Seiten & Extras -->
+    <p style="font-size:12px; font-weight:700; color:#E8564A; text-transform:uppercase; letter-spacing:1px; margin:0 0 8px 0;">Seiten & Extras</p>
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#FFF5EB; border-radius:12px; margin-bottom:20px;">
       ${zeile("Gewünschte Seiten", daten.seiten)}
-      ${zeile("Texte vorhanden", daten.texteVorhanden)}
       ${zeile("Sonstiges", daten.sonstiges)}
+      ${zeile("Social Media", daten.socialMedia)}
+      ${zeile("Öffnungszeiten", daten.oeffnungszeiten)}
     </table>`;
 
   await sendEmail({

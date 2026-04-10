@@ -141,24 +141,36 @@ model Anfrage {
   beschreibung           String        @db.Text
   standort               String?
   website                String?
+  erfahrung              String?
+  teamgroesse            String?
 
-  // Schritt 2: Zielgruppe
+  // Schritt 2: Leistungen & USP
+  leistungen             String?       @db.Text
+  usp                    String?       @db.Text
+  slogan                 String?
+
+  // Schritt 3: Zielgruppe & Ziele
   zielgruppe             String
   websiteZiel            String
   zielgruppeBeschreibung String?       @db.Text
+  tonalitaet             String?
+  gewuenschteCta         String[]
 
-  // Schritt 3: Branding
+  // Schritt 4: Design & Branding
   hatLogo                String
   farben                 String?
   vorbilder              String?       @db.Text
   stilPraeferenz         String?
+  eigeneFotos            String?
 
-  // Schritt 4: Inhalte
+  // Schritt 5: Seiten & Extras
   seiten                 String[]
   texteVorhanden         String
   sonstiges              String?       @db.Text
+  socialMedia            String?
+  oeffnungszeiten        String?
 
-  // Schritt 5: Kontakt
+  // Schritt 6: Kontakt
   ansprechpartner        String
   email                  String
   telefon                String?

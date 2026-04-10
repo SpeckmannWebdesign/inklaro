@@ -13,34 +13,46 @@ const ShieldCheck = () => (
 
 const steps = [
   { num: "1", title: "Dein Unternehmen" },
-  { num: "2", title: "Zielgruppe & Ziele" },
-  { num: "3", title: "Design & Branding" },
-  { num: "4", title: "Inhalte" },
-  { num: "5", title: "Kontaktdaten" },
+  { num: "2", title: "Leistungen & USP" },
+  { num: "3", title: "Zielgruppe & Ziele" },
+  { num: "4", title: "Design & Branding" },
+  { num: "5", title: "Seiten & Extras" },
+  { num: "6", title: "Kontaktdaten" },
 ];
 
 const inputCls = "bg-[#FFF5EB] border border-[#E8DFD4] rounded-xl px-4 py-3.5 text-[#0F2B3C] text-[15px] placeholder:text-[#8DA4B4] focus:border-[#E8564A] focus:outline-none transition w-full";
 
 interface FormData {
-  // Schritt 1
+  // Schritt 1: Unternehmen
   firmenname: string;
   branche: string;
   beschreibung: string;
   standort: string;
   website: string;
-  // Schritt 2
+  erfahrung: string;
+  teamgroesse: string;
+  // Schritt 2: Leistungen & USP
+  leistungen: string;
+  usp: string;
+  slogan: string;
+  // Schritt 3: Zielgruppe & Ziele
   zielgruppe: string;
   websiteZiel: string;
   zielgruppeBeschreibung: string;
-  // Schritt 3
+  tonalitaet: string;
+  gewuenschteCta: string[];
+  // Schritt 4: Design & Branding
   hatLogo: string;
   farben: string;
   vorbilder: string;
   stilPraeferenz: string;
-  // Schritt 4
+  eigeneFotos: string;
+  // Schritt 5: Seiten & Extras
   seiten: string[];
   sonstiges: string;
-  // Schritt 5
+  socialMedia: string;
+  oeffnungszeiten: string;
+  // Schritt 6: Kontaktdaten
   ansprechpartner: string;
   email: string;
   telefon: string;
@@ -58,15 +70,25 @@ export default function AnfragenPage() {
     beschreibung: "",
     standort: "",
     website: "",
+    erfahrung: "",
+    teamgroesse: "",
+    leistungen: "",
+    usp: "",
+    slogan: "",
     zielgruppe: "",
     websiteZiel: "",
     zielgruppeBeschreibung: "",
+    tonalitaet: "",
+    gewuenschteCta: [],
     hatLogo: "",
     farben: "",
     vorbilder: "",
     stilPraeferenz: "",
+    eigeneFotos: "",
     seiten: [],
     sonstiges: "",
+    socialMedia: "",
+    oeffnungszeiten: "",
     ansprechpartner: "",
     email: "",
     telefon: "",
@@ -83,13 +105,22 @@ export default function AnfragenPage() {
         : [...prev.seiten, seite],
     }));
 
+  const toggleCta = (cta: string) =>
+    setForm((prev) => ({
+      ...prev,
+      gewuenschteCta: prev.gewuenschteCta.includes(cta)
+        ? prev.gewuenschteCta.filter((c) => c !== cta)
+        : [...prev.gewuenschteCta, cta],
+    }));
+
   const stepValid = (s: number): boolean => {
     switch (s) {
       case 0: return !!(form.firmenname && form.branche && form.beschreibung);
-      case 1: return !!(form.zielgruppe && form.websiteZiel);
-      case 2: return !!form.hatLogo;
-      case 3: return true;
-      case 4: return !!(form.ansprechpartner && form.email);
+      case 1: return true;
+      case 2: return !!(form.zielgruppe && form.websiteZiel);
+      case 3: return !!form.hatLogo;
+      case 4: return true;
+      case 5: return !!(form.ansprechpartner && form.email);
       default: return false;
     }
   };
@@ -188,7 +219,7 @@ export default function AnfragenPage() {
                 </div>
                 <div className="flex flex-col gap-2">
                   <label className="text-[#4A6274] text-xs font-semibold">Was macht dein Unternehmen? *</label>
-                  <textarea rows={3} placeholder="Beschreibe kurz, was du anbietest und was dich von der Konkurrenz unterscheidet..." required value={form.beschreibung} onChange={(e) => set("beschreibung", e.target.value)} className={`${inputCls} resize-none`} />
+                  <textarea rows={3} placeholder="Beschreibe kurz, was du anbietest..." required value={form.beschreibung} onChange={(e) => set("beschreibung", e.target.value)} className={`${inputCls} resize-none`} />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-2">
@@ -200,10 +231,51 @@ export default function AnfragenPage() {
                     <input type="text" placeholder="www.deine-aktuelle-seite.de" value={form.website} onChange={(e) => set("website", e.target.value)} className={inputCls} />
                   </div>
                 </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="flex flex-col gap-2">
+                    <label className="text-[#4A6274] text-xs font-semibold">Wie lange gibt es dein Unternehmen?</label>
+                    <select value={form.erfahrung} onChange={(e) => set("erfahrung", e.target.value)} className={`${inputCls} appearance-none`}>
+                      <option value="">Bitte wählen...</option>
+                      <option>Gerade erst gestartet</option>
+                      <option>1–3 Jahre</option>
+                      <option>3–10 Jahre</option>
+                      <option>10–20 Jahre</option>
+                      <option>Über 20 Jahre</option>
+                    </select>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <label className="text-[#4A6274] text-xs font-semibold">Teamgröße</label>
+                    <select value={form.teamgroesse} onChange={(e) => set("teamgroesse", e.target.value)} className={`${inputCls} appearance-none`}>
+                      <option value="">Bitte wählen...</option>
+                      <option>Einzelunternehmer</option>
+                      <option>2–5 Mitarbeiter</option>
+                      <option>6–20 Mitarbeiter</option>
+                      <option>Über 20 Mitarbeiter</option>
+                    </select>
+                  </div>
+                </div>
               </div>
 
-              {/* Step 2: Zielgruppe */}
+              {/* Step 2: Leistungen & USP */}
               <div className={step === 1 ? "flex flex-col gap-6" : "hidden"}>
+                <h2 className="font-[family-name:var(--font-display)] text-2xl text-[#0F2B3C] mb-2">Leistungen & Alleinstellung</h2>
+                <p className="text-[#4A6274] text-sm -mt-4 mb-2">Was bietest du an und warum sollten Kunden sich für dich entscheiden?</p>
+                <div className="flex flex-col gap-2">
+                  <label className="text-[#4A6274] text-xs font-semibold">Deine 3–5 wichtigsten Leistungen</label>
+                  <textarea rows={3} placeholder="z.B. Elektroinstallation, Smart-Home-Beratung, Photovoltaik-Anlagen, E-Ladestationen..." value={form.leistungen} onChange={(e) => set("leistungen", e.target.value)} className={`${inputCls} resize-none`} />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-[#4A6274] text-xs font-semibold">Was unterscheidet dich von der Konkurrenz?</label>
+                  <textarea rows={2} placeholder="z.B. 24h-Notdienst, 15 Jahre Erfahrung, regionale Nähe, besondere Zertifizierungen..." value={form.usp} onChange={(e) => set("usp", e.target.value)} className={`${inputCls} resize-none`} />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-[#4A6274] text-xs font-semibold">Hast du einen Slogan? (optional)</label>
+                  <input type="text" placeholder="z.B. Dein Elektriker in Oldenburg" value={form.slogan} onChange={(e) => set("slogan", e.target.value)} className={inputCls} />
+                </div>
+              </div>
+
+              {/* Step 3: Zielgruppe & Ziele */}
+              <div className={step === 2 ? "flex flex-col gap-6" : "hidden"}>
                 <h2 className="font-[family-name:var(--font-display)] text-2xl text-[#0F2B3C] mb-2">Zielgruppe & Ziele</h2>
                 <p className="text-[#4A6274] text-sm -mt-4 mb-2">Wen willst du erreichen und was soll deine Website bewirken?</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -232,12 +304,34 @@ export default function AnfragenPage() {
                   <label className="text-[#4A6274] text-xs font-semibold">Beschreibe deine Zielgruppe genauer (optional)</label>
                   <textarea rows={2} placeholder="z.B. Hausbesitzer 30–60 Jahre im Raum Oldenburg, die eine Heizungssanierung planen..." value={form.zielgruppeBeschreibung} onChange={(e) => set("zielgruppeBeschreibung", e.target.value)} className={`${inputCls} resize-none`} />
                 </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-[#4A6274] text-xs font-semibold">Wie sprichst du deine Kunden an?</label>
+                  <div className="flex gap-3">
+                    {["Du", "Sie", "Beides"].map((opt) => (
+                      <label key={opt} className="flex-1 cursor-pointer">
+                        <input type="radio" name="tonalitaet" value={opt} checked={form.tonalitaet === opt} onChange={() => set("tonalitaet", opt)} className="sr-only peer" />
+                        <div className="text-center py-3 rounded-full bg-[#FFF5EB] border border-[#E8DFD4] text-[#4A6274] text-sm font-medium peer-checked:border-[#E8564A] peer-checked:border-2 peer-checked:text-[#E8564A] peer-checked:font-semibold transition">{opt}</div>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <span className="text-[#4A6274] text-xs font-semibold">Wie sollen Kunden dich kontaktieren? (Mehrfachauswahl)</span>
+                  <div className="flex flex-wrap gap-2">
+                    {["Anrufen", "Kontaktformular", "WhatsApp", "Termin buchen", "E-Mail"].map((cta) => (
+                      <label key={cta} className="cursor-pointer">
+                        <input type="checkbox" value={cta} checked={form.gewuenschteCta.includes(cta)} onChange={() => toggleCta(cta)} className="sr-only peer" />
+                        <div className="px-4 py-2.5 rounded-full bg-[#FFF5EB] border border-[#E8DFD4] text-[#4A6274] text-[13px] font-medium peer-checked:border-[#E8564A] peer-checked:border-2 peer-checked:text-[#E8564A] peer-checked:font-semibold transition">{cta}</div>
+                      </label>
+                    ))}
+                  </div>
+                </div>
               </div>
 
-              {/* Step 3: Branding */}
-              <div className={step === 2 ? "flex flex-col gap-6" : "hidden"}>
+              {/* Step 4: Design & Branding */}
+              <div className={step === 3 ? "flex flex-col gap-6" : "hidden"}>
                 <h2 className="font-[family-name:var(--font-display)] text-2xl text-[#0F2B3C] mb-2">Design & Branding</h2>
-                <p className="text-[#4A6274] text-sm -mt-4 mb-2">Haben Sie schon ein Corporate Design? Falls nicht, kein Problem — wir kümmern uns darum.</p>
+                <p className="text-[#4A6274] text-sm -mt-4 mb-2">Hast du schon ein Corporate Design? Falls nicht, kein Problem — wir kümmern uns darum.</p>
                 <div className="flex flex-col gap-2">
                   <span className="text-[#4A6274] text-xs font-semibold">Hast du ein Logo? *</span>
                   <div className="flex gap-3">
@@ -275,11 +369,22 @@ export default function AnfragenPage() {
                   <label className="text-[#4A6274] text-xs font-semibold">Gibt es Websites, die dir gefallen? (optional)</label>
                   <textarea rows={2} placeholder="z.B. www.beispiel-firma.de — gefällt mir der Stil, die Farben, das Layout..." value={form.vorbilder} onChange={(e) => set("vorbilder", e.target.value)} className={`${inputCls} resize-none`} />
                 </div>
+                <div className="flex flex-col gap-2">
+                  <span className="text-[#4A6274] text-xs font-semibold">Hast du eigene Fotos?</span>
+                  <div className="flex flex-col sm:flex-row gap-2">
+                    {["Ja, professionelle Fotos", "Ja, aber nur Handy-Fotos", "Nein"].map((opt) => (
+                      <label key={opt} className="flex-1 cursor-pointer">
+                        <input type="radio" name="eigeneFotos" value={opt} checked={form.eigeneFotos === opt} onChange={() => set("eigeneFotos", opt)} className="sr-only peer" />
+                        <div className="text-center py-3 rounded-full bg-[#FFF5EB] border border-[#E8DFD4] text-[#4A6274] text-[13px] font-medium peer-checked:border-[#E8564A] peer-checked:border-2 peer-checked:text-[#E8564A] peer-checked:font-semibold transition">{opt}</div>
+                      </label>
+                    ))}
+                  </div>
+                </div>
               </div>
 
-              {/* Step 4: Inhalte */}
-              <div className={step === 3 ? "flex flex-col gap-6" : "hidden"}>
-                <h2 className="font-[family-name:var(--font-display)] text-2xl text-[#0F2B3C] mb-2">Inhalte & Seiten</h2>
+              {/* Step 5: Seiten & Extras */}
+              <div className={step === 4 ? "flex flex-col gap-6" : "hidden"}>
+                <h2 className="font-[family-name:var(--font-display)] text-2xl text-[#0F2B3C] mb-2">Seiten & Extras</h2>
                 <p className="text-[#4A6274] text-sm -mt-4 mb-2">Was soll alles auf deiner Website zu finden sein?</p>
                 <div className="flex flex-col gap-2">
                   <span className="text-[#4A6274] text-xs font-semibold">Welche Seiten brauchst du? (Mehrfachauswahl)</span>
@@ -293,13 +398,21 @@ export default function AnfragenPage() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
+                  <label className="text-[#4A6274] text-xs font-semibold">Social-Media-Profile (optional)</label>
+                  <input type="text" placeholder="z.B. instagram.com/deinname, facebook.com/deinname" value={form.socialMedia} onChange={(e) => set("socialMedia", e.target.value)} className={inputCls} />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-[#4A6274] text-xs font-semibold">Öffnungszeiten (optional)</label>
+                  <input type="text" placeholder="z.B. Mo–Fr 8–17 Uhr, Sa nach Vereinbarung" value={form.oeffnungszeiten} onChange={(e) => set("oeffnungszeiten", e.target.value)} className={inputCls} />
+                </div>
+                <div className="flex flex-col gap-2">
                   <label className="text-[#4A6274] text-xs font-semibold">Noch etwas, das wir wissen sollten?</label>
-                  <textarea rows={3} placeholder="z.B. Besondere Funktionen, Terminbuchung, Öffnungszeiten-Widget, spezielle Wünsche..." value={form.sonstiges} onChange={(e) => set("sonstiges", e.target.value)} className={`${inputCls} resize-none`} />
+                  <textarea rows={3} placeholder="z.B. Besondere Funktionen, Terminbuchung, spezielle Wünsche..." value={form.sonstiges} onChange={(e) => set("sonstiges", e.target.value)} className={`${inputCls} resize-none`} />
                 </div>
               </div>
 
-              {/* Step 5: Kontakt */}
-              <div className={step === 4 ? "flex flex-col gap-6" : "hidden"}>
+              {/* Step 6: Kontaktdaten */}
+              <div className={step === 5 ? "flex flex-col gap-6" : "hidden"}>
                 <h2 className="font-[family-name:var(--font-display)] text-2xl text-[#0F2B3C] mb-2">Deine Kontaktdaten</h2>
                 <p className="text-[#4A6274] text-sm -mt-4 mb-2">Fast geschafft! Wie können wir dich erreichen?</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
