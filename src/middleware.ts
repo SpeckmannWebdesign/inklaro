@@ -1,8 +1,10 @@
 // Middleware: Schützt /admin Routen (außer /admin/login)
+// Prüft nur ob der Cookie vorhanden ist — JWT-Verifizierung passiert in den API-Routen
 
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { getTokenFromHeader } from "@/lib/auth";
+
+const COOKIE_NAME = "inklaro-admin-token";
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -15,11 +17,10 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Auth prüfen
-  const cookieHeader = request.headers.get("cookie");
-  const user = getTokenFromHeader(cookieHeader);
+  // Prüfen ob Cookie vorhanden ist
+  const token = request.cookies.get(COOKIE_NAME)?.value;
 
-  if (!user) {
+  if (!token) {
     // Bei API-Routen: 401 zurückgeben
     if (pathname.startsWith("/api/admin")) {
       return NextResponse.json(
