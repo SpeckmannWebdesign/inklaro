@@ -92,9 +92,21 @@ export default function Datenschutz() {
                 verlangen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen
                 Aufsichtsbehörde zu.
               </p>
-              <p>
+              <p className="mb-4">
                 Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit an
                 uns wenden.
+              </p>
+
+              <h3 className="font-semibold text-[#0F2B3C] text-base mb-2">
+                Analyse-Tools und Tools von Dritt&shy;anbietern
+              </h3>
+              <p className="mb-4">
+                Beim Besuch dieser Website kann Ihr Surf-Verhalten statistisch ausgewertet werden.
+                Das geschieht vor allem mit sogenannten Analyseprogrammen.
+              </p>
+              <p>
+                Detaillierte Informationen zu diesen Analyseprogrammen finden Sie in der folgenden
+                Datenschutzerklärung.
               </p>
             </section>
 
@@ -492,10 +504,106 @@ export default function Datenschutz() {
               </p>
             </section>
 
-            {/* 5. Plugins und Tools */}
+            {/* 5. Analyse-Tools und Werbung */}
             <section>
               <h2 className="font-semibold text-[#0F2B3C] text-xl mb-4">
-                5. Plugins und Tools
+                5. Analyse-Tools und Werbung
+              </h2>
+
+              <h3 className="font-semibold text-[#0F2B3C] text-base mb-2">Fathom Analytics</h3>
+              <p className="mb-4">
+                Wir haben Fathom Analytics auf dieser Website eingebunden. Anbieter ist die Conva
+                Ventures Inc., BOX 37058 Millstream PO Victoria, British Columbia V9B 0E8, Canada.
+              </p>
+              <p className="mb-4">
+                Mit Fathom Analytics können wir das Verhalten unserer Websitebesucher analysieren. Zu
+                diesem Zweck wird die IP-Adresse und der Useragent nach der Erfassung durch die
+                Erstellung eines individuellen Hashs unverzüglich anonymisiert. Der Hashwert wird bei
+                Hetzner in Deutschland für 48 Stunden gespeichert. Der Hash kann nicht wieder dekodiert
+                werden. Fathom Analytics verwendet keine Cookies, und keine Daten durch die der
+                Besucher getrackt oder geloggt werden kann.
+              </p>
+              <p className="mb-4">
+                Nach Aussage von Fathom Analytics verbleiben alle in der EU erfassten Daten auf
+                EU-Servern.
+              </p>
+              <p className="mb-4">
+                Die Verwendung von Fathom Analytics erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f
+                DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der anonymisierten
+                Analyse des Nutzerverhaltens und um sein Webangebot zu optimieren. Sofern eine
+                entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich
+                auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG, soweit die
+                Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im
+                Endgerät des Nutzers (z.&nbsp;B. Device-Fingerprinting) im Sinne des TDDDG umfasst.
+                Die Einwilligung ist jederzeit widerrufbar.
+              </p>
+
+              <h4 className="font-semibold text-[#0F2B3C] text-[15px] mb-1">
+                Auftragsverarbeitung
+              </h4>
+              <p className="mb-8">
+                Wir haben einen Vertrag über Auftragsverarbeitung (AVV) zur Nutzung des oben
+                genannten Dienstes geschlossen. Hierbei handelt es sich um einen
+                datenschutzrechtlich vorgeschriebenen Vertrag, der gewährleistet, dass dieser die
+                personenbezogenen Daten unserer Websitebesucher nur nach unseren Weisungen und unter
+                Einhaltung der DSGVO verarbeitet.
+              </p>
+
+              <h3 className="font-semibold text-[#0F2B3C] text-base mb-2">Meta Pixel</h3>
+              <p className="mb-4">
+                Wir verwenden auf dieser Website das Meta Pixel (ehemals Facebook Pixel). Anbieter
+                ist die Meta Platforms Ireland Limited, Merrion Road, Dublin 4, D04 X2K5, Irland.
+              </p>
+              <p className="mb-4">
+                Das Meta Pixel ermöglicht es uns, das Verhalten von Nutzern nachzuverfolgen, nachdem
+                diese durch Klick auf eine Meta-Werbeanzeige (Facebook/Instagram) auf unsere Website
+                weitergeleitet wurden. So können wir die Wirksamkeit der Meta-Werbeanzeigen für
+                statistische und Marktforschungszwecke erfassen und zukünftige Werbemaßnahmen
+                optimieren. Die erhobenen Daten sind für uns als Betreiber dieser Website nicht
+                einsehbar und werden nur im Rahmen von Anzeigenauswertungen bereitgestellt.
+              </p>
+              <p className="mb-4">
+                Das Meta Pixel setzt Cookies und ruft verschiedene Funktionen auf, die eine Analyse
+                Ihres Nutzerverhaltens ermöglichen. Hierzu werden u.&nbsp;a. Ihre IP-Adresse, Geräte-
+                und Browserinformationen sowie Seitenaufrufe erfasst und an Meta-Server in den USA
+                übermittelt.
+              </p>
+              <p className="mb-4">
+                Die Nutzung dieses Dienstes erfolgt auf Grundlage Ihrer Einwilligung nach Art. 6
+                Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG. Die Einwilligung ist jederzeit
+                widerrufbar.
+              </p>
+              <p className="mb-4">
+                Die Datenübertragung in die USA wird auf die Standardvertragsklauseln der
+                EU-Kommission gestützt. Details finden Sie hier:{" "}
+                <a
+                  href="https://www.facebook.com/legal/EU_data_transfer_addendum"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#0F2B3C] underline hover:opacity-75"
+                >
+                  https://www.facebook.com/legal/EU_data_transfer_addendum
+                </a>
+                .
+              </p>
+              <p>
+                Weitere Informationen zum Datenschutz bei Meta finden Sie unter:{" "}
+                <a
+                  href="https://www.facebook.com/about/privacy/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#0F2B3C] underline hover:opacity-75"
+                >
+                  https://www.facebook.com/about/privacy/
+                </a>
+                .
+              </p>
+            </section>
+
+            {/* 6. Plugins und Tools */}
+            <section>
+              <h2 className="font-semibold text-[#0F2B3C] text-xl mb-4">
+                6. Plugins und Tools
               </h2>
 
               <h3 className="font-semibold text-[#0F2B3C] text-base mb-2">
