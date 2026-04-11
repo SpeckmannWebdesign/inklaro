@@ -61,7 +61,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Speckmann Webdesign GmbH",
             },
-            sameAs: ["https://wa.me/4915208709068"],
+            sameAs: [],
           },
           {
             "@context": "https://schema.org",
