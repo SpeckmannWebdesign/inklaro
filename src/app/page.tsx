@@ -144,8 +144,17 @@ export default function Home() {
                 <a href="#prozess" className="text-[#0F2B3C] font-semibold text-base px-8 py-4 rounded-full border-2 border-[#0F2B3C] btn-secondary transition-all duration-200">So funktioniert&apos;s</a>
               </div>
             </div>
-            <div className="flex-1 max-w-[560px]">
-              <Image src="/images/hero.avif" alt="Professionelle Website erstellen lassen" width={560} height={620} className="rounded-3xl w-full object-cover" priority sizes="(max-width: 1024px) 100vw, 560px" />
+            <div className="flex-1 max-w-[560px] w-full">
+              <div className="relative w-full rounded-3xl overflow-hidden shadow-lg" style={{ paddingTop: "56.25%" }}>
+                <iframe
+                  src="https://customer-h9fl0o3nd0nh7oc3.cloudflarestream.com/6dc48619ba06fd17c8240e14d8491cdc/iframe?poster=https%3A%2F%2Fcustomer-h9fl0o3nd0nh7oc3.cloudflarestream.com%2F6dc48619ba06fd17c8240e14d8491cdc%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D0h0m2s%26height%3D600"
+                  title="Inklaro – Professionelle Website erstellen lassen"
+                  loading="lazy"
+                  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                  allowFullScreen
+                  className="absolute inset-0 h-full w-full border-0"
+                />
+              </div>
             </div>
           </div>
         </section>

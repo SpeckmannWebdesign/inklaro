@@ -18,9 +18,22 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.inklaro.de"),
   title: "Inklaro – Professionelle Website zum Festpreis",
   description:
     "Professionelle Website ab 799 € netto. Sieht auf allen Geräten gut aus, rechtlich sicher, blitzschnell. Erst zahlen, wenn du zufrieden bist.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: ["/favicon.ico"],
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     title: "Inklaro – Professionelle Website zum Festpreis",
     description:
@@ -46,8 +59,8 @@ export default function RootLayout({
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "Inklaro",
-            url: "https://inklaro.de",
-            logo: "https://inklaro.de/images/inklaro-logo.png",
+            url: "https://www.inklaro.de",
+            logo: "https://www.inklaro.de/images/inklaro-logo.png",
             description: "Professionelle Websites zum Festpreis — responsive, DSGVO-konform, blitzschnell.",
             telephone: "+4915208709068",
             address: {
@@ -67,7 +80,7 @@ export default function RootLayout({
             "@context": "https://schema.org",
             "@type": "WebSite",
             name: "Inklaro",
-            url: "https://inklaro.de",
+            url: "https://www.inklaro.de",
           },
           {
             "@context": "https://schema.org",

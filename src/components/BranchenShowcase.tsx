@@ -75,7 +75,7 @@ export default function BranchenShowcase({ branche, beschreibung, screenshot, ur
     "@context": "https://schema.org",
     "@type": "Service",
     name: `Website für ${branche} erstellen lassen`,
-    provider: { "@type": "Organization", name: "Inklaro", url: "https://inklaro.de" },
+    provider: { "@type": "Organization", name: "Inklaro", url: "https://www.inklaro.de" },
     description: beschreibung,
     areaServed: { "@type": "Country", name: "DE" },
     offers: {
