@@ -11,7 +11,7 @@ export default function Page() {
     <BranchenShowcase
       branche="SHK-Betriebe"
       beschreibung="So könnte deine SHK-Website aussehen — professionell, zuverlässig und perfekt für Sanitär, Heizung und Klima."
-      screenshot="/images/fKxcf.avif"
+      screenshot="/images/fullpage-shk.avif"
       url="www.schroeder-haustechnik.de"
       seoText="Wenn die Heizung im Winter ausfällt oder ein Rohrbruch das Badezimmer flutet, suchen Kunden sofort online nach einem SHK-Betrieb in der Nähe. Wer dann mit einer professionellen Website und gut sichtbarer Notdienstnummer erscheint, bekommt den Auftrag. Aber auch bei geplanten Projekten wie Badsanierung, Heizungstausch oder Wärmepumpe vergleichen Kunden Betriebe online. Eine klare Website mit Leistungsübersicht, Referenzen und guter Google-Sichtbarkeit für deine Region sorgt dafür, dass du gefunden wirst — nicht die Konkurrenz."
       vorteile={[

@@ -11,7 +11,7 @@ export default function Page() {
     <BranchenShowcase
       branche="Rechtsanwälte"
       beschreibung="So könnte deine Kanzlei-Website aussehen — seriös, vertrauenswürdig und auf deine Mandanten zugeschnitten."
-      screenshot="/images/KgvdS.avif"
+      screenshot="/images/fullpage-rechtsanwalt.avif"
       url="www.kanzlei-berger-partner.de"
       seoText="Wenn Menschen einen Rechtsanwalt suchen, googeln sie — und sie entscheiden in Sekunden, ob eine Kanzlei vertrauenswürdig wirkt. Eine professionelle Website mit klarer Darstellung der Rechtsgebiete, Anwaltsprofile und einer seriösen Gestaltung ist das Fundament für Mandantengewinnung. Ohne eigene Website verlierst du Mandanten an Kanzleien, die online professioneller auftreten. Besonders bei sensiblen Themen wie Familienrecht oder Arbeitsrecht suchen Menschen eine Kanzlei, die schon auf der Website Kompetenz und Vertrauen ausstrahlt."
       vorteile={[

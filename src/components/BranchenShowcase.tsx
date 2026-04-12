@@ -32,18 +32,24 @@ interface BranchenShowcaseProps {
 }
 
 const alleBranchen = [
+  { name: "Restaurant", desc: "Gastronomie, Catering, Bistro", img: "/images/fullpage-restaurant.avif", href: "/branchen/restaurant" },
+  { name: "Café", desc: "Café, Bäckerei, Bistro", img: "/images/fullpage-cafe.avif", href: "/branchen/cafe" },
+  { name: "Fitnessstudio", desc: "Gym, Personal Training, Fitness", img: "/images/fullpage-fitnessstudio.avif", href: "/branchen/fitnessstudio" },
+  { name: "Yogastudio", desc: "Yoga, Pilates, Meditation", img: "/images/fullpage-yoga.avif", href: "/branchen/yoga" },
+  { name: "Physiotherapie", desc: "Praxis, Therapie, Reha", img: "/images/fullpage-physiotherapie.avif", href: "/branchen/physiotherapie" },
+  { name: "Zahnarzt", desc: "Praxis, Implantate, Prophylaxe", img: "/images/fullpage-zahnarzt.avif", href: "/branchen/zahnarzt" },
+  { name: "Arztpraxis", desc: "Hausarzt, Facharzt, Therapeut", img: "/images/Tfgar.avif", href: "/branchen/arztpraxis" },
+  { name: "Rechtsanwalt", desc: "Kanzlei, Anwalt, Notar", img: "/images/fullpage-rechtsanwalt.avif", href: "/branchen/rechtsanwalt" },
+  { name: "Steuerberater", desc: "Buchhaltung, Steuern, Beratung", img: "/images/fullpage-steuerberater.avif", href: "/branchen/steuerberater" },
+  { name: "Architekt", desc: "Planung, Bauleitung, Entwurf", img: "/images/fullpage-architekt.avif", href: "/branchen/architekt" },
+  { name: "Coaching", desc: "Business-, Life- & Personal Coach", img: "/images/fullpage-coaching.avif", href: "/branchen/coaching" },
+  { name: "Fotograf", desc: "Hochzeit, Portrait, Business", img: "/images/fullpage-fotograf.avif", href: "/branchen/fotograf" },
+  { name: "Hochzeitsplanung", desc: "Hochzeitsplaner, Events", img: "/images/fullpage-hochzeitsplanung.avif", href: "/branchen/hochzeitsplanung" },
+  { name: "Tischler", desc: "Tischlerei, Schreiner, Möbelbau", img: "/images/fullpage-tischler.avif", href: "/branchen/tischler" },
+  { name: "SHK-Betrieb", desc: "Sanitär, Heizung, Klima", img: "/images/fullpage-shk.avif", href: "/branchen/shk" },
   { name: "Elektriker", desc: "Elektroinstallation, Smart Home, Notdienst", img: "/images/oQ5OH.avif", href: "/branchen/elektriker" },
-  { name: "Restaurant", desc: "Gastronomie, Café, Catering", img: "/images/nuGnq.avif", href: "/branchen/restaurant" },
   { name: "Freelancer", desc: "Portfolio, Berater, Kreative", img: "/images/IPZsz.avif", href: "/branchen/freelancer" },
-  { name: "Arztpraxis", desc: "Ärzte, Zahnärzte, Therapeuten", img: "/images/Tfgar.avif", href: "/branchen/arztpraxis" },
-  { name: "Fitnessstudio", desc: "Gym, Personal Training, Yoga", img: "/images/5cM2T.avif", href: "/branchen/fitnessstudio" },
   { name: "Immobilien", desc: "Makler, Hausverwaltung, Bauträger", img: "/images/q71eS.avif", href: "/branchen/immobilien" },
-  { name: "Rechtsanwalt", desc: "Kanzlei, Anwalt, Notar", img: "/images/hero-rechtsanwalt.avif", href: "/branchen/rechtsanwalt" },
-  { name: "Steuerberater", desc: "Buchhaltung, Steuern, Beratung", img: "/images/hero-steuerberater.avif", href: "/branchen/steuerberater" },
-  { name: "Café", desc: "Café, Bäckerei, Bistro", img: "/images/hero-cafe.avif", href: "/branchen/cafe" },
-  { name: "Tischler", desc: "Tischlerei, Schreiner, Möbelbau", img: "/images/hero-tischler.avif", href: "/branchen/tischler" },
-  { name: "SHK-Betrieb", desc: "Sanitär, Heizung, Klima", img: "/images/hero-shk.avif", href: "/branchen/shk" },
-  { name: "Hochzeitsplanung", desc: "Hochzeitsplaner, Events", img: "/images/hero-hochzeit.avif", href: "/branchen/hochzeitsplanung" },
 ];
 
 export default function BranchenShowcase({ branche, beschreibung, screenshot, url, seoText, vorteile, faqs }: BranchenShowcaseProps) {

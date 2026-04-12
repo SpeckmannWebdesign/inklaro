@@ -11,7 +11,7 @@ export default function Page() {
     <BranchenShowcase
       branche="Tischler & Schreiner"
       beschreibung="So könnte deine Tischlerei-Website aussehen — handwerklich, warm und so authentisch wie deine Arbeit."
-      screenshot="/images/wj1Qk.avif"
+      screenshot="/images/fullpage-tischler.avif"
       url="www.tischlerei-hartmann.de"
       seoText="Kunden, die eine Maßanfertigung, einen Einbauschrank oder eine individuelle Küche suchen, vergleichen Tischlereien online. Sie wollen sehen, was ein Betrieb kann — echte Projekte, handwerkliche Qualität und die Liebe zum Detail. Eine Website mit überzeugenden Referenzfotos und klarer Leistungsübersicht ist dabei der entscheidende Faktor. Gerade im Tischlerhandwerk verkaufen Bilder mehr als Worte: Vorher-Nachher-Vergleiche, Nahaufnahmen von Holzverbindungen und fertige Einbauten sprechen für sich."
       vorteile={[

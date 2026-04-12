@@ -11,7 +11,7 @@ export default function Page() {
     <BranchenShowcase
       branche="Steuerberater"
       beschreibung="So könnte deine Steuerberater-Website aussehen — kompetent, modern und auf Vertrauen gebaut."
-      screenshot="/images/LgAzE.avif"
+      screenshot="/images/fullpage-steuerberater.avif"
       url="www.steuerberatung-hartmann.de"
       seoText="Die Suche nach einem neuen Steuerberater beginnt fast immer bei Google. Mandanten vergleichen Kanzleien, lesen Bewertungen und achten darauf, ob die Website Kompetenz und Vertrauen ausstrahlt. Eine professionelle Online-Präsenz mit klarer Leistungsübersicht und sympathischer Teamvorstellung macht den Unterschied zwischen einer Anfrage und einem Weiterklicken. Besonders Gründer, Freiberufler und kleine Unternehmen suchen einen Steuerberater, der modern auftritt und digital erreichbar ist."
       vorteile={[

@@ -11,7 +11,7 @@ export default function Page() {
     <BranchenShowcase
       branche="Cafés & Bäckereien"
       beschreibung="So könnte deine Café-Website aussehen — warm, einladend und so gemütlich wie dein Laden."
-      screenshot="/images/5nEbT.avif"
+      screenshot="/images/fullpage-cafe.avif"
       url="www.cafe-goldstueck.de"
       seoText="Ob Frühstück, Kaffeespezialitäten oder hausgemachter Kuchen — Gäste suchen ihr nächstes Lieblingscafé online. Sie scrollen durch Fotos, schauen die Karte an und prüfen die Öffnungszeiten, bevor sie vorbeikommen. Ein Café ohne eigene Website verliert diese Gäste an die Konkurrenz, die mit schönen Bildern und klaren Infos überzeugt. Die Atmosphäre deines Cafés muss sich bereits auf der Website widerspiegeln — warme Farben, einladende Fotos und eine Speisekarte, die Lust auf einen Besuch macht."
       vorteile={[

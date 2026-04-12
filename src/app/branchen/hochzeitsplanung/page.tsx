@@ -11,7 +11,7 @@ export default function Page() {
     <BranchenShowcase
       branche="Hochzeitsplaner"
       beschreibung="So könnte deine Website aussehen — romantisch-elegant und so einladend wie die Feste, die du planst."
-      screenshot="/images/9zYQM.avif"
+      screenshot="/images/fullpage-hochzeitsplanung.avif"
       url="www.sophie-lehmann-hochzeiten.de"
       seoText="Die Hochzeitsplanung beginnt heute auf Pinterest, Instagram und Google. Paare suchen nach Inspiration — und nach jemandem, der ihre Traumhochzeit umsetzt. Wer als Hochzeitsplaner keine eigene Website hat, existiert für viele Brautpaare schlicht nicht. Eine elegante Website mit echten Hochzeitsfotos, Referenzen und einer klaren Beschreibung deines Angebots überzeugt Paare davon, dass sie bei dir in den besten Händen sind. Emotionale Bildwelten und persönliche Texte sind dabei wichtiger als jede Preisliste."
       vorteile={[

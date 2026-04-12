@@ -29,18 +29,24 @@ const C = {
 };
 
 const branchen = [
-  { name: "Fitnessstudio", desc: "Gym, Personal Training, Yoga", img: "/images/5cM2T.avif", href: "/branchen/fitnessstudio" },
-  { name: "Restaurant", desc: "Gastronomie, Café, Catering", img: "/images/nuGnq.avif", href: "/branchen/restaurant" },
-  { name: "Freelancer", desc: "Portfolio, Berater, Kreative", img: "/images/IPZsz.avif", href: "/branchen/freelancer" },
-  { name: "Arztpraxis", desc: "Ärzte, Zahnärzte, Therapeuten", img: "/images/Tfgar.avif", href: "/branchen/arztpraxis" },
-  { name: "Hochzeitsplanung", desc: "Hochzeitsplaner, Events", img: "/images/hero-hochzeit.avif", href: "/branchen/hochzeitsplanung" },
-  { name: "Immobilien", desc: "Makler, Hausverwaltung, Bauträger", img: "/images/q71eS.avif", href: "/branchen/immobilien" },
-  { name: "Rechtsanwalt", desc: "Kanzlei, Anwalt, Notar", img: "/images/hero-rechtsanwalt.avif", href: "/branchen/rechtsanwalt" },
-  { name: "Steuerberater", desc: "Buchhaltung, Steuern, Beratung", img: "/images/hero-steuerberater.avif", href: "/branchen/steuerberater" },
-  { name: "Café", desc: "Café, Bäckerei, Bistro", img: "/images/hero-cafe.avif", href: "/branchen/cafe" },
-  { name: "Tischler", desc: "Tischlerei, Schreiner, Möbelbau", img: "/images/hero-tischler.avif", href: "/branchen/tischler" },
-  { name: "SHK-Betrieb", desc: "Sanitär, Heizung, Klima", img: "/images/hero-shk.avif", href: "/branchen/shk" },
+  { name: "Restaurant", desc: "Gastronomie, Catering, Bistro", img: "/images/fullpage-restaurant.avif", href: "/branchen/restaurant" },
+  { name: "Café", desc: "Café, Bäckerei, Bistro", img: "/images/fullpage-cafe.avif", href: "/branchen/cafe" },
+  { name: "Fitnessstudio", desc: "Gym, Personal Training, Fitness", img: "/images/fullpage-fitnessstudio.avif", href: "/branchen/fitnessstudio" },
+  { name: "Yogastudio", desc: "Yoga, Pilates, Meditation", img: "/images/fullpage-yoga.avif", href: "/branchen/yoga" },
+  { name: "Physiotherapie", desc: "Praxis, Therapie, Reha", img: "/images/fullpage-physiotherapie.avif", href: "/branchen/physiotherapie" },
+  { name: "Zahnarzt", desc: "Praxis, Implantate, Prophylaxe", img: "/images/fullpage-zahnarzt.avif", href: "/branchen/zahnarzt" },
+  { name: "Arztpraxis", desc: "Hausarzt, Facharzt, Therapeut", img: "/images/Tfgar.avif", href: "/branchen/arztpraxis" },
+  { name: "Rechtsanwalt", desc: "Kanzlei, Anwalt, Notar", img: "/images/fullpage-rechtsanwalt.avif", href: "/branchen/rechtsanwalt" },
+  { name: "Steuerberater", desc: "Buchhaltung, Steuern, Beratung", img: "/images/fullpage-steuerberater.avif", href: "/branchen/steuerberater" },
+  { name: "Architekt", desc: "Planung, Bauleitung, Entwurf", img: "/images/fullpage-architekt.avif", href: "/branchen/architekt" },
+  { name: "Coaching", desc: "Business-, Life- & Personal Coach", img: "/images/fullpage-coaching.avif", href: "/branchen/coaching" },
+  { name: "Fotograf", desc: "Hochzeit, Portrait, Business", img: "/images/fullpage-fotograf.avif", href: "/branchen/fotograf" },
+  { name: "Hochzeitsplanung", desc: "Hochzeitsplaner, Events", img: "/images/fullpage-hochzeitsplanung.avif", href: "/branchen/hochzeitsplanung" },
+  { name: "Tischler", desc: "Tischlerei, Schreiner, Möbelbau", img: "/images/fullpage-tischler.avif", href: "/branchen/tischler" },
+  { name: "SHK-Betrieb", desc: "Sanitär, Heizung, Klima", img: "/images/fullpage-shk.avif", href: "/branchen/shk" },
   { name: "Elektriker", desc: "Elektroinstallation, Smart Home, Notdienst", img: "/images/oQ5OH.avif", href: "/branchen/elektriker" },
+  { name: "Freelancer", desc: "Portfolio, Berater, Kreative", img: "/images/IPZsz.avif", href: "/branchen/freelancer" },
+  { name: "Immobilien", desc: "Makler, Hausverwaltung, Bauträger", img: "/images/q71eS.avif", href: "/branchen/immobilien" },
 ];
 
 /* ── Form Helpers ── */
@@ -106,10 +112,6 @@ export default function Home() {
             ))}
           </div>
           <div className="flex items-center gap-4">
-            <a href="tel:+4915208709068" className="hidden lg:flex items-center gap-2 text-[#4A6274] hover:text-[#0F2B3C] transition text-[15px] font-medium">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              0152 0870 9068
-            </a>
             <a href="/anfragen" className="bg-[#E8564A] text-white font-bold text-sm px-7 py-3 rounded-full btn-primary transition-all duration-200">Website anfragen</a>
             <button onClick={() => setMenuOpen(!menuOpen)} className="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Menü öffnen">
               <span className={`w-6 h-0.5 bg-[#0F2B3C] transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
