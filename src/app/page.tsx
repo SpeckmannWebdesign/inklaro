@@ -147,7 +147,7 @@ export default function Home() {
             <div className="flex-1 max-w-[560px] w-full lg:mt-[68px]">
               <div className="relative w-full rounded-3xl overflow-hidden shadow-lg" style={{ paddingTop: "56.25%" }}>
                 <iframe
-                  src="https://customer-h9fl0o3nd0nh7oc3.cloudflarestream.com/6dc48619ba06fd17c8240e14d8491cdc/iframe?poster=https%3A%2F%2Fcustomer-h9fl0o3nd0nh7oc3.cloudflarestream.com%2F6dc48619ba06fd17c8240e14d8491cdc%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D0h0m2s%26height%3D600"
+                  src="https://customer-h9fl0o3nd0nh7oc3.cloudflarestream.com/6dc48619ba06fd17c8240e14d8491cdc/iframe?poster=https%3A%2F%2Fcdn.prod.website-files.com%2F63bffa9e0c0d1cc7a25a59a1%2F69dc013a20fbcec174d33b0d_SW_Inklaro_VSL_Thumbnail_v01.avif"
                   title="Inklaro – Professionelle Website erstellen lassen"
                   loading="lazy"
                   allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
