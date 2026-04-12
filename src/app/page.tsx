@@ -131,7 +131,7 @@ export default function Home() {
       <main id="main" className="pt-20">
         {/* HERO */}
         <section className="bg-[#FFFAF5]">
-          <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-16 px-5 lg:px-16 pt-8 pb-16 lg:py-0 lg:min-h-[700px]">
+          <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-16 px-5 lg:px-16 pt-8 pb-16 lg:pt-32 lg:pb-24 lg:min-h-[700px]">
             <div className="flex-1 flex flex-col gap-8 max-w-[640px]">
               <div className="inline-flex items-center gap-2 bg-[#FFF5EB] border border-[#E8DFD4] rounded-full px-4 py-2 w-fit">
                 <span className="w-2 h-2 bg-[#E8564A] rounded-full" />
@@ -144,7 +144,7 @@ export default function Home() {
                 <a href="#prozess" className="text-[#0F2B3C] font-semibold text-base px-8 py-4 rounded-full border-2 border-[#0F2B3C] btn-secondary transition-all duration-200">So funktioniert&apos;s</a>
               </div>
             </div>
-            <div className="flex-1 max-w-[560px] w-full">
+            <div className="flex-1 max-w-[560px] w-full lg:mt-[68px]">
               <div className="relative w-full rounded-3xl overflow-hidden shadow-lg" style={{ paddingTop: "56.25%" }}>
                 <iframe
                   src="https://customer-h9fl0o3nd0nh7oc3.cloudflarestream.com/6dc48619ba06fd17c8240e14d8491cdc/iframe?poster=https%3A%2F%2Fcustomer-h9fl0o3nd0nh7oc3.cloudflarestream.com%2F6dc48619ba06fd17c8240e14d8491cdc%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D0h0m2s%26height%3D600"
