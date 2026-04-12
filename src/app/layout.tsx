@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Serif_Display, Nunito } from "next/font/google";
+import Script from "next/script";
 import StructuredData from "@/components/StructuredData";
 import "./globals.css";
 
@@ -54,6 +55,11 @@ export default function RootLayout({
       className={`${dmSerif.variable} ${nunito.variable} antialiased`}
     >
       <body className="min-h-screen bg-[#FFFAF5] text-[#0F2B3C]">
+        <Script
+          src="https://cdn.usefathom.com/script.js"
+          data-site="IONPZOCJ"
+          strategy="afterInteractive"
+        />
         <StructuredData data={[
           {
             "@context": "https://schema.org",
