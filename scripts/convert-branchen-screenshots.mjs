@@ -5,6 +5,7 @@ import { resolve, join } from "node:path";
 const SRC_DIR = "/Users/marcelspeckmann/Documents/Claude/Website Designs/exports";
 const OUT_DIR = resolve(process.cwd(), "public/images");
 const TARGET_WIDTH = 1600;
+const CARD_RATIO = 2 / 3; // Höhe / Breite (3:2 landscape, passt zur Card 480x320)
 
 // Pencil-Dateiname → Slug auf der Website
 const MAP = {
@@ -44,17 +45,26 @@ for (const [pencilLower, slug] of Object.entries(MAP)) {
   const meta = await sharp(srcPath).metadata();
   const targetWidth = Math.min(TARGET_WIDTH, meta.width);
 
-  const pipeline = sharp(srcPath).resize({ width: targetWidth, withoutEnlargement: true });
-
+  // Fullpage-Variante (komplette Seite, fuer Detailseite der jeweiligen Branche)
+  const fullPipeline = sharp(srcPath).resize({ width: targetWidth, withoutEnlargement: true });
   const avifPath = join(OUT_DIR, `fullpage-${slug}.avif`);
   const jpgPath = join(OUT_DIR, `fullpage-${slug}.jpg`);
+  await fullPipeline.clone().avif({ quality: 60, effort: 4 }).toFile(avifPath);
+  await fullPipeline.clone().jpeg({ quality: 82, progressive: true, mozjpeg: true }).toFile(jpgPath);
 
-  await pipeline.clone().avif({ quality: 60, effort: 4 }).toFile(avifPath);
-  await pipeline.clone().jpeg({ quality: 82, progressive: true, mozjpeg: true }).toFile(jpgPath);
+  // Card-Variante (nur Hero-Ausschnitt, fuer Branchen-Cards auf Startseite/Showcase)
+  const cardCropHeight = Math.round(meta.width * CARD_RATIO);
+  const cardAvifPath = join(OUT_DIR, `card-${slug}.avif`);
+  const cardJpgPath = join(OUT_DIR, `card-${slug}.jpg`);
+  const cardPipeline = sharp(srcPath)
+    .extract({ left: 0, top: 0, width: meta.width, height: cardCropHeight })
+    .resize({ width: Math.min(1200, meta.width), withoutEnlargement: true });
+  await cardPipeline.clone().avif({ quality: 62, effort: 4 }).toFile(cardAvifPath);
+  await cardPipeline.clone().jpeg({ quality: 82, progressive: true, mozjpeg: true }).toFile(cardJpgPath);
 
-  const avifSize = statSync(avifPath).size;
-  const jpgSize = statSync(jpgPath).size;
-  console.log(`✓ ${real.padEnd(22)} → fullpage-${slug}.{avif,jpg}  (${(avifSize / 1024).toFixed(0)} KB / ${(jpgSize / 1024).toFixed(0)} KB)`);
+  const full = statSync(avifPath).size;
+  const card = statSync(cardAvifPath).size;
+  console.log(`✓ ${real.padEnd(22)} → fullpage + card  (${(full / 1024).toFixed(0)} / ${(card / 1024).toFixed(0)} KB avif)`);
 }
 
 console.log("\nFertig.");
