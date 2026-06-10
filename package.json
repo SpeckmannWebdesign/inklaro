@@ -16,7 +16,7 @@
     "@stripe/stripe-js": "^9.0.1",
     "bcryptjs": "^3.0.3",
     "jsonwebtoken": "^9.0.3",
-    "next": "16.2.2",
+    "next": "16.2.6",
     "octokit": "^5.0.5",
     "pg": "^8.20.0",
     "prisma": "^7.6.0",
@@ -40,7 +40,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.2.2",
+    "eslint-config-next": "16.2.6",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
